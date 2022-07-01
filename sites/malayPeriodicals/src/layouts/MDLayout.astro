@@ -1,0 +1,18 @@
+---
+// Component Imports
+import { BaseLayout } from '@libdsastro/ui';
+import navigation from "../data/navigation.json"
+
+const { content } = Astro.props;
+---
+<BaseLayout title={content.title} navItems={ navigation }>
+  <div class="h-[250px]" style={`background: url('${ content.banner }') center no-repeat`}>
+    <div class="container mx-auto pt-10 md:pt-16 px-5 md:px-0 prose prose-img:mt-0 text-center">
+      <h1 class="font-serif">{ content.title }</h1>
+      <img src="/assets/flourish.svg" alt="a nice flourish" class="w-1/3 mx-auto"/>
+    </div>
+  </div>
+  <article class="container mt-5 px-5 md:px-0 prose max-w-none prose-p:max-w-prose prose-p:mx-auto prose-ol:max-w-prose prose-ol:mx-auto lg:prose-xl text-justify">
+    <slot />
+  </article>
+</BaseLayout>

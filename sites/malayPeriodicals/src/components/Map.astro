@@ -1,0 +1,98 @@
+---
+---
+<script>
+  import maplibregl from 'maplibre-gl';
+  import 'maplibre-gl/dist/maplibre-gl.css';
+
+  map = new maplibregl.Map({
+        container: 'map', // container id
+        style: 'https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL',
+        center: [0, 0], // starting position [lng, lat]
+        zoom: 1, // starting zoom
+        scrollZoom: false,
+    });
+
+  map.on('load', () => {
+    // Insert the layer beneath any symbol layer.
+    const layers = map.getStyle().layers;
+    let labelLayerId;
+    for (var i = 0; i < layers.length; i++) {
+      if (layers[i].type === 'symbol' && layers[i].layout['text-field']) {
+        labelLayerId = layers[i].id;
+      break;
+      }
+    }
+    map.addLayer(
+      {
+        'id': '3d-buildings',
+        'source': 'openmaptiles',
+        'source-layer': 'building',
+        'filter': ['==', 'extrude', 'true'],
+        'type': 'fill-extrusion',
+        'minzoom': 10,
+        'paint': {
+          'fill-extrusion-color': '#aaa',
+          // use an 'interpolate' expression to add a smooth transition effect to the
+          // buildings as the user zooms in
+          'fill-extrusion-height': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            16,
+            0,
+            16.05,
+            ['get', 'height']
+          ],
+          'fill-extrusion-base': [
+            'interpolate',
+            ['linear'],
+            ['zoom'],
+            16,
+            0,
+            16.05,
+            ['get', 'min_height']
+          ],
+          'fill-extrusion-opacity': 0.6
+        }
+      },
+      labelLayerId
+    );
+    map.addSource(
+      'libmaps1975',
+      {                                                                                                                                           
+        'type': 'raster',                                                                                                                                                   
+        'tiles': [                                                                                                                                                          
+          'https://libmaps.nus.edu.sg/gis/rest/services/Sing_Hist_Maps/1975/MapServer/tile/{z}/{y}/{x}'                                                                   
+        ],                                                                                                                                                                  
+        'tileSize': 256                                                                                                                                                     
+      }
+    );
+  });
+
+  const intersectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          console.log(entry);
+          map.flyTo(JSON.parse(entry.target.dataset.chapterlocation));
+          if (entry.target.dataset.rasterlayer && !map.getLayer(entry.target.dataset.rasterlayer)) {
+            map.addLayer({
+              'id': entry.target.dataset.rasterlayer,
+              'type': 'raster',
+              'source': entry.target.dataset.rasterlayer,
+            }, '3d-buildings');
+          }
+        }else if(map.getLayer(entry.target.dataset.rasterlayer)){
+          map.removeLayer(entry.target.dataset.rasterlayer);
+        }
+      });
+    }
+  );
+
+  document.map = map;
+
+  document.querySelectorAll('.mapChapter').forEach((element) => {
+    intersectionObserver.observe(element);
+  })
+</script>
+<div id="map" class="!fixed top-0 h-screen w-screen -z-10"></div>
