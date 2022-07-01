@@ -1,0 +1,36 @@
+---
+export interface Props{
+  navItems: {text: string, url: string}[]
+}
+const { navItems } = Astro.props
+---
+<div class="bg-neutral-50 border-t border-neutral-300">
+  <nav class="container relative mx-auto justify-start w-full text-neutral-500 z-10">
+    <button 
+      type="button" 
+      class="block ml-5 md:hidden py-5 border-b-4 border border-transparent text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600" 
+      aria-label="toggle menu"
+      onclick="javascript:(e=>{itemsUL.classList.toggle('hidden');})()"
+    >
+      <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
+        <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+      </svg>
+    </button>
+    <ul id="itemsUL" class="hidden list-none absolute left-0 right-0 md:static bg-neutral-50 pl-5 md:pl-0 flex flex-col md:flex-row md:block">
+    {navItems.map((item) => {
+      let liClasses = "inline-block transition mr-5 py-5 border-b-4 border-transparent hover:text-neutral-900";
+      (Astro.canonicalURL.pathname == item.url )
+        ? liClasses += " border-b-orange-400"
+        : liClasses += " hover:border-b-orange-400"
+      return(
+      <li class={ liClasses }>
+        <a href={ item.url }
+        >
+        { item.text }
+        </a>
+      </li>
+      )
+    })}
+    </ul>
+  </nav>
+</div>

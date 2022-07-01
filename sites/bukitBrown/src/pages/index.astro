@@ -1,0 +1,31 @@
+---
+import { BaseLayout } from "@libdsastro/ui"
+import ScrollyThree from '../components/ScrollyThree.astro'
+import ThreeChapter from '../components/ThreeChapter.astro'
+import navigation from "../data/navigation.json"
+---
+<BaseLayout title="storythree" navItems={ navigation }>
+  <ScrollyThree/>
+  <div class="pt-[10vh] w-1/3">
+    <ThreeChapter to='0'>
+      <h2>Jade bangle</h2>
+      <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vestibulum consequat, dolor quis finibus interdum, quam sem faucibus nulla, sit amet varius quam velit ac ante. Vivamus facilisis condimentum massa, ut dapibus lacus efficitur sit amet. Quisque euismod mi eu urna finibus, non sagittis leo venenatis. Aenean a erat nibh. Phasellus et tellus in magna facilisis faucibus eget non magna. Integer condimentum diam iaculis dui accumsan fermentum.</p>
+    </ThreeChapter>
+    <ThreeChapter to='-1'>
+      <h2>Hair cream</h2>
+      <p>Vivamus gravida ligula vitae nulla cursus venenatis. Donec et erat scelerisque, euismod metus ut, finibus tortor. Donec maximus mattis neque sit amet consectetur. Sed fermentum lorem ac libero viverra pellentesque. Donec elit lorem, aliquam non purus at, efficitur sollicitudin dui. Nam placerat maximus dui, quis pharetra urna sagittis tincidunt. In pretium ut sem ac sodales.</p>
+    </ThreeChapter>
+    <ThreeChapter to='-2'>
+      <h2>Ceramics</h2>
+      <p>Phasellus ante nibh, ullamcorper eget mattis sed, accumsan vitae orci. Aenean consectetur urna dui, et lobortis ex molestie quis. Sed turpis ipsum, tincidunt nec enim et, fringilla luctus metus. Proin quis turpis faucibus risus ultrices facilisis quis ac erat. Proin rutrum sem at ante pulvinar consequat. Aliquam id pretium quam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sagittis dolor felis, non lobortis tortor efficitur ac. Proin viverra, diam vel mattis gravida, ligula magna rhoncus lacus, nec auctor eros tortor sagittis odio. Curabitur feugiat sem non ligula lacinia, vitae tincidunt urna lobortis. Donec nec felis at odio dapibus faucibus in at nisl. Vestibulum id maximus ante. In hac habitasse platea dictumst.</p>
+    </ThreeChapter>
+    <ThreeChapter to='-3'>
+      <h2>More ceramics</h2>
+      <p>Phasellus luctus purus non laoreet vulputate. Sed condimentum vel ante sit amet eleifend. Nam odio nibh, lobortis vitae consectetur non, luctus a augue. Phasellus in ante sit amet metus tristique pellentesque quis eu lectus. In lobortis nulla vitae augue vehicula, ac suscipit metus convallis. Phasellus vel commodo augue, nec sollicitudin leo. Nunc quis euismod erat. Mauris porta ornare lacus nec malesuada. Morbi sollicitudin consectetur ex, vitae hendrerit est ultricies vel. Quisque cursus eros posuere, dapibus quam nec, commodo lacus. Vestibulum convallis lacinia odio, non pharetra lectus eleifend id. Nulla facilisi.</p>
+    </ThreeChapter>
+    <ThreeChapter to='-4'>
+      <h2>One last bit of ceramics</h2>
+      <p>Curabitur imperdiet, purus ut ultrices consectetur, risus eros hendrerit nisi, sed tempus augue sapien eu magna. Praesent eu lobortis nunc. Sed efficitur orci eget dolor euismod tempus. Donec sem turpis, vestibulum sed orci id, finibus consequat neque. Aenean augue odio, viverra non orci vitae, mollis mattis elit. Fusce tempor massa lacinia nulla eleifend, eu faucibus elit tristique. Ut in urna nunc. Maecenas pulvinar augue ipsum, quis scelerisque purus dapibus non. Curabitur sodales eu ipsum ut fermentum. Maecenas suscipit dui at lacus cursus, sed tempus neque aliquam. Quisque rutrum mauris id lacinia volutpat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+    </ThreeChapter>
+  </div>
+</BaseLayout>

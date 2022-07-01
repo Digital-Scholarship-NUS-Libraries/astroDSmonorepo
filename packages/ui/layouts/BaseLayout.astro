@@ -1,0 +1,29 @@
+---
+import { Header } from "../index.js"
+import { NavBar } from "../index.js"
+import { Footer } from "../index.js"
+
+export interface Props {
+	title: string;
+  navItems: {text: string, url: string}[]
+}
+
+const { title } = Astro.props as Props;
+const { navItems } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<title>{title}</title>
+</head>
+<body>
+  <Header />
+  <NavBar navItems={ navItems } />
+	<slot />
+<Footer />
+</body>
+</html>

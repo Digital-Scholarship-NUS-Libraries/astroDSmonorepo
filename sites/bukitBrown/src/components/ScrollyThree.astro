@@ -1,0 +1,234 @@
+---
+---
+  <script>
+      import gsap from 'gsap'
+      import * as THREE from 'three'
+      import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+      import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js"
+      import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader"
+  
+      function setupModel(data) {
+        const model = data.scene.children[0];
+        return model;
+      }
+  
+  // mouse
+
+const cursor = {}
+cursor.x = 0
+cursor.y = 0
+
+window.addEventListener('mousemove', (e) => {
+  cursor.x = e.clientX / sizes.width - 0.5
+  cursor.y = e .clientY / sizes.height - 0.5
+})
+
+  const updateAllMaterials = () => {
+    scene.traverse((child)=>{
+      if(child instanceof THREE.Mesh && child.material instanceof THREE.MeshStandardMaterial){
+        // we can set this on the scene instead with scene.environment
+        // child.material.envMap = environmentMap
+        // child.material.envMapIntensity = debugObject.envMapIntensity
+        child.castShadow = true
+        child.receiveShadow = true
+      }
+    })
+  }
+
+      async function loadModels() {
+        const loader = new GLTFLoader();
+        const dracoLoader = new DRACOLoader();
+        dracoLoader.setDecoderPath("/draco/")
+        loader.setDRACOLoader(dracoLoader);
+  
+        const [
+          rulerData,
+          jadeBangleData,
+          hairCreamData,
+          ceramicsSet1Data,
+          ceramicsSet2Data,
+          ceramicsSet3Data,
+        ] = await Promise.all([
+          loader.loadAsync('/assets/models/ruler.glb'),
+          loader.loadAsync('/assets/models/777_jade_bangle.glb'),
+          loader.loadAsync('/assets/models/84_hair_cream.glb'),
+          loader.loadAsync('/assets/models/1205_Ceramics_set1.glb'),
+          loader.loadAsync('/assets/models/1205_Ceramics_set2.glb'),
+          loader.loadAsync('/assets/models/1205_Ceramics_set3.glb'),
+        ]);
+  
+        const ruler = setupModel(rulerData);
+        ruler.position.set(0, 0, 0);
+        ruler.rotation.x = Math.PI / 2;
+        ruler.rotation.y = Math.PI / 2;
+        ruler.castShadow = true;
+        ruler.scale.set(1,1,1);
+        const jadeBangle = setupModel(jadeBangleData);
+        jadeBangle.position.set(0, 0, 0);
+        jadeBangle.scale.set(10,10,10);
+        const hairCream = setupModel(hairCreamData);
+        hairCream.position.set(0, -1, 0);
+        hairCream.scale.set(10,10,10);
+        const ceramicsSet1 = setupModel(ceramicsSet1Data);
+        ceramicsSet1.position.set(0, -2, 0);
+        ceramicsSet1.scale.set(10,10,10);
+        const ceramicsSet2 = setupModel(ceramicsSet2Data);
+        ceramicsSet2.position.set(0, -3, 0);
+        ceramicsSet2.scale.set(10,10,10);
+        const ceramicsSet3 = setupModel(ceramicsSet3Data);
+        ceramicsSet3.position.set(0, -4, 0);
+        // ceramicsSet3.rotation.y = -(Math.PI / 2);
+        ceramicsSet3.scale.set(10,10,10);
+  
+        return { ruler, jadeBangle, hairCream, ceramicsSet1, ceramicsSet2, ceramicsSet3 };
+      }
+  
+      const group = new THREE.Group()
+  
+      const groupXOffset = 0.15
+      const groupYOffset = -0.09
+  
+      const init = async() => {
+        const { ruler, jadeBangle, hairCream, ceramicsSet1, ceramicsSet2, ceramicsSet3 } = await loadModels()
+        updateAllMaterials()
+        group.add(jadeBangle, hairCream, ceramicsSet1, ceramicsSet2, ceramicsSet3)
+        group.position.set(groupXOffset, groupYOffset, 0)
+        scene.add(ruler, group)
+      }
+  
+      const canvas = document.querySelector('canvas#webglscene')
+      const scene = new THREE.Scene()
+      scene.background = new THREE.Color( 0xffffff )
+  
+      init()
+  
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.8)
+      scene.add(ambientLight)
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 3.0)
+      directionalLight.position.set(0.1,1,1)
+      directionalLight.castShadow = true
+      directionalLight.shadow.camera.far = 15
+      directionalLight.shadow.mapSize.set(1024, 1024)
+
+      scene.add(directionalLight)
+
+      const plane = new THREE.Mesh(
+        new THREE.PlaneGeometry(5,5),
+        new THREE.MeshStandardMaterial({color: 0xefefef})
+      )
+      plane.receiveShadow = true
+      plane.position.y = - 0.3
+      plane.rotation.x = - Math.PI / 2
+      scene.add(plane)
+      /**
+       * Materials
+       */
+      const material = new THREE.MeshStandardMaterial()
+      material.roughness = 0.7
+      
+      /**
+       * Sizes
+       */
+      const sizes = {
+          width: window.innerWidth,
+          height: window.innerHeight
+      }
+  
+      const axesHelper = new THREE.AxesHelper(2)
+      scene.add(axesHelper)
+      const gridHelper = new THREE.GridHelper(6)
+      scene.add(gridHelper)
+      
+      window.addEventListener('resize', () =>
+      {
+          // Update sizes
+          sizes.width = window.innerWidth
+          sizes.height = window.innerHeight
+      
+          // Update camera
+          camera.aspect = sizes.width / sizes.height
+          camera.updateProjectionMatrix()
+      
+          // Update renderer
+          renderer.setSize(sizes.width, sizes.height)
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+      })
+      
+      /**
+       * Camera
+       */
+      // Base camera
+      const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+      //const camera = new THREE.OrthographicCamera(sizes.width / - 2000, sizes.width / 2000, sizes.height / 2000, sizes.height / - 2000, 1, 1000)
+      camera.position.set(0,0.1,0.3)
+      camera.lookAt(group.position)
+      scene.add(camera)
+      
+      console.log(group)
+      group.position.set(0.2,-0.0,0)
+      // Controls
+      const controls = new OrbitControls(camera, canvas)
+      controls.enableDamping = true
+      
+      /**
+       * Renderer
+       */
+      const renderer = new THREE.WebGLRenderer({
+          canvas: canvas,
+          antialias: true
+      })
+      renderer.setSize(sizes.width, sizes.height)
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+      renderer.toneMapping = THREE.ACESFilmicToneMapping
+      renderer.physicallyCorrectLights = true
+      renderer.shadowMap.enabled = true
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap
+      /**
+       * Animate
+       */
+      const clock = new THREE.Clock()
+      
+      let previousTime = 0
+
+      const tick = () =>
+      {
+          const elapsedTime = clock.getElapsedTime()
+          const deltaTime = elapsedTime - previousTime
+          previousTime = elapsedTime
+  
+          group.children.forEach((object) => {
+            object.rotation.y = elapsedTime * Math.PI / 10
+          })
+  
+          const parallaxX = cursor.x * 0.2
+          const parallaxY = cursor.y * 0.2 + 0.1
+
+          camera.position.x += (parallaxX - camera.position.x) * 2 * deltaTime
+          camera.position.y += (parallaxY - camera.position.y) * 2 * deltaTime
+
+          // Render
+          renderer.render(scene, camera)
+      
+          // Call tick again on the next frame
+          window.requestAnimationFrame(tick)
+      }
+      
+      tick()
+  
+    const intersectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.2) {
+            gsap.to(group.position, {duration: 0.5, delay: 0.1, y: groupYOffset - entry.target.dataset.to})
+          }else{
+          }
+        });
+      },
+      {threshold: [0.4]}
+    );
+  
+    document.querySelectorAll('.threeChapter').forEach((element) => {
+      intersectionObserver.observe(element);
+    })
+        </script>
+  <canvas id='webglscene' class="!fixed top-0 h-screen w-screen -z-10"></canvas>
