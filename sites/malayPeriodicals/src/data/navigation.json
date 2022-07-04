@@ -4,19 +4,19 @@
     "url": "/"
   },
   {
+    "text": "Key Newspapers",
+    "url": "/key-newspapers/"
+  },
+  {
+    "text": "Key Individuals",
+    "url": "/key-individuals/"
+  },
+  {
+    "text": "References",
+    "url": "/references/"
+  },
+  {
     "text": "About",
-    "url": "/about-us/"
-  },
-  {
-    "text": "Work",
-    "url": "/work/"
-  },
-  {
-    "text": "Blog",
-    "url": "/blog/"
-  },
-  {
-    "text": "Contact",
-    "url": "/contact/"
+    "url": "/about/"
   }
 ]
