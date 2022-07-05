@@ -20,8 +20,8 @@ const { navItems } = Astro.props
     {navItems.map((item) => {
       let liClasses = "inline-block transition mr-5 py-5 border-b-4 border-transparent hover:text-neutral-900";
       (Astro.canonicalURL.pathname == item.url )
-        ? liClasses += " border-b-orange-400"
-        : liClasses += " hover:border-b-orange-400"
+        ? liClasses += " border-b-nusorange"
+        : liClasses += " hover:border-b-nusorange"
       return(
       <li class={ liClasses }>
         <a href={ item.url }
