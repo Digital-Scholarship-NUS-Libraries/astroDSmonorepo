@@ -1,0 +1,47 @@
+---
+// Component Imports
+import Navbar from '../components/Navbar.astro';
+import Map from '../components/Map.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<title>storymap</title>
+	</head>
+
+	<body>
+    <Navbar />
+    <Map/>
+    <div class="pt-[10vh]">
+      <div class="mapChapter px-5 mt-[50vh] mb-64"
+        data-chapterlocation='{
+        "center": [-113.91666, 48.66451],
+        "zoom": 9,
+        "pitch": 0.00,
+        "bearing": 0.00
+      }'>
+        <h2>a title</h2>
+        <p>a paragraph</p>
+      </div>
+      <div class="mapChapter px-5 mt-[50vh] mb-64"
+        data-chapterlocation='{
+          "center": [103.77308, 1.29658],
+          "zoom": 16,
+          "pitch": 42.00,
+          "bearing": -38.40
+        }'
+        data-rasterlayer="libmaps1975">
+        <h2>here we are</h2>
+        <p>yes</p>
+      </div>
+      <div class="mapChapter px-5 mt-[50vh] mb-64">
+        <h2>it's me again</h2>
+      </div>
+      <div class="mapChapter px-5 mt-[50vh] mb-64">
+        <h2>mister meeseeks</h2>
+      </div>
+    </div>
+	</body>
+</html>

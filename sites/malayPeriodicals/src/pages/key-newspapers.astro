@@ -1,0 +1,7 @@
+---
+import MPLayout from '../layouts/MPLayout.astro'
+import { frontmatter, Content } from '../markdown/key-newspapers.md'
+---
+<MPLayout title={ frontmatter.title } banner={ frontmatter.banner }>
+  <Content />
+</MPLayout>
