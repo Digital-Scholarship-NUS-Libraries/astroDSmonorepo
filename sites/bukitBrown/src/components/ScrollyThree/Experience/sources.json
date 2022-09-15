@@ -1,0 +1,44 @@
+[
+  {
+    "name": "environmentMapTexture",
+    "type": "cubeTexture",
+    "path": [
+      "/assets/envmap/px.jpg",
+      "/assets/envmap/nx.jpg",
+      "/assets/envmap/py.jpg",
+      "/assets/envmap/ny.jpg",
+      "/assets/envmap/pz.jpg",
+      "/assets/envmap/nz.jpg"
+    ]
+  },
+  {
+    "name": "rulerModel",
+    "type": "gltfDracoModel",
+    "path": "/assets/models/ruler.glb"
+  },
+  {
+    "name": "jadeBangleModel",
+    "type": "gltfDracoModel",
+    "path": "/assets/models/777_jade_bangle.glb"
+  },
+  {
+    "name": "hairCreamModel",
+    "type": "gltfDracoModel",
+    "path": "/assets/models/84_hair_cream.glb"
+  },
+  {
+    "name": "ceramicsSet1Model",
+    "type": "gltfDracoModel",
+    "path": "/assets/models/1205_Ceramics_set1.glb"
+  },
+  {
+    "name": "ceramicsSet2Model",
+    "type": "gltfDracoModel",
+    "path": "/assets/models/1205_Ceramics_set2.glb"
+  },
+  {
+    "name": "ceramicsSet3Model",
+    "type": "gltfDracoModel",
+    "path": "/assets/models/1205_Ceramics_set3.glb"
+  }
+]

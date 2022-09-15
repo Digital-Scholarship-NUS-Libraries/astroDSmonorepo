@@ -1,19 +1,9 @@
 ---
-// Component Imports
-import Navbar from '../components/Navbar.astro';
-import Map from '../components/Map.astro';
+import MPLayout from '../../layouts/MPLayout.astro'
+import StoryMap from '../../components/StoryMap.astro';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<title>storymap</title>
-	</head>
-
-	<body>
-    <Navbar />
-    <Map/>
+<MPLayout title="About" banner="/assets/home_banner_notext.jpg">
+    <StoryMap/>
     <div class="pt-[10vh]">
       <div class="mapChapter px-5 mt-[50vh] mb-64"
         data-chapterlocation='{
@@ -43,5 +33,4 @@ import Map from '../components/Map.astro';
         <h2>mister meeseeks</h2>
       </div>
     </div>
-	</body>
-</html>
+</MPLayout>
