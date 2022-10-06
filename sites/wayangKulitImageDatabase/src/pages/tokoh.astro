@@ -1,0 +1,11 @@
+---
+import { BaseLayout } from "@libdsastro/ui"
+import FeaturedCharacters from "../components/FeaturedCharacters.svelte";
+import navigation from "../data/navigation.json"
+---
+<BaseLayout title="Wayang Kulit Image Database" navItems={navigation}>
+  <main class="mx-auto prose text-justify">
+    <h1>Wayang Kulit Image Database</h1>
+  <FeaturedCharacters />
+  </main>
+</BaseLayout>

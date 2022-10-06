@@ -1,6 +1,4 @@
-import { atom, map } from 'nanostores';
-
-// export const isCartOpen = atom(false);
+import { atom } from 'nanostores';
 
 export type alias = {
   alias: string;
@@ -8,6 +6,8 @@ export type alias = {
   ketrangan?: string;
   alias_type: string;
 }
+
+export type singleAlias = string;
 
 export type image = {
   url: string;
@@ -37,6 +37,18 @@ export type wayangCharacter = {
 
 export const featuredCharactersAtom = atom<wayangCharacter[]>([]);
 
-export function setFeaturedCharacters(featuredCharacters: wayangCharacter[]){
+export function setFeaturedCharactersAtom(featuredCharacters: wayangCharacter[]){
   featuredCharactersAtom.set(featuredCharacters);
+}
+
+export const wayangTokohAtom = atom<wayangCharacter|null>(null);
+
+export function setWayangTokohAtom(wayangTokoh: wayangCharacter){
+  wayangTokohAtom.set(wayangTokoh)
+}
+
+export const aliasesAtom = atom<singleAlias[]>([]);
+
+export function setAliasesAtom(aliases: singleAlias[]){
+  aliasesAtom.set(aliases)
 }
