@@ -2,7 +2,7 @@
   import FeaturedCharacterCard from "./FeaturedCharacterCard.svelte";
   import {
     featuredCharactersAtom,
-    setFeaturedCharacters,
+    setFeaturedCharactersAtom,
   } from "../stores/wayangStore";
 
   const interestingCharacters = [
@@ -59,20 +59,17 @@
     );
   }
 
-  const getFeaturedCharacters = async (urls) => {
-    const res = await Promise.all(urls.map((url) => fetch(url)));
+  const getFeaturedCharacters = async (urls) => { const res = await Promise.all(urls.map((url) => fetch(url)));
     const data = await Promise.all(res.map((r) => r.json()));
     return data;
   };
 
-  let featuredCharactersData = [];
-
   getFeaturedCharacters(chosenCharacters).then((charactersList) => {
-    setFeaturedCharacters(charactersList);
+    setFeaturedCharactersAtom(charactersList);
   });
 </script>
 
-<div class="grid grid-cols-3 gap-4 justify-center">
+<div class="-mx-24 grid grid-cols-3 gap-4 justify-center">
   {#each $featuredCharactersAtom as oneCharacter}
     <FeaturedCharacterCard cardData={oneCharacter} />
   {/each}

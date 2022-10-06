@@ -2,7 +2,7 @@
   export let cardData;
 </script>
 
-<div class="text-center bg-slate-100 rounded-t-md">
+<div class="text-center bg-neutral-50 rounded-t-md">
   <h3 class="mt-3">{cardData.canonical_name}</h3>
   <div class="max-w-full h-64 max-h-64 overflow-hidden rounded-b-md">
     <img
