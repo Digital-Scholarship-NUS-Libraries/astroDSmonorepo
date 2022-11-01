@@ -1,4 +1,10 @@
 ---
+export interface Props {
+	imgSrc: string;
+  imgCaption: string;
+  floatSide?: "left"|"right"
+}
+
 const { imgSrc, imgCaption, floatSide } = Astro.props;
 ---
 <figure class:list={['not-prose', 'lg:w-96', {'lg:float-left lg:-ml-56 lg:mr-6': floatSide == "left", 'lg:float-right lg:-mr-56 lg:ml-6': floatSide == "right"}]}>

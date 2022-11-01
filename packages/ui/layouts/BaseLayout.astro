@@ -8,8 +8,7 @@ export interface Props {
   navItems: {text: string, url: string}[]
 }
 
-const { title } = Astro.props as Props;
-const { navItems } = Astro.props as Props;
+const { title, navItems } = Astro.props;
 ---
 
 <!DOCTYPE html>
