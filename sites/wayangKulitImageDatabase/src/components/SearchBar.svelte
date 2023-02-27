@@ -3,12 +3,14 @@
   const getAliases = async () => {
     const res = await fetch(
       "https://blooming-badlands-24637.herokuapp.com/aliases/?skip=0&limit=1000"
+      // "/api/aliases.json"
     );
+    if (!res.ok) {
+      throw new Error("Failed to fetch aliases. Status: " + res.status);
+    }
     const data = await res.json();
     return data;
   };
-
-  let allAliases = [];
 
   getAliases().then((aliases) => {
     setAliasesAtom(aliases);
@@ -42,7 +44,7 @@
         console.log("Enter");
         break;
     }
-  }
+  };
 </script>
 
 <h2>{filteredItems.length} / {$aliasesAtom.length}</h2>
@@ -63,9 +65,11 @@
     >
       {#each filteredItems as item}
         <a
-          href={"https://blooming-badlands-24637.herokuapp.com/alias/?alias=" +
-            item.alias}
-          ><li class="px-2 rounded-md hover:bg-neutral-200">{item.alias}</li></a
+          href={"https://blooming-badlands-24637.herokuapp.com/alias/?canonical=" +
+            item.canonical}
+          ><li class="px-2 rounded-md hover:bg-neutral-200">
+            {item.alias} ({item.canonical})
+          </li></a
         >
       {/each}
     </ul>
