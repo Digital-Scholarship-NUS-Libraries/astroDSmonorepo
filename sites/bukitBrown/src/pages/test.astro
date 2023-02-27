@@ -1,0 +1,10 @@
+---
+import { BaseLayout } from "@libdsastro/ui"
+import JadeBangle from "../components/JadeBangle.jsx"
+import navigation from "../data/navigation.json"
+---
+<BaseLayout title="test r3f" navItems={ navigation }>
+  <div class="flex-1 h-screen">
+    <JadeBangle client:only/>
+  </div>
+</BaseLayout>
