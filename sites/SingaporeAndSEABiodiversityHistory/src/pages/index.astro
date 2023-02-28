@@ -1,9 +1,11 @@
 ---
 import { BaseLayout } from "@libdsastro/ui";
 import navigation from "../data/navigation.json";
+import Map from "../components/Map.svelte";
 ---
 <BaseLayout title="Singapore and South-East Asia Biodiversity History" navItems={navigation}>
   <main class="mx-auto py-10 prose text-justify">
     <h1>Singapore and South-East Asia Biodiversity History</h1>
+    <Map client:only="svelte"/>
   </main>
 </BaseLayout>
