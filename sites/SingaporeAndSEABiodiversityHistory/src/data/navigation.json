@@ -4,11 +4,7 @@
     "url": "/"
   },
   {
-    "text": "Section 1",
-    "url": "/section1/"
-  },
-  {
-    "text": "Section 2",
-    "url": "/section2/"
+    "text": "Data",
+    "url": "/data"
   }
 ]
