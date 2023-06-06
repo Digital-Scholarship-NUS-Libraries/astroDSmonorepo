@@ -4,7 +4,11 @@
     "url": "/"
   },
   {
-    "text": "Data",
-    "url": "/data"
+    "text": "Animals Data",
+    "url": "/data/animal"
+  },
+  {
+    "text": "Plants Data",
+    "url": "/data/plant"
   }
 ]

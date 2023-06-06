@@ -2,7 +2,7 @@ import { readable, derived, writable } from 'svelte/store';
 import { csv } from "d3";
 
 const animals = readable([], function start(set) {
-  csv("data/20230405_animals.csv").then(d => set(d));
+  csv("../data/20230405_animals.csv").then(d => set(d));
 })
 
 export const filterAttributes = writable({
