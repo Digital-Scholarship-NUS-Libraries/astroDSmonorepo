@@ -56,15 +56,15 @@
       markerSource.clear();
       animals.forEach((animal) => {
         if (
-          animal["Longitude (First published)"] &&
-          animal["Latitude (First published)"]
+          animal["Long_FirstPub"] &&
+          animal["Lat_FirstPub"]
         ) {
           markerSource.addFeature(
             new Feature({
               geometry: new Point(
                 fromLonLat([
-                  animal["Longitude (First published)"],
-                  animal["Latitude (First published)"],
+                  animal["Long_FirstPub"],
+                  animal["Lat_FirstPub"]
                 ])
               ),
             })

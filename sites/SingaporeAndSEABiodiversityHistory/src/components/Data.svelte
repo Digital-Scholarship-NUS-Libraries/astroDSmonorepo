@@ -21,148 +21,168 @@
 </script>
 
 <div>
-  <p>
-    Fauna:
-    <label>
-      <input
-        type="checkbox"
-        on:change={setFaunaAves}
-        checked={$filterAttributes.fauna.aves}
-      />
+  <article>
+    <h4>Years (Largest Range: 1800 - 2022)</h4>
+
+    <input
+      type="number"
+      bind:value={$filterAttributes.minYear}
+      min="1800"
+      max={$filterAttributes.maxYear}
+      placeholder="Start"
+      class="input input-bordered input-sm max-w-xs"
+    />
+    -
+    <input
+      type="number"
+      bind:value={$filterAttributes.maxYear}
+      min={$filterAttributes.minYear}
+      max="2022"
+      placeholder="End"
+      class="input input-bordered input-sm max-w-xs"
+    />
+
+    <h4>Fauna</h4>
+
+    <button
+      class={$filterAttributes.fauna.aves
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setFaunaAves}
+    >
       Aves
-    </label>
-    <label>
-      <input
-        type="checkbox"
-        on:change={setFaunaFreshwater}
-        checked={$filterAttributes.fauna.freshwater}
-      />
+    </button>
+
+    <button
+      class={$filterAttributes.fauna.freshwater
+       ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setFaunaFreshwater}
+    >
       Freshwater
-    </label>
-    <label>
-      <input
-        type="checkbox"
-        on:change={setFaunaMarine}
-        checked={$filterAttributes.fauna.marine}
-      />
+    </button>
+
+    <button
+      class={$filterAttributes.fauna.marine
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setFaunaMarine}
+    >
       Marine
-    </label>
+    </button>
 
-    <label>
-      <input
-        type="checkbox"
-        on:change={setFaunaTerrestrial}
-        checked={$filterAttributes.fauna.terrestrial}
-      />
+    <button
+      class={$filterAttributes.fauna.terrestrial
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setFaunaTerrestrial}
+    >
       Terrestrial
-    </label>
-  </p>
+    </button>
 
-  <p>
-    Pathway:
+    <h4>Pathway</h4>
 
-    <label>
-      <input
-        type="checkbox"
-        on:change={setIntroPathwayAgricultural}
-        checked={$filterAttributes.introPathway.agricultural}
-      />
+    <button
+      class={$filterAttributes.introPathway.agricultural
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setIntroPathwayAgricultural}
+    >
       Agricultural
-    </label>
+    </button>
 
-    <label>
-      <input
-        type="checkbox"
-        on:change={setIntroPathwayBiological}
-        checked={$filterAttributes.introPathway.biological}
-      />
+    <button
+      class={$filterAttributes.introPathway.biological
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setIntroPathwayBiological}
+    >
       Biological
-    </label>
+    </button>
 
-    <label>
-      <input
-        type="checkbox"
-        on:change={setIntroPathwayConsumption}
-        checked={$filterAttributes.introPathway.consumption}
-      />
+    <button
+      class={$filterAttributes.introPathway.consumption
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setIntroPathwayConsumption}
+    >
       Consumption
-    </label>
+    </button>
 
-    <label>
-      <input
-        type="checkbox"
-        on:change={setIntroPathwayCorridor}
-        checked={$filterAttributes.introPathway.corridor}
-      />
+    <button
+      class={$filterAttributes.introPathway.corridor
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setIntroPathwayCorridor}
+    >
       Corridor
-    </label>
+    </button>
 
-    <label>
-      <input
-        type="checkbox"
-        on:change={setIntroPathwayFishing}
-        checked={$filterAttributes.introPathway.fishing}
-      />
+    <button
+      class={$filterAttributes.introPathway.fishing
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setIntroPathwayFishing}
+    >
       Fishing
-    </label>
+    </button>
 
-    <label>
-      <input
-        type="checkbox"
-        on:change={setIntroPathwayHorticultural}
-        checked={$filterAttributes.introPathway.horticultural}
-      />
+    <button
+      class={$filterAttributes.introPathway.horticultural
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setIntroPathwayHorticultural}
+    >
       Horticultural
-    </label>
+    </button>
 
-    <label>
-      <input
-        type="checkbox"
-        on:change={setIntroPathwayMercyRelease}
-        checked={$filterAttributes.introPathway.mercyRelease}
-      />
+    <button
+      class={$filterAttributes.introPathway.mercyRelease
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setIntroPathwayMercyRelease}
+    >
       Mercy Release
-    </label>
+    </button>
 
-    <label>
-      <input
-        type="checkbox"
-        on:change={setIntroPathwayPetTrade}
-        checked={$filterAttributes.introPathway.petTrade}
-      />
+    <button
+      class={$filterAttributes.introPathway.petTrade
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setIntroPathwayPetTrade}
+    >
       Pet Trade
-    </label>
+    </button>
 
-    <label>
-      <input
-        type="checkbox"
-        on:change={setIntroPathwayTransport}
-        checked={$filterAttributes.introPathway.transport}
-      />
+    <button
+      class={$filterAttributes.introPathway.transport
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setIntroPathwayTransport}
+    >
       Transport
-    </label>
-  </p>
+    </button>
 
-  <p>
-    Others:
-    <label>
-      <input
-        type="checkbox"
-        on:change={setExtinction}
-        checked={$filterAttributes.extinction}
-      />
-      Extinct
-    </label>
+    <h4>Others</h4>
 
-    <label>
-      <input
-        type="checkbox"
-        on:change={setActiveRemoval}
-        checked={$filterAttributes.activeRemoval}
-      />
+    <button
+      class={$filterAttributes.activeRemoval
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setActiveRemoval}
+    >
       Active Removal
-    </label>
-  </p>
+    </button>
+
+    <button
+      class={$filterAttributes.extinction
+        ? "btn btn-xs btn hover:bg-gray-400"
+        : "btn btn-xs btn-outline hover:bg-gray-400"}
+      on:click={setExtinction}
+    >
+      Extinct
+    </button>
+  </article>
 
   <table class="table-auto">
     <tr>
@@ -175,14 +195,14 @@
     </tr>
     {#each $filteredAnimals as animal}
       <tr>
-        <td class="border px-4 py-2">{animal["Common Name"]}</td>
+        <td class="border px-4 py-2">{animal["CommonName"]}</td>
         <td class="border px-4 py-2">{animal["Fauna"]}</td>
         <td class="border px-4 py-2"
-          >{animal["Date: yyyy (First published)"]}</td
+          >{animal["Date_yyyy_FirstPub"]}</td
         >
-        <td class="border px-4 py-2">{animal["Introduction_all"]}</td>
-        <td class="border px-4 py-2">{animal["Extinction (Y/N)"]}</td>
-        <td class="border px-4 py-2">{animal["Active removal (Y/N)"]}</td>
+        <td class="border px-4 py-2">{animal["Intro_all"]}</td>
+        <td class="border px-4 py-2">{animal["Extinction_YN"]}</td>
+        <td class="border px-4 py-2">{animal["ActiveRemoval_YN"]}</td>
       </tr>
     {/each}
   </table>
