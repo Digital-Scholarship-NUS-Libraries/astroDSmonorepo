@@ -2,12 +2,12 @@ import { readable, derived, writable } from 'svelte/store';
 import { csv } from "d3";
 
 const animals = readable([], function start(set) {
-  csv("data/SG_Animal_Naturalised.csv").then(d => set(d));
+  csv("../data/20230405_animals.csv").then(d => set(d));
 })
 
 export const filterAttributes = writable({
-  minYear: 1800,
-  maxYear: 2022,
+  minYear: 1819,
+  maxYear: 2023,
   fauna: {
     aves: true,
     freshwater: true,
@@ -122,8 +122,8 @@ export const filteredAnimals = derived(
   ([$animals, $filterAttributes], set) => {
     set($animals
       .filter(animal => (
-        (Number(animal["Date: yyyy (First published)"]) >= $filterAttributes.minYear) &&
-        Number(animal["Date: yyyy (First published)"]) <= $filterAttributes.maxYear
+        (Number(animal["Date_yyyy_FirstPub"]) >= $filterAttributes.minYear) &&
+        Number(animal["Date_yyyy_FirstPub"]) <= $filterAttributes.maxYear
       ))
       .filter(animal => (
         (animal["Fauna"] === "Aves" && $filterAttributes.fauna.aves) ||
@@ -132,46 +132,25 @@ export const filteredAnimals = derived(
         (animal["Fauna"] === "Terrestrial" && $filterAttributes.fauna.terrestrial)
       ))
       .filter(animal => (
-        (animal["Introduction_all"].split(" | ").includes("Agricultural trade") && $filterAttributes.introPathway.agricultural) ||
-        (animal["Introduction_all"].split(" | ").includes("Biological control") && $filterAttributes.introPathway.biological) ||
-        (animal["Introduction_all"].split(" | ").includes("Consumption trade") && $filterAttributes.introPathway.consumption) ||
-        (animal["Introduction_all"].split(" | ").includes("Corridors") && $filterAttributes.introPathway.corridor) ||
-        (animal["Introduction_all"].split(" | ").includes("Fishing") && $filterAttributes.introPathway.fishing) ||
-        (animal["Introduction_all"].split(" | ").includes("Horticultural trade") && $filterAttributes.introPathway.horticultural) ||
-        (animal["Introduction_all"].split(" | ").includes("Mercy release") && $filterAttributes.introPathway.mercyRelease) ||
-        (animal["Introduction_all"].split(" | ").includes("Pet trade") && $filterAttributes.introPathway.petTrade) ||
-        (animal["Introduction_all"].split(" | ").includes("Transport") && $filterAttributes.introPathway.transport)
+        (animal["Intro_all"].split(" | ").includes("Agricultural trade") && $filterAttributes.introPathway.agricultural) ||
+        (animal["Intro_all"].split(" | ").includes("Biological control") && $filterAttributes.introPathway.biological) ||
+        (animal["Intro_all"].split(" | ").includes("Consumption trade") && $filterAttributes.introPathway.consumption) ||
+        (animal["Intro_all"].split(" | ").includes("Corridors") && $filterAttributes.introPathway.corridor) ||
+        (animal["Intro_all"].split(" | ").includes("Fishing") && $filterAttributes.introPathway.fishing) ||
+        (animal["Intro_all"].split(" | ").includes("Horticultural trade") && $filterAttributes.introPathway.horticultural) ||
+        (animal["Intro_all"].split(" | ").includes("Mercy release") && $filterAttributes.introPathway.mercyRelease) ||
+        (animal["Intro_all"].split(" | ").includes("Pet trade") && $filterAttributes.introPathway.petTrade) ||
+        (animal["Intro_all"].split(" | ").includes("Transport") && $filterAttributes.introPathway.transport)
       ))
       .filter(animal => (
-        animal["Extinction (Y/N)"] === ($filterAttributes.extinction ? "Y" : "N")
+        animal["Extinction_YN"] === ($filterAttributes.extinction ? "Y" : "N")
       ))
       .filter(animal => (
-        animal["Active removal (Y/N)"] === ($filterAttributes.activeRemoval ? "Y" : "N")
+        animal["ActiveRemoval_YN"] === ($filterAttributes.activeRemoval ? "Y" : "N")
       ))
     )
   }
 )
-
-export const setMinYear = (year) => {
-  if (year > filterAttributes.maxYear) {
-    return filterAttributes;
-  }
-
-  return filterAttributes.update(attr => ({
-    ...attr,
-    minYear: year > filterAttributes.maxYear
-  }))
-}
-
-export const setMaxYear = (year) => {
-  if (year < filterAttributes.minYear) {
-    return filterAttributes;
-  }
-  filterAttributes.update(attr => ({
-    ...attr,
-    maxYear: year
-  }))
-}
 
 export const setFaunaAves = () => {
   filterAttributes.update(attr => ({
