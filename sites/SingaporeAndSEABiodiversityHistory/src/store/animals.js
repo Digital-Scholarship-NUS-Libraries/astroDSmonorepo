@@ -34,8 +34,8 @@ export const filteredAnimalsGeoJSON = derived(
   ([$animals, $filterAttributes], set) => {
     const animalsFeatures = $animals
       .filter(animal => (
-        (Number(animal["Date: yyyy (First published)"]) >= $filterAttributes.minYear) &&
-        Number(animal["Date: yyyy (First published)"]) <= $filterAttributes.maxYear
+        (Number(animal["Date_yyyy_FirstPub"]) >= $filterAttributes.minYear) &&
+        Number(animal["Date_yyyy_FirstPub"]) <= $filterAttributes.maxYear
       ))
       .filter(animal => (
         (animal["Fauna"] === "Aves" && $filterAttributes.fauna.aves) ||
@@ -44,27 +44,29 @@ export const filteredAnimalsGeoJSON = derived(
         (animal["Fauna"] === "Terrestrial" && $filterAttributes.fauna.terrestrial)
       ))
       .filter(animal => (
-        (animal["Introduction_all"].split(" | ").includes("Agricultural trade") && $filterAttributes.introPathway.agricultural) ||
-        (animal["Introduction_all"].split(" | ").includes("Biological control") && $filterAttributes.introPathway.biological) ||
-        (animal["Introduction_all"].split(" | ").includes("Consumption trade") && $filterAttributes.introPathway.consumption) ||
-        (animal["Introduction_all"].split(" | ").includes("Corridors") && $filterAttributes.introPathway.corridor) ||
-        (animal["Introduction_all"].split(" | ").includes("Fishing") && $filterAttributes.introPathway.fishing) ||
-        (animal["Introduction_all"].split(" | ").includes("Horticultural trade") && $filterAttributes.introPathway.horticultural) ||
-        (animal["Introduction_all"].split(" | ").includes("Mercy release") && $filterAttributes.introPathway.mercyRelease) ||
-        (animal["Introduction_all"].split(" | ").includes("Pet trade") && $filterAttributes.introPathway.petTrade) ||
-        (animal["Introduction_all"].split(" | ").includes("Transport") && $filterAttributes.introPathway.transport)
+        (animal["Intro_all"].split(" | ").includes("Agricultural trade") && $filterAttributes.introPathway.agricultural) ||
+        (animal["Intro_all"].split(" | ").includes("Biological control") && $filterAttributes.introPathway.biological) ||
+        (animal["Intro_all"].split(" | ").includes("Consumption trade") && $filterAttributes.introPathway.consumption) ||
+        (animal["Intro_all"].split(" | ").includes("Corridors") && $filterAttributes.introPathway.corridor) ||
+        (animal["Intro_all"].split(" | ").includes("Fishing") && $filterAttributes.introPathway.fishing) ||
+        (animal["Intro_all"].split(" | ").includes("Horticultural trade") && $filterAttributes.introPathway.horticultural) ||
+        (animal["Intro_all"].split(" | ").includes("Mercy release") && $filterAttributes.introPathway.mercyRelease) ||
+        (animal["Intro_all"].split(" | ").includes("Pet trade") && $filterAttributes.introPathway.petTrade) ||
+        (animal["Intro_all"].split(" | ").includes("Transport") && $filterAttributes.introPathway.transport)
       ))
       .filter(animal => (
-        animal["Extinction (Y/N)"] === ($filterAttributes.extinction ? "Y" : "N")
+        animal["Extinction_YN"] === ($filterAttributes.extinction ? "Y" : "N")
       ))
       .filter(animal => (
-        animal["Active removal (Y/N)"] === ($filterAttributes.activeRemoval ? "Y" : "N")
+        animal["ActiveRemoval_YN"] === ($filterAttributes.activeRemoval ? "Y" : "N")
       ))
-      .filter(animal => (Number(animal["Longitude (First published)"]) && Number(animal["Latitude (First published)"])))
+      .filter(animal => (
+        Number(animal["Long_FirstPub"]) && Number(animal["Lat_FirstPub"])
+      ))
       .map(animal => {
         return {
           "type": "Feature",
-          "geometry": { "type": "Point", "coordinates": [Number(animal["Longitude (First published)"]), Number(animal["Latitude (First published)"])] },
+          "geometry": { "type": "Point", "coordinates": [Number(animal["Long_FirstPub"]), Number(animal["Lat_FirstPub"])] },
           "properties": {
             "Status": animal["Status"],
             "Species name (Current accepted)": animal["Species name (Current accepted)"],
