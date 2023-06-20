@@ -29,96 +29,6 @@ export const filterAttributes = writable({
   activeRemoval: false,
 })
 
-export const filteredAnimalsGeoJSON = derived(
-  [animals, filterAttributes],
-  ([$animals, $filterAttributes], set) => {
-    const animalsFeatures = $animals
-      .filter(animal => (
-        (Number(animal["Date_yyyy_FirstPub"]) >= $filterAttributes.minYear) &&
-        Number(animal["Date_yyyy_FirstPub"]) <= $filterAttributes.maxYear
-      ))
-      .filter(animal => (
-        (animal["Fauna"] === "Aves" && $filterAttributes.fauna.aves) ||
-        (animal["Fauna"] === "Freshwater" && $filterAttributes.fauna.freshwater) ||
-        (animal["Fauna"] === "Marine" && $filterAttributes.fauna.marine) ||
-        (animal["Fauna"] === "Terrestrial" && $filterAttributes.fauna.terrestrial)
-      ))
-      .filter(animal => (
-        (animal["Intro_all"].split(" | ").includes("Agricultural trade") && $filterAttributes.introPathway.agricultural) ||
-        (animal["Intro_all"].split(" | ").includes("Biological control") && $filterAttributes.introPathway.biological) ||
-        (animal["Intro_all"].split(" | ").includes("Consumption trade") && $filterAttributes.introPathway.consumption) ||
-        (animal["Intro_all"].split(" | ").includes("Corridors") && $filterAttributes.introPathway.corridor) ||
-        (animal["Intro_all"].split(" | ").includes("Fishing") && $filterAttributes.introPathway.fishing) ||
-        (animal["Intro_all"].split(" | ").includes("Horticultural trade") && $filterAttributes.introPathway.horticultural) ||
-        (animal["Intro_all"].split(" | ").includes("Mercy release") && $filterAttributes.introPathway.mercyRelease) ||
-        (animal["Intro_all"].split(" | ").includes("Pet trade") && $filterAttributes.introPathway.petTrade) ||
-        (animal["Intro_all"].split(" | ").includes("Transport") && $filterAttributes.introPathway.transport)
-      ))
-      .filter(animal => (
-        animal["Extinction_YN"] === ($filterAttributes.extinction ? "Y" : "N")
-      ))
-      .filter(animal => (
-        animal["ActiveRemoval_YN"] === ($filterAttributes.activeRemoval ? "Y" : "N")
-      ))
-      .filter(animal => (
-        Number(animal["Long_FirstPub"]) && Number(animal["Lat_FirstPub"])
-      ))
-      .map(animal => {
-        return {
-          "type": "Feature",
-          "geometry": { "type": "Point", "coordinates": [Number(animal["Long_FirstPub"]), Number(animal["Lat_FirstPub"])] },
-          "properties": {
-            "Status": animal["Status"],
-            "Species name (Current accepted)": animal["Species name (Current accepted)"],
-            "Authority, Year": animal["Authority, Year"],
-            "Common Name": animal["Common Name"],
-            "Species  (Previous names)": animal["Species  (Previous names)"],
-            "Fauna": animal["Fauna"],
-            "Kingdom": animal["Kingdom"],
-            "Phylum": animal["Phylum"],
-            "Class": animal["Class"],
-            "Order": animal["Order"],
-            "Family": animal["Family"],
-            "Genus": animal["Genus"],
-            "Species": animal["Species"],
-            "Native_biogeog": animal["Native_biogeog"],
-            "Native_geog": animal["Native_geog"],
-            "Species name (First published)": animal["Species name (First published)"],
-            "Reference (First published)": animal["Reference (First published)"],
-            "Specific Page No. (First published)": animal["Specific Page No. (First published)"],
-            "Date: yyyy (First published)": animal["Date: yyyy (First published)"],
-            "Latitude (First published)": animal["Latitude (First published)"],
-            "Longitude (First published)": animal["Longitude (First published)"],
-            "Location (First published)": animal["Location (First published)"],
-            "Species name (First sighting)": animal["Species name (First sighting)"],
-            "Reference (First sighting)": animal["Reference (First sighting)"],
-            "Date: dd/mm/yyyy (First sighting)": animal["Date: dd/mm/yyyy (First sighting)"],
-            "Year (First sighting)": animal["Year (First sighting)"],
-            "Latitude (First sighting)": animal["Latitude (First sighting)"],
-            "Longitude (First sighting)": animal["Longitude (First sighting)"],
-            "Location (First sighting)": animal["Location (First sighting)"],
-            "Introduction pathway": animal["Introduction pathway"],
-            "Introduction_mode": animal["Introduction_mode"],
-            "Introduction_all": animal["Introduction_all"],
-            "Introduction pathway Reference": animal["Introduction pathway Reference"],
-            "Extinction (Y/N)": animal["Extinction (Y/N)"],
-            "Year (Extinction)": animal["Year (Extinction)"],
-            "Extinction Reference": animal["Extinction Reference"],
-            "Active removal (Y/N)": animal["Active removal (Y/N)"],
-            "Active removal Reference": animal["Active removal Reference"],
-            "References: Subsequent records (Surname, journal short form, vol(issue) (year) page)": animal["References: Subsequent records (Surname, journal short form, vol(issue) (year) page)"],
-            "Additional Remarks": animal["Additional Remarks"]
-          }
-        };
-      });
-    const animalsGeoJSON = {
-      "type": "FeatureCollection",
-      "features": animalsFeatures
-    };
-    set(animalsGeoJSON);
-  }
-)
-
 export const filteredAnimals = derived(
   [animals, filterAttributes],
   ([$animals, $filterAttributes], set) => {
@@ -151,6 +61,67 @@ export const filteredAnimals = derived(
         animal["ActiveRemoval_YN"] === ($filterAttributes.activeRemoval ? "Y" : "N")
       ))
     )
+  }
+)
+
+export const filteredAnimalsGeoJSON = derived(
+  [filteredAnimals, filterAttributes],
+  ([$filteredAnimals, $filterAttributes], set) => {
+    const animalsFeatures = $filteredAnimals
+      .map(animal => {
+        return {
+          "type": "Feature",
+          "geometry": { "type": "Point", "coordinates": [Number(animal["Long_FirstPub"]), Number(animal["Lat_FirstPub"])] },
+          "properties": {
+            "OID": animal["OID"],
+            "Status": animal["Status"],
+            "Name_Current": animal["Name_Current"],
+            "Authority_Year": animal["Authority_Year"],
+            "CommonName": animal["CommonName"],
+            "PreviousNames": animal["PreviousNames"],
+            "Fauna": animal["Fauna"],
+            "Kingdom": animal["Kingdom"],
+            "Phylum": animal["Phylum"],
+            "Class": animal["Class"],
+            "Order": animal["Order"],
+            "Family": animal["Family"],
+            "Genus": animal["Genus"],
+            "Species": animal["Species"],
+            "Native_biogeog": animal["Native_biogeog"],
+            "Native_geog": animal["Native_geog"],
+            "Name_FirstPub": animal["Name_FirstPub"],
+            "Ref_FirstPub": animal["Ref_FirstPub"],
+            "PageNo_FirstPub": animal["PageNo_FirstPub"],
+            "Date_yyyy_FirstPub": Number(animal["Date_yyyy_FirstPub"]),
+            "Lat_FirstPub": animal["Lat_FirstPub"],
+            "Long_FirstPub": animal["Long_FirstPub"],
+            "Location_FirstPub": animal["Location_FirstPub"],
+            "Name_FirstSight": animal["Name_FirstSight"],
+            "Ref_FirstSight": animal["Ref_FirstSight"],
+            "Date_ddmmyyyy_FirstSight": animal["Date_ddmmyyyy_FirstSight"],
+            "Year_FirstSight": animal["Year_FirstSight"],
+            "Lat_FirstSight": animal["Lat_FirstSight"],
+            "Long_FirstSight": animal["Long_FirstSight"],
+            "Location_FirstSight": animal["Location_FirstSight"],
+            "Intro_pathway": animal["Intro_pathway"],
+            "Intro_mode": animal["Intro_mode"],
+            "Intro_all": animal["Intro_all"],
+            "IntroPathway_Ref": animal["IntroPathway_Ref"],
+            "Extinction_YN": animal["Extinction_YN"],
+            "Year_Extinction": animal["Year_Extinction"],
+            "Extinction_Ref": animal["Extinction_Ref"],
+            "ActiveRemoval_YN": animal["ActiveRemoval_YN"],
+            "ActiveRemoval_Ref": animal["ActiveRemoval_Ref"],
+            "Ref_SubsequentRecords": animal["Ref_SubsequentRecords"],
+            "Add_Remarks": animal["Add_Remarks"]
+          }
+        };
+      });
+    const animalsGeoJSON = {
+      "type": "FeatureCollection",
+      "features": animalsFeatures
+    };
+    set(animalsGeoJSON);
   }
 )
 
