@@ -10,9 +10,13 @@
     Popup,
     hoverStateFilter,
   } from "svelte-maplibre";
+  import type { Feature } from "geojson";
+  import { slide } from "svelte/transition";
   import PointPopup from "./PointPopup.svelte";
   import ClusterPopup from "./ClusterPopup.svelte";
 
+  let selectedPoint: Feature | null = null;
+  let clusterVisible: boolean = true;
   // filteredAnimalsGeoJSON.subscribe((v) => console.log(v));
   // $: console.log($filteredAnimalsGeoJSON);
 </script>
@@ -62,8 +66,27 @@
           "circle-stroke-opacity": hoverStateFilter(0, 1),
         }}
       >
-        <Popup openOn={"click"} closeOnClickInside let:features>
-          <ClusterPopup feature={features?.[0]} />
+        <Popup openOn={"click"} let:features>
+          {#if clusterVisible}
+            <ClusterPopup
+              feature={features?.[0]}
+              onSelectSpecies={(species) => {
+                clusterVisible = false;
+                selectedPoint = species;
+              }}
+            />
+          {/if}
+          {#if !clusterVisible && selectedPoint}
+            <div transition:slide>
+              <PointPopup
+                feature={selectedPoint.properties}
+                closeButtonVisible={true}
+                onClose={() => {
+                  clusterVisible = true;
+                }}
+              />
+            </div>
+          {/if}
         </Popup>
       </CircleLayer>
       <SymbolLayer
@@ -93,7 +116,12 @@
         }}
       >
         <Popup openOn={"click"} closeOnClickInside let:features>
-          <PointPopup feature={features?.[0]?.properties} />
+          {#if features && features[0] && features[0].properties}
+            <PointPopup
+              feature={features[0].properties}
+              closeButtonVisible={false}
+            />
+          {/if}
         </Popup>
       </CircleLayer>
     </GeoJSON>

@@ -2,10 +2,12 @@
   import type { Feature } from "geojson";
   import { mapContext } from "svelte-maplibre";
 
-  export let feature: Feature;
+  export let feature: Feature | undefined;
+  export let onSelectSpecies: (feature: Feature) => void;
+
+  let visible = true;
 
   const { map, source } = mapContext();
-
   let innerFeatures: Feature[] = [];
   $: if ($map && $source) {
     $map
@@ -14,13 +16,17 @@
         innerFeatures = features;
       });
   }
+
+  let pointFeature = null;
 </script>
 
-<div class="max-h-80 max-w-xs overflow-y-scroll">
+<div class="max-h-80 w-80 overflow-y-scroll">
   <ul>
     {#each innerFeatures as feat}
       {#if feat}
-        <li><strong>{feat.properties["Name_Current"]}</strong></li>
+        <li class="cursor-pointer" on:click={() => onSelectSpecies(feat)}>
+          <strong>{feat.properties["Name_Current"]}</strong>
+        </li>
       {/if}
     {/each}
   </ul>
