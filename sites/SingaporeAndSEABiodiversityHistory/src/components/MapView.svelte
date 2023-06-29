@@ -11,6 +11,7 @@
     hoverStateFilter,
   } from "svelte-maplibre";
   import PointPopup from "./PointPopup.svelte";
+  import ClusterPopup from "./ClusterPopup.svelte";
 
   // filteredAnimalsGeoJSON.subscribe((v) => console.log(v));
   // $: console.log($filteredAnimalsGeoJSON);
@@ -60,7 +61,11 @@
           "circle-stroke-width": 1,
           "circle-stroke-opacity": hoverStateFilter(0, 1),
         }}
-      />
+      >
+        <Popup openOn={"click"} closeOnClickInside let:features>
+          <ClusterPopup feature={features?.[0]} />
+        </Popup>
+      </CircleLayer>
       <SymbolLayer
         applyToClusters
         layout={{
