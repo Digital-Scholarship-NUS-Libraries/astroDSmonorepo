@@ -10,6 +10,7 @@
     Popup,
     hoverStateFilter,
   } from "svelte-maplibre";
+  import { animalHeaderToLabelMap } from "../data/animals";
 
   // filteredAnimalsGeoJSON.subscribe((v) => console.log(v));
   $: console.log($filteredAnimalsGeoJSON);
@@ -93,7 +94,7 @@
           <ul>
             {#each Object.entries(props) as [key, value]}
               {#if value}
-                <li><strong>{key}:</strong> {value}</li>
+                <li><strong>{animalHeaderToLabelMap[key]}:</strong> {value}</li>
               {/if}
             {/each}
           </ul>
