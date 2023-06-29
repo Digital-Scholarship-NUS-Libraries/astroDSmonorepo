@@ -10,11 +10,10 @@
     Popup,
     hoverStateFilter,
   } from "svelte-maplibre";
-  import { animalHeaderToLabelMap } from "../data/animals";
+  import PointPopup from "./PointPopup.svelte";
 
   // filteredAnimalsGeoJSON.subscribe((v) => console.log(v));
-  $: console.log($filteredAnimalsGeoJSON);
-  let clickedFeature: Record<string, any> | null = null;
+  // $: console.log($filteredAnimalsGeoJSON);
 </script>
 
 <div class="flex h-screen">
@@ -87,17 +86,9 @@
           "circle-stroke-color": "#f00",
           "circle-stroke-opacity": hoverStateFilter(0, 1),
         }}
-        on:click={(e) => (clickedFeature = e.detail.features?.[0]?.properties)}
       >
         <Popup openOn={"click"} closeOnClickInside let:features>
-          {@const props = features?.[0]?.properties}
-          <ul>
-            {#each Object.entries(props) as [key, value]}
-              {#if value}
-                <li><strong>{animalHeaderToLabelMap[key]}:</strong> {value}</li>
-              {/if}
-            {/each}
-          </ul>
+          <PointPopup feature={features?.[0]?.properties} />
         </Popup>
       </CircleLayer>
     </GeoJSON>
@@ -106,11 +97,3 @@
     <AnimalFilterDrawer />
   </div>
 </div>
-
-<style>
-  :global(.maplibregl-popup-content) {
-    max-height: 300px;
-    max-width: 250px;
-    overflow: scroll;
-  }
-</style>
