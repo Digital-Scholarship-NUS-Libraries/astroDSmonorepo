@@ -24,6 +24,7 @@
   <ul>
     {#each innerFeatures as feat}
       {#if feat}
+        <!-- svelte-ignore a11y-click-events-have-key-events -->
         <li class="cursor-pointer" on:click={() => onSelectSpecies(feat)}>
           <strong>{feat.properties["Name_Current"]}</strong>
         </li>
