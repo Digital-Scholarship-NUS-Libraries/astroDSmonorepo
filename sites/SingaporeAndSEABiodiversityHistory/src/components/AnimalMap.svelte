@@ -72,8 +72,7 @@
                 selectedPoint = species;
               }}
             />
-          {/if}
-          {#if !clusterVisible && selectedPoint}
+          {:else if selectedPoint && selectedPoint.properties}
             <div transition:slide>
               <PointPopup
                 feature={selectedPoint.properties}
