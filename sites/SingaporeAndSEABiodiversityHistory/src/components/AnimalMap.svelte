@@ -1,6 +1,4 @@
 <script lang="ts">
-  // import Map from "./Map.svelte";
-  import AnimalFilterDrawer from "./AnimalFilterDrawer.svelte";
   import { filteredAnimalsGeoJSON } from "../store/animals";
   import {
     MapLibre,
@@ -17,17 +15,12 @@
 
   let selectedPoint: Feature | null = null;
   let clusterVisible: boolean = true;
-  // filteredAnimalsGeoJSON.subscribe((v) => console.log(v));
-  // $: console.log($filteredAnimalsGeoJSON);
 </script>
 
-<div class="flex h-screen">
-  <!-- <div class="w-8/12"> -->
-  <!--   <Map lon={103.8} lat={1.35} zoom={10} /> -->
-  <!-- </div> -->
+<div>
   <MapLibre
     style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
-    class="w-8/12"
+    class="h-screen"
     center={[103.8, 1.35]}
     zoom={11}
     maxBounds={[
@@ -64,6 +57,10 @@
           "circle-stroke-color": "#f00",
           "circle-stroke-width": 1,
           "circle-stroke-opacity": hoverStateFilter(0, 1),
+        }}
+        on:click={() => {
+          clusterVisible = true;
+          selectedPoint = null;
         }}
       >
         <Popup openOn={"click"} let:features>
@@ -114,6 +111,10 @@
           "circle-stroke-color": "#f00",
           "circle-stroke-opacity": hoverStateFilter(0, 1),
         }}
+        on:click={() => {
+          clusterVisible = true;
+          selectedPoint = null;
+        }}
       >
         <Popup openOn={"click"} closeOnClickInside let:features>
           {#if features && features[0] && features[0].properties}
@@ -126,7 +127,4 @@
       </CircleLayer>
     </GeoJSON>
   </MapLibre>
-  <div class="w-4/12">
-    <AnimalFilterDrawer />
-  </div>
 </div>

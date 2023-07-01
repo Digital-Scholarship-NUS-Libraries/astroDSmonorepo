@@ -1,7 +1,7 @@
 ---
 import { BaseLayout } from "@libdsastro/ui";
 import navigation from "../data/navigation.json";
-import MapView from "../components/MapView.svelte";
+import AnimalView from "../components/AnimalView.svelte";
 ---
 
 <BaseLayout
@@ -12,6 +12,6 @@ import MapView from "../components/MapView.svelte";
     <div class="mx-auto prose py-10">
       <h1>Singapore and South-East Asia Biodiversity History</h1>
     </div>
-    <MapView client:only="svelte" />
+    <AnimalView client:only="svelte" />
   </main>
 </BaseLayout>
