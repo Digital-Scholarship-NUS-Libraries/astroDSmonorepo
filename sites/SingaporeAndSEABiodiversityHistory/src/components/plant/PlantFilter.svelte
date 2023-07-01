@@ -6,7 +6,7 @@
     setResidencyCasual,
     setResidencyCryptogenic,
     setResidencyNaturalised,
-  } from "../store/plants.js";
+  } from "../../store/plants.js";
 </script>
 
 <div class="pl-4 pr-4 pb-4 h-full overflow-y-scroll">
@@ -61,7 +61,7 @@
 
     <button
       class={$filterAttributes.residency.naturalised
-        ? "btn btn-xs btn hover:bg-gray-500"
+        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={setResidencyNaturalised}
     >
@@ -70,7 +70,7 @@
 
     <button
       class={$filterAttributes.residency.casual
-        ? "btn btn-xs btn hover:bg-gray-500"
+        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={setResidencyCasual}
     >
@@ -79,7 +79,7 @@
 
     <button
       class={$filterAttributes.residency.cryptogenic
-        ? "btn btn-xs btn hover:bg-gray-500"
+        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={setResidencyCryptogenic}
     >
@@ -90,7 +90,7 @@
 
     <button
       class={$filterAttributes.activeRemoval
-        ? "btn btn-xs btn hover:bg-gray-500"
+        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={setActiveRemoval}
     >
@@ -99,7 +99,7 @@
 
     <button
       class={$filterAttributes.extinction
-        ? "btn btn-xs btn hover:bg-gray-500"
+        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={setExtinction}
     >

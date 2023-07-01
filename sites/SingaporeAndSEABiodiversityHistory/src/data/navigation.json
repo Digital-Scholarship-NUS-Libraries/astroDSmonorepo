@@ -1,14 +1,14 @@
 [
   {
-    "text": "Home",
+    "text": "Introduction",
     "url": "/"
   },
   {
-    "text": "Animals Data",
-    "url": "/data/animal"
+    "text": "Animal Map",
+    "url": "/map/animal"
   },
   {
-    "text": "Plants Data",
-    "url": "/data/plant"
+    "text": "Plant Map",
+    "url": "/map/plant"
   }
 ]

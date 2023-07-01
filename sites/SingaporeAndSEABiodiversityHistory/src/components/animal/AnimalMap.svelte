@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { filteredAnimalsGeoJSON } from "../store/animals";
+  import { filteredAnimalsGeoJSON } from "../../store/animals";
   import {
     MapLibre,
     GeoJSON,
@@ -10,8 +10,8 @@
   } from "svelte-maplibre";
   import type { Feature } from "geojson";
   import { slide } from "svelte/transition";
-  import PointPopup from "./PointPopup.svelte";
-  import ClusterPopup from "./ClusterPopup.svelte";
+  import AnimalPointPopup from "./AnimalPointPopup.svelte";
+  import AnimalClusterPopup from "./AnimalClusterPopup.svelte";
 
   let selectedPoint: Feature | null = null;
   let clusterVisible: boolean = true;
@@ -65,7 +65,7 @@
       >
         <Popup openOn={"click"} let:features>
           {#if clusterVisible}
-            <ClusterPopup
+            <AnimalClusterPopup
               feature={features?.[0]}
               onSelectSpecies={(species) => {
                 clusterVisible = false;
@@ -74,7 +74,7 @@
             />
           {:else if selectedPoint && selectedPoint.properties}
             <div transition:slide>
-              <PointPopup
+              <AnimalPointPopup
                 feature={selectedPoint.properties}
                 closeButtonVisible={true}
                 onClose={() => {
@@ -117,7 +117,7 @@
       >
         <Popup openOn={"click"} closeOnClickInside let:features>
           {#if features && features[0] && features[0].properties}
-            <PointPopup
+            <AnimalPointPopup
               feature={features[0].properties}
               closeButtonVisible={false}
             />

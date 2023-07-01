@@ -1,7 +1,7 @@
 ---
 import { BaseLayout } from "@libdsastro/ui";
 import navigation from "../../data/navigation.json";
-import PlantData from "../../components/PlantData.svelte";
+import AnimalPage from "../../components/animal/AnimalPage.svelte";
 ---
 
 <BaseLayout
@@ -11,7 +11,7 @@ import PlantData from "../../components/PlantData.svelte";
   <main>
     <div class="mx-auto prose py-10">
       <h1>Singapore and South-East Asia Biodiversity History</h1>
-      <PlantData client:only="svelte" />
     </div>
+    <AnimalPage client:only="svelte" />
   </main>
 </BaseLayout>

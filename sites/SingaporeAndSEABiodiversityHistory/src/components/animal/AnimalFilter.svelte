@@ -16,7 +16,7 @@
     setIntroPathwayTransport,
     setExtinction,
     setActiveRemoval,
-  } from "../store/animals.js";
+  } from "../../store/animals.js";
 
   export let toggleMap: () => void;
 </script>

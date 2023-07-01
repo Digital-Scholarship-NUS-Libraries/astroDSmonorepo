@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { filteredAnimals } from "../store/animals.js";
+  import { filteredAnimals } from "../../store/animals.js";
 </script>
 
 <div class="h-screen w-full overflow-y-scroll">
