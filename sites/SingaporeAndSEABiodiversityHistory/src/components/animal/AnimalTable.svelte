@@ -5,7 +5,8 @@
 <div class="h-screen w-full overflow-y-scroll">
   <table class="table-auto">
     <tr>
-      <th class="px-4 py-2">Common Name ({$filteredAnimals.length} animals)</th>
+      <th class="px-4 py-2">Current Name ({$filteredAnimals.length} animals)</th
+      >
       <th class="px-4 py-2">Fauna</th>
       <th class="px-4 py-2">First published year</th>
       <th class="px-4 py-2">Introduction pathway</th>
@@ -14,7 +15,7 @@
     </tr>
     {#each $filteredAnimals as animal}
       <tr>
-        <td class="border px-4 py-2">{animal["CommonName"]}</td>
+        <td class="border px-4 py-2">{animal["Name_Current"]}</td>
         <td class="border px-4 py-2">{animal["Fauna"]}</td>
         <td class="border px-4 py-2">{animal["Date_yyyy_FirstPub"]}</td>
         <td class="border px-4 py-2">{animal["Intro_all"]}</td>

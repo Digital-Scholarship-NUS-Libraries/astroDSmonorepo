@@ -5,17 +5,16 @@
     toggleFaunaFreshwater,
     toggleFaunaMarine,
     toggleFaunaTerrestrial,
-    toggleIntroPathwayAgricultural,
     toggleIntroPathwayBiological,
     toggleIntroPathwayConsumption,
     toggleIntroPathwayCorridor,
     toggleIntroPathwayFishing,
-    toggleIntroPathwayHorticultural,
-    toggleIntroPathwayMercyRelease,
+    toggleIntroPathwayPlantTrade,
     toggleIntroPathwayPetTrade,
-    toggleIntroPathwayTransport,
     toggleExtinction,
     toggleActiveRemoval,
+    toggleIntroPathwayHitchhiker,
+    toggleIntroPathwayUnknown,
   } from "../../store/animals.js";
   import {
     analyticals,
@@ -121,15 +120,6 @@
       <h4>Pathway</h4>
 
       <button
-        class={$filterAttributes.introPathway.agricultural
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-400"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
-        on:click={toggleIntroPathwayAgricultural}
-      >
-        Agricultural
-      </button>
-
-      <button
         class={$filterAttributes.introPathway.biological
           ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
           : "btn btn-xs btn-outline hover:bg-gray-300"}
@@ -166,24 +156,6 @@
       </button>
 
       <button
-        class={$filterAttributes.introPathway.horticultural
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
-        on:click={toggleIntroPathwayHorticultural}
-      >
-        Horticultural
-      </button>
-
-      <button
-        class={$filterAttributes.introPathway.mercyRelease
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
-        on:click={toggleIntroPathwayMercyRelease}
-      >
-        Mercy Release
-      </button>
-
-      <button
         class={$filterAttributes.introPathway.petTrade
           ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
           : "btn btn-xs btn-outline hover:bg-gray-300"}
@@ -193,12 +165,30 @@
       </button>
 
       <button
-        class={$filterAttributes.introPathway.transport
+        class={$filterAttributes.introPathway.plantTrade
+          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-400"
+          : "btn btn-xs btn-outline hover:bg-gray-300"}
+        on:click={toggleIntroPathwayPlantTrade}
+      >
+        Plant Trade
+      </button>
+
+      <button
+        class={$filterAttributes.introPathway.hitchhiker
           ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
           : "btn btn-xs btn-outline hover:bg-gray-300"}
-        on:click={toggleIntroPathwayTransport}
+        on:click={toggleIntroPathwayHitchhiker}
       >
-        Transport
+        Stowaway
+      </button>
+
+      <button
+        class={$filterAttributes.introPathway.unknown
+          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn btn-xs btn-outline hover:bg-gray-300"}
+        on:click={toggleIntroPathwayUnknown}
+      >
+        Unknown
       </button>
 
       <h4>Others</h4>

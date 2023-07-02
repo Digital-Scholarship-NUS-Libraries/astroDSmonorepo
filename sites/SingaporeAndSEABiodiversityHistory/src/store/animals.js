@@ -15,15 +15,14 @@ export const filterAttributes = writable({
     terrestrial: true
   },
   introPathway: {
-    agricultural: true,
+    plantTrade: true,
     biological: true,
     consumption: true,
     corridor: true,
     fishing: true,
-    horticultural: true,
-    mercyRelease: true,
     petTrade: true,
-    transport: true
+    hitchhiker: true,
+    unknown: true,
   },
   extinction: false,
   activeRemoval: false,
@@ -44,15 +43,14 @@ export const filteredAnimals = derived(
         (animal["Fauna"] === "Terrestrial" && $filterAttributes.fauna.terrestrial)
       ))
       .filter(animal => (
-        (animal["Intro_all"].split(" | ").includes("Agricultural trade") && $filterAttributes.introPathway.agricultural) ||
+        (animal["Intro_all"].split(" | ").includes("Plant trade") && $filterAttributes.introPathway.plantTrade) ||
         (animal["Intro_all"].split(" | ").includes("Biological control") && $filterAttributes.introPathway.biological) ||
         (animal["Intro_all"].split(" | ").includes("Consumption trade") && $filterAttributes.introPathway.consumption) ||
-        (animal["Intro_all"].split(" | ").includes("Corridors") && $filterAttributes.introPathway.corridor) ||
+        (animal["Intro_all"].split(" | ").includes("Corridor") && $filterAttributes.introPathway.corridor) ||
         (animal["Intro_all"].split(" | ").includes("Fishing") && $filterAttributes.introPathway.fishing) ||
-        (animal["Intro_all"].split(" | ").includes("Horticultural trade") && $filterAttributes.introPathway.horticultural) ||
-        (animal["Intro_all"].split(" | ").includes("Mercy release") && $filterAttributes.introPathway.mercyRelease) ||
         (animal["Intro_all"].split(" | ").includes("Pet trade") && $filterAttributes.introPathway.petTrade) ||
-        (animal["Intro_all"].split(" | ").includes("Transport") && $filterAttributes.introPathway.transport)
+        (animal["Intro_all"].split(" | ").includes("Hitchhiker") && $filterAttributes.introPathway.hitchhiker) ||
+        (animal["Intro_all"].split(" | ").includes("Unknown") && $filterAttributes.introPathway.unknown)
       ))
       .filter(animal => (
         animal["Extinction_YN"] === ($filterAttributes.extinction ? "Y" : "N")
@@ -104,16 +102,6 @@ export const toggleFaunaTerrestrial = () => {
   }))
 }
 
-export const toggleIntroPathwayAgricultural = () => {
-  filterAttributes.update(attr => ({
-    ...attr,
-    introPathway: {
-      ...attr.introPathway,
-      agricultural: !attr.introPathway.agricultural
-    }
-  }))
-}
-
 export const toggleIntroPathwayBiological = () => {
   filterAttributes.update(attr => ({
     ...attr,
@@ -154,22 +142,12 @@ export const toggleIntroPathwayFishing = () => {
   }))
 }
 
-export const toggleIntroPathwayHorticultural = () => {
+export const toggleIntroPathwayPlantTrade = () => {
   filterAttributes.update(attr => ({
     ...attr,
     introPathway: {
       ...attr.introPathway,
-      horticultural: !attr.introPathway.horticultural
-    }
-  }))
-}
-
-export const toggleIntroPathwayMercyRelease = () => {
-  filterAttributes.update(attr => ({
-    ...attr,
-    introPathway: {
-      ...attr.introPathway,
-      mercyRelease: !attr.introPathway.mercyRelease
+      plantTrade: !attr.introPathway.plantTrade
     }
   }))
 }
@@ -184,12 +162,22 @@ export const toggleIntroPathwayPetTrade = () => {
   }))
 }
 
-export const toggleIntroPathwayTransport = () => {
+export const toggleIntroPathwayHitchhiker = () => {
   filterAttributes.update(attr => ({
     ...attr,
     introPathway: {
       ...attr.introPathway,
-      transport: !attr.introPathway.transport
+      hitchhiker: !attr.introPathway.hitchhiker
+    }
+  }))
+}
+
+export const toggleIntroPathwayUnknown = () => {
+  filterAttributes.update(attr => ({
+    ...attr,
+    introPathway: {
+      ...attr.introPathway,
+      unknown: !attr.introPathway.unknown
     }
   }))
 }
