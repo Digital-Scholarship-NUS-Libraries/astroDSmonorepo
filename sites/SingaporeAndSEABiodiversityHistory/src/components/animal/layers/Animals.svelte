@@ -27,17 +27,8 @@
       applyToClusters
       hoverCursor="pointer"
       paint={{
-        "circle-color": [
-          "step",
-          ["get", "point_count"],
-          "#51bbd6",
-          3,
-          "#f1f075",
-          4,
-          "#f28cb1",
-        ],
+        "circle-color": "#ecbefa",
         "circle-radius": ["step", ["get", "point_count"], 20, 3, 30, 4, 40],
-        "circle-stroke-color": "#f00",
         "circle-stroke-width": 1,
         "circle-stroke-opacity": hoverStateFilter(0, 1),
       }}
@@ -83,13 +74,12 @@
         "circle-color": [
           "step",
           ["get", "Date_yyyy_FirstPub"],
-          "#0000ff",
+          "#624ff0",
           1965,
-          "#ff0000",
+          "#e64c4c",
         ],
-        "circle-radius": 5,
+        "circle-radius": 7,
         "circle-stroke-width": 1,
-        "circle-stroke-color": "#f00",
         "circle-stroke-opacity": hoverStateFilter(0, 1),
       }}
       on:click={() => {
