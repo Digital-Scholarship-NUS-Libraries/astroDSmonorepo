@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { filteredAnimalsGeoJSON } from "../../../store/animalLayers";
+  import { animals } from "../../../store/animalLayers";
   import {
     GeoJSON,
     CircleLayer,
@@ -19,7 +19,7 @@
 <div>
   <GeoJSON
     id="animals"
-    data={$filteredAnimalsGeoJSON}
+    data={$animals}
     cluster={{ radius: 500, maxZoom: 16 }}
     generateId
   >

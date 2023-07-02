@@ -1,0 +1,239 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 0,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.85540000000009,
+          1.2660710000000677
+        ]
+      },
+      "properties": {
+        "OBJECTID": 1,
+        "Country": "Singapore",
+        "PortName": "Tanjong Pagar Container Terminal",
+        "PortType": "Container",
+        "YearEstablished": 1972,
+        "Operator": "PSA",
+        "Location": "Tanjong Pagar",
+        "Lat": 1.266071,
+        "Long": 103.8554,
+        "Remarks": "Coordinates from:https://www.findlatitudeandlongitude.com/l/Tanjong+Pagar+Port+Terminal%2C+Straits+View%2C+Singapore%2C+Central+Region%2C+079119%2C+Singapore/7890465/; year established: https://www.globalpsa.com/tanjong-pagar-terminal-the-icon-of-singapores-port-heritage/#:~:text=When%20TPT%20opened%20in%201972,East%20Asia%27s%20first%20container%20terminal.",
+        "marker-color": "#920e56",
+        "marker-size": "medium",
+        "marker-symbol": "triangle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.83437600000008,
+          1.2679800000000228
+        ]
+      },
+      "properties": {
+        "OBJECTID": 2,
+        "Country": "Singapore",
+        "PortName": "Keppel Terminal",
+        "PortType": "Container",
+        "YearEstablished": 1990,
+        "Operator": "PSA",
+        "Location": "Keppel",
+        "Lat": 1.26798,
+        "Long": 103.834376,
+        "Remarks": "Coordinates from: https://www.findlatitudeandlongitude.com/l/Keppel+Terminal+Rd+M%2C+Singapore/4591353/; year of operation from: https://www.clc.gov.sg/docs/default-source/urban-systems-studies/rb162799-mnd-uss-bk4-seaports-final.pdf",
+        "marker-color": "#ff3100",
+        "marker-size": "medium",
+        "marker-symbol": "triangle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.83012500000007,
+          1.2597910000000638
+        ]
+      },
+      "properties": {
+        "OBJECTID": 3,
+        "Country": "Singapore",
+        "PortName": "Brani Terminal",
+        "PortType": "Container",
+        "YearEstablished": 1990,
+        "Operator": "PSA",
+        "Location": "Brani",
+        "Lat": 1.259791,
+        "Long": 103.830125,
+        "Remarks": "Coordinates from: https://www.findlatitudeandlongitude.com/l/Brani+Terminal+Ave%2C+Singapore/40814/",
+        "marker-color": "#ff3100",
+        "marker-size": "medium",
+        "marker-symbol": "triangle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.79612700000007,
+          1.2794190000000754
+        ]
+      },
+      "properties": {
+        "OBJECTID": 4,
+        "Country": "Singapore",
+        "PortName": "Pasir Panjang Terminal",
+        "PortType": "Container",
+        "YearEstablished": 1995,
+        "Operator": "PSA",
+        "Location": "Pasir Panjang",
+        "Lat": 1.279419,
+        "Long": 103.796127,
+        "Remarks": "Coordinates from: https://www.findlatitudeandlongitude.com/l/PASIR+PANJANG+TERMINAL+BLDG/1037466/",
+        "marker-color": "#ff9200",
+        "marker-size": "medium",
+        "marker-symbol": "triangle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.83131400000008,
+          1.4617680000000632
+        ]
+      },
+      "properties": {
+        "OBJECTID": 5,
+        "Country": "Singapore",
+        "PortName": "Sembawang Wharves",
+        "PortType": "General",
+        "YearEstablished": 1971,
+        "Operator": "PSA",
+        "Location": "Sembawang",
+        "Lat": 1.461768,
+        "Long": 103.831314,
+        "Remarks": "Coordinates from: https://www.findlatitudeandlongitude.com/l/Sembawang+Wharves%2C+Singapore%2C+Central+Singapore%2C+Singapore/6314704/; More info on history: https://eresources.nlb.gov.sg/infopedia/articles/SIP_577_2005-01-27.html",
+        "marker-color": "#49188f",
+        "marker-size": "medium",
+        "marker-symbol": "triangle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.72431200000005,
+          1.3034620000000245
+        ]
+      },
+      "properties": {
+        "OBJECTID": 6,
+        "Country": "Singapore",
+        "PortName": "Jurong Port",
+        "PortType": "Multi-purpose",
+        "YearEstablished": 1965,
+        "Operator": "Jurong Port Pte Ltd",
+        "Location": "Jurong",
+        "Lat": 1.303462,
+        "Long": 103.724312,
+        "Remarks": "Coordinates from: https://www.findlatitudeandlongitude.com/l/jurong+port+singapore/2309277/",
+        "marker-color": "#0022c8",
+        "marker-size": "medium",
+        "marker-symbol": "triangle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 6,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.61550000000005,
+          1.2516000000000531
+        ]
+      },
+      "properties": {
+        "OBJECTID": 7,
+        "Country": "Singapore",
+        "PortName": "Tuas Port",
+        "PortType": "Container",
+        "YearEstablished": 2021,
+        "Operator": "PSA",
+        "Location": "Tuas",
+        "Lat": 1.2516,
+        "Long": 103.6155,
+        "Remarks": "Google search; year of operations from MPA (https://www.mpa.gov.sg/maritime-singapore/port-of-the-future#:~:text=Tuas%20Port%20was%20officially%20opened%20on%201%20September%202022.)",
+        "marker-color": "#ffffff",
+        "marker-size": "medium",
+        "marker-symbol": "triangle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 7,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.90610000000004,
+          1.4441000000000486
+        ]
+      },
+      "properties": {
+        "OBJECTID": 8,
+        "Country": "Malaysia",
+        "PortName": "Johor Port at Pasir Gudang",
+        "PortType": "Edible oil and other commodities",
+        "YearEstablished": 1977,
+        "Operator": "Johor Port Bhd",
+        "Location": "Johor",
+        "Lat": 1.4441,
+        "Long": 103.9061,
+        "Remarks": "Google search; year of operations from Netherlands Enterprise Agency (2022); more info https://www.johorport.com.my/about-us/overview#:~:text=As%20a%20Regional%20Commodity%20Hub,the%20region%20for%20LME%20cargo.",
+        "marker-color": "#db051c",
+        "marker-size": "medium",
+        "marker-symbol": "triangle"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 8,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          103.55320000000006,
+          1.3622000000000298
+        ]
+      },
+      "properties": {
+        "OBJECTID": 9,
+        "Country": "Malaysia",
+        "PortName": "Port of Tanjung Pelepas",
+        "PortType": "Container",
+        "YearEstablished": 2000,
+        "Operator": "Port of Tanjung Pelepas Bhd",
+        "Location": "Johor",
+        "Lat": 1.3622,
+        "Long": 103.5532,
+        "Remarks": "Google search; year of operations from Netherlands Enterprise Agency (2022)",
+        "marker-color": "#ffce6d",
+        "marker-size": "medium",
+        "marker-symbol": "triangle"
+      }
+    }
+  ]
+}

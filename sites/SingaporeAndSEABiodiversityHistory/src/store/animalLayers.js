@@ -13,8 +13,10 @@ import IntroStowaway from "/public/data/geojsons/IntroStowaway.json";
 import IntroUnknown from "/public/data/geojsons/IntroUnknown.json";
 import OthersActiveRemoval from "/public/data/geojsons/OthersActiveRemoval.json";
 import OthersExtinction from "/public/data/geojsons/OthersExtinction.json";
+import SupplementaryPortsAroundSG from "/public/data/geojsons/SupplementaryPortsAroundSG.json";
 
-export const filteredAnimalsGeoJSON = derived(
+
+export const animals = derived(
   [filteredAnimals, filterAttributes],
   ([$filteredAnimals, $filterAttributes], set) => {
     const animalsFeatures = $filteredAnimals
@@ -72,9 +74,9 @@ export const filteredAnimalsGeoJSON = derived(
       "features": animalsFeatures
     });
   }
-)
+);
 
-export const analyticalMaps = writable({
+export const analyticals = writable({
   faunaAves: {
     visible: false,
     geoJSON: FaunaAves,
@@ -129,132 +131,146 @@ export const analyticalMaps = writable({
   },
 });
 
-export const toggleFaunaAves = () => {
-  analyticalMaps.update(m => ({
-    ...m,
-    faunaAves: {
-      ...m.faunaAves,
-      visible: !m.faunaAves.visible,
-    },
-  }));
+export const ports = writable({
+  visible: false,
+  geoJSON: SupplementaryPortsAroundSG,
+});
+
+export const analyticalsToggles = {
+  toggleFaunaAves: () => {
+    analyticals.update(m => ({
+      ...m,
+      faunaAves: {
+        ...m.faunaAves,
+        visible: !m.faunaAves.visible,
+      },
+    }));
+  },
+
+  toggleFaunaFreshwater: () => {
+    analyticals.update(m => ({
+      ...m,
+      faunaFreshwater: {
+        ...m.faunaFreshwater,
+        visible: !m.faunaFreshwater.visible,
+      },
+    }));
+  },
+
+  toggleFaunaMarine: () => {
+    analyticals.update(m => ({
+      ...m,
+      faunaMarine: {
+        ...m.faunaMarine,
+        visible: !m.faunaMarine.visible,
+      },
+    }));
+  },
+
+  toggleFaunaTerrestrial: () => {
+    analyticals.update(m => ({
+      ...m,
+      faunaTerrestrial: {
+        ...m.faunaTerrestrial,
+        visible: !m.faunaTerrestrial.visible,
+      },
+    }));
+  },
+
+  toggleIntroConsumption: () => {
+    analyticals.update(m => ({
+      ...m,
+      introConsumption: {
+        ...m.introConsumption,
+        visible: !m.introConsumption.visible,
+      },
+    }));
+  },
+
+  toggleIntroCorridor: () => {
+    analyticals.update(m => ({
+      ...m,
+      introCorridor: {
+        ...m.introCorridor,
+        visible: !m.introCorridor.visible,
+      },
+    }));
+  },
+
+  toggleIntroFishing: () => {
+    analyticals.update(m => ({
+      ...m,
+      introFishing: {
+        ...m.introFishing,
+        visible: !m.introFishing.visible,
+      },
+    }));
+  },
+
+  toggleIntroPet: () => {
+    analyticals.update(m => ({
+      ...m,
+      introPet: {
+        ...m.introPet,
+        visible: !m.introPet.visible,
+      },
+    }));
+  },
+
+  toggleIntroPlant: () => {
+    analyticals.update(m => ({
+      ...m,
+      introPlant: {
+        ...m.introPlant,
+        visible: !m.introPlant.visible,
+      },
+    }));
+  },
+
+  toggleIntroStowaway: () => {
+    analyticals.update(m => ({
+      ...m,
+      introStowaway: {
+        ...m.introStowaway,
+        visible: !m.introStowaway.visible,
+      },
+    }));
+  },
+
+  toggleIntroUnknown: () => {
+    analyticals.update(m => ({
+      ...m,
+      introUnknown: {
+        ...m.introUnknown,
+        visible: !m.introUnknown.visible,
+      },
+    }));
+  },
+
+  toggleOthersActiveRemoval: () => {
+    analyticals.update(m => ({
+      ...m,
+      othersActiveRemoval: {
+        ...m.othersActiveRemoval,
+        visible: !m.othersActiveRemoval.visible,
+      },
+    }));
+  },
+
+  toggleOthersExtinction: () => {
+    analyticals.update(m => ({
+      ...m,
+      othersExtinction: {
+        ...m.othersExtinction,
+        visible: !m.othersExtinction.visible,
+      },
+    }));
+  },
 }
 
-export const toggleFaunaFreshwater = () => {
-  analyticalMaps.update(m => ({
+export const togglePorts = () => {
+  ports.update(m => ({
     ...m,
-    faunaFreshwater: {
-      ...m.faunaFreshwater,
-      visible: !m.faunaFreshwater.visible,
-    },
-  }));
-}
-
-export const toggleFaunaMarine = () => {
-  analyticalMaps.update(m => ({
-    ...m,
-    faunaMarine: {
-      ...m.faunaMarine,
-      visible: !m.faunaMarine.visible,
-    },
-  }));
-}
-
-export const toggleFaunaTerrestrial = () => {
-  analyticalMaps.update(m => ({
-    ...m,
-    faunaTerrestrial: {
-      ...m.faunaTerrestrial,
-      visible: !m.faunaTerrestrial.visible,
-    },
-  }));
-}
-
-export const toggleIntroConsumption = () => {
-  analyticalMaps.update(m => ({
-    ...m,
-    introConsumption: {
-      ...m.introConsumption,
-      visible: !m.introConsumption.visible,
-    },
-  }));
-}
-
-export const toggleIntroCorridor = () => {
-  analyticalMaps.update(m => ({
-    ...m,
-    introCorridor: {
-      ...m.introCorridor,
-      visible: !m.introCorridor.visible,
-    },
-  }));
-}
-
-export const toggleIntroFishing = () => {
-  analyticalMaps.update(m => ({
-    ...m,
-    introFishing: {
-      ...m.introFishing,
-      visible: !m.introFishing.visible,
-    },
-  }));
-}
-
-export const toggleIntroPet = () => {
-  analyticalMaps.update(m => ({
-    ...m,
-    introPet: {
-      ...m.introPet,
-      visible: !m.introPet.visible,
-    },
-  }));
-}
-
-export const toggleIntroPlant = () => {
-  analyticalMaps.update(m => ({
-    ...m,
-    introPlant: {
-      ...m.introPlant,
-      visible: !m.introPlant.visible,
-    },
-  }));
-}
-
-export const toggleIntroStowaway = () => {
-  analyticalMaps.update(m => ({
-    ...m,
-    introStowaway: {
-      ...m.introStowaway,
-      visible: !m.introStowaway.visible,
-    },
-  }));
-}
-
-export const toggleIntroUnknown = () => {
-  analyticalMaps.update(m => ({
-    ...m,
-    introUnknown: {
-      ...m.introUnknown,
-      visible: !m.introUnknown.visible,
-    },
-  }));
-}
-
-export const toggleOthersActiveRemoval = () => {
-  analyticalMaps.update(m => ({
-    ...m,
-    othersActiveRemoval: {
-      ...m.othersActiveRemoval,
-      visible: !m.othersActiveRemoval.visible,
-    },
-  }));
-}
-
-export const toggleOthersExtinction = () => {
-  analyticalMaps.update(m => ({
-    ...m,
-    othersExtinction: {
-      ...m.othersExtinction,
-      visible: !m.othersExtinction.visible,
-    },
+    visible: !m.visible,
   }));
 }

@@ -18,20 +18,10 @@
     setActiveRemoval,
   } from "../../store/animals.js";
   import {
-    analyticalMaps,
-    toggleFaunaAves,
-    toggleFaunaFreshwater,
-    toggleFaunaMarine,
-    toggleFaunaTerrestrial,
-    toggleIntroConsumption,
-    toggleIntroCorridor,
-    toggleIntroFishing,
-    toggleIntroPet,
-    toggleIntroPlant,
-    toggleIntroStowaway,
-    toggleIntroUnknown,
-    toggleOthersActiveRemoval,
-    toggleOthersExtinction,
+    analyticals,
+    analyticalsToggles,
+    ports,
+    togglePorts,
   } from "../../store/animalLayers.js";
 
   export let toggleMap: () => void;
@@ -259,15 +249,15 @@
 
     <img src="/public/assets/Legend-SpeciesMaps.png" alt="legend" />
 
-    <h4>Fauna types:</h4>
+    <h4>Fauna Types</h4>
 
     <div class="flex items-center">
       <input
         id="aves-fauna-map"
         type="checkbox"
-        checked={$analyticalMaps.faunaAves.visible}
+        checked={$analyticals.faunaAves.visible}
         class="checkbox"
-        on:change={toggleFaunaAves}
+        on:change={analyticalsToggles.toggleFaunaAves}
       />
       <label for="aves-fauna-map" class="ml-2">Aves</label>
     </div>
@@ -276,9 +266,9 @@
       <input
         id="aves-freshwater-map"
         type="checkbox"
-        checked={$analyticalMaps.faunaFreshwater.visible}
+        checked={$analyticals.faunaFreshwater.visible}
         class="checkbox"
-        on:change={toggleFaunaFreshwater}
+        on:change={analyticalsToggles.toggleFaunaFreshwater}
       />
       <label for="aves-freshwater-map" class="ml-2">Freshwater</label>
     </div>
@@ -287,9 +277,9 @@
       <input
         id="aves-marine-map"
         type="checkbox"
-        checked={$analyticalMaps.faunaMarine.visible}
+        checked={$analyticals.faunaMarine.visible}
         class="checkbox"
-        on:change={toggleFaunaMarine}
+        on:change={analyticalsToggles.toggleFaunaMarine}
       />
       <label for="aves-marine-map" class="ml-2">Marine</label>
     </div>
@@ -298,25 +288,25 @@
       <input
         id="aves-terrestrial-map"
         type="checkbox"
-        checked={$analyticalMaps.faunaTerrestrial.visible}
+        checked={$analyticals.faunaTerrestrial.visible}
         class="checkbox"
-        on:change={toggleFaunaTerrestrial}
+        on:change={analyticalsToggles.toggleFaunaTerrestrial}
       />
       <label for="aves-terrestrial-map" class="ml-2">Terrestrial</label>
     </div>
 
     <h4>
-      Introductory pathways (note that the biological control introductory
-      pathway does not have established species with known locality):
+      Introductory Pathways (note that the biological control introductory
+      pathway does not have established species with known locality)
     </h4>
 
     <div class="flex items-center">
       <input
         id="intro-plant-trade-map"
         type="checkbox"
-        checked={$analyticalMaps.introPlant.visible}
+        checked={$analyticals.introPlant.visible}
         class="checkbox"
-        on:change={toggleIntroPlant}
+        on:change={analyticalsToggles.toggleIntroPlant}
       />
       <label for="intro-plant-trade-map" class="ml-2">Plant Trade</label>
     </div>
@@ -325,9 +315,9 @@
       <input
         id="intro-consumption-trade-map"
         type="checkbox"
-        checked={$analyticalMaps.introConsumption.visible}
+        checked={$analyticals.introConsumption.visible}
         class="checkbox"
-        on:change={toggleIntroConsumption}
+        on:change={analyticalsToggles.toggleIntroConsumption}
       />
       <label for="intro-consumption-trade-map" class="ml-2">Consumption</label>
     </div>
@@ -336,9 +326,9 @@
       <input
         id="intro-pet-trade-map"
         type="checkbox"
-        checked={$analyticalMaps.introPet.visible}
+        checked={$analyticals.introPet.visible}
         class="checkbox"
-        on:change={toggleIntroPet}
+        on:change={analyticalsToggles.toggleIntroPet}
       />
       <label for="intro-pet-trade-map" class="ml-2">Pet Trade</label>
     </div>
@@ -347,9 +337,9 @@
       <input
         id="intro-fishing-map"
         type="checkbox"
-        checked={$analyticalMaps.introFishing.visible}
+        checked={$analyticals.introFishing.visible}
         class="checkbox"
-        on:change={toggleIntroFishing}
+        on:change={analyticalsToggles.toggleIntroFishing}
       />
       <label for="intro-fishing-map" class="ml-2">Fishing</label>
     </div>
@@ -358,9 +348,9 @@
       <input
         id="intro-stowaway-map"
         type="checkbox"
-        checked={$analyticalMaps.introStowaway.visible}
+        checked={$analyticals.introStowaway.visible}
         class="checkbox"
-        on:change={toggleIntroStowaway}
+        on:change={analyticalsToggles.toggleIntroStowaway}
       />
       <label for="intro-stowaway-map" class="ml-2">Stowaway</label>
     </div>
@@ -369,9 +359,9 @@
       <input
         id="intro-corridor-map"
         type="checkbox"
-        checked={$analyticalMaps.introCorridor.visible}
+        checked={$analyticals.introCorridor.visible}
         class="checkbox"
-        on:change={toggleIntroCorridor}
+        on:change={analyticalsToggles.toggleIntroCorridor}
       />
       <label for="intro-corridor-map" class="ml-2">Corridor</label>
     </div>
@@ -380,25 +370,22 @@
       <input
         id="intro-unknown-map"
         type="checkbox"
-        checked={$analyticalMaps.introUnknown.visible}
+        checked={$analyticals.introUnknown.visible}
         class="checkbox"
-        on:change={toggleIntroUnknown}
+        on:change={analyticalsToggles.toggleIntroUnknown}
       />
       <label for="intro-unknown-map" class="ml-2">Unknown</label>
     </div>
 
-    <h4>
-      Other supplementary information which may be useful for further analysis
-      include:
-    </h4>
+    <h4>Active Removal and Extinction</h4>
 
     <div class="flex items-center">
       <input
         id="other-extinction-map"
         type="checkbox"
-        checked={$analyticalMaps.othersExtinction.visible}
+        checked={$analyticals.othersExtinction.visible}
         class="checkbox"
-        on:change={toggleOthersExtinction}
+        on:change={analyticalsToggles.toggleOthersExtinction}
       />
       <label for="other-extinction-map" class="ml-2">
         Extinction (instead of count, year of extinction is considered where
@@ -411,13 +398,33 @@
       <input
         id="other-active-removal-map"
         type="checkbox"
-        checked={$analyticalMaps.othersActiveRemoval.visible}
+        checked={$analyticals.othersActiveRemoval.visible}
         class="checkbox"
-        on:change={toggleOthersActiveRemoval}
+        on:change={analyticalsToggles.toggleOthersActiveRemoval}
       />
       <label for="other-active-removal-map" class="ml-2">
         Active Removal
       </label>
     </div>
+
+    <h4>
+      Other supplementary information which may be useful for further analysis
+      include
+    </h4>
+
+    <div class="flex items-center">
+      <input
+        id="other-ports"
+        type="checkbox"
+        checked={$ports.visible}
+        class="checkbox"
+        on:change={togglePorts}
+      />
+      <label for="other-ports" class="ml-2">
+        Location of ports around and in Singapore
+      </label>
+    </div>
+
+    <img src="/public/assets/Legend-Ports.png" alt="Ports" />
   </article>
 </div>
