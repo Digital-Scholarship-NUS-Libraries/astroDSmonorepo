@@ -13,7 +13,7 @@
   <div class="max-h-80 w-80 overflow-y-scroll">
     {#if feature}
       <ul>
-        <strong>General</strong>
+        <strong class="underline underline-offset-1">General</strong>
         <li><strong>Status: </strong>{feature["Status"]}</li>
         <li>
           <strong>Species Name (Current Accepted): </strong>{feature[
@@ -46,7 +46,9 @@
         </li>
         <br />
 
-        <li><strong>First Published</strong></li>
+        <li>
+          <strong class="underline underline-offset-1">First Published</strong>
+        </li>
         <li>
           <strong>Species name (First Published): </strong>{feature[
             "Name_FirstPub"
@@ -82,7 +84,9 @@
         </li>
         <br />
 
-        <li><strong>First Sighting</strong></li>
+        <li>
+          <strong class="underline underline-offset-1">First Sighting</strong>
+        </li>
         <li>
           <strong>Species name (First sighting): </strong>{feature[
             "Name_FirstSight"
@@ -98,8 +102,6 @@
             "Date_ddmmyyyy_FirstSight"
           ]}
         </li>
-        <br />
-
         <li>
           <strong>Year (First sighting) : </strong>{feature["Year_FirstSight"]}
         </li>
@@ -120,7 +122,11 @@
         </li>
         <br />
 
-        <li><strong>Introduction Pathway</strong></li>
+        <li>
+          <strong class="underline underline-offset-1"
+            >Introduction Pathway</strong
+          >
+        </li>
         <li>
           <strong>Introduction Pathway: </strong>{feature["Intro_pathway"]}
         </li>
@@ -128,7 +134,9 @@
         <li><strong>Introduction All: </strong>{feature["Intro_all"]}</li>
         <br />
 
-        <li><strong> Extinction </strong></li>
+        <li>
+          <strong class="underline underline-offset-1"> Extinction </strong>
+        </li>
         <li><strong>Extinction (Y/N): </strong>{feature["Extinction_YN"]}</li>
         <li>
           <strong>Year (Extinction): </strong>{feature["Year_Extinction"]}
@@ -138,7 +146,9 @@
         </li>
         <br />
 
-        <li><strong> Active Removal </strong></li>
+        <li>
+          <strong class="underline underline-offset-1"> Active Removal </strong>
+        </li>
         <li>
           <strong>Active removal (Y/N): </strong>{feature["ActiveRemoval_YN"]}
         </li>
@@ -149,7 +159,7 @@
         </li>
         <br />
 
-        <li><strong>General</strong></li>
+        <li><strong class="underline underline-offset-1">General</strong></li>
         <li>
           <strong
             >References: Subsequent records (Surname, journal short form,
