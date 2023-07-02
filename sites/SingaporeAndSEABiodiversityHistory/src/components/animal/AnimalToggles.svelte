@@ -17,6 +17,22 @@
     setExtinction,
     setActiveRemoval,
   } from "../../store/animals.js";
+  import {
+    analyticalMaps,
+    toggleFaunaAves,
+    toggleFaunaFreshwater,
+    toggleFaunaMarine,
+    toggleFaunaTerrestrial,
+    toggleIntroConsumption,
+    toggleIntroCorridor,
+    toggleIntroFishing,
+    toggleIntroPet,
+    toggleIntroPlant,
+    toggleIntroStowaway,
+    toggleIntroUnknown,
+    toggleOthersActiveRemoval,
+    toggleOthersExtinction,
+  } from "../../store/animalLayers.js";
 
   export let toggleMap: () => void;
 </script>
@@ -224,5 +240,184 @@
     >
       Extinct
     </button>
+
+    <h4>2. Maps with analysis.</h4>
+
+    <h4>Description</h4>
+
+    <body>
+      Information from the SSRTG project database and other relevant reliable
+      sources are used to generate these maps which support the visual analysis
+      of the data for research and exploration. The study area has been broken
+      down into transverse hexagonal tessellations for consistency and summary
+      maps of count and mean year of first published record for established
+      species for respective fauna types, introductory pathways, and other
+      information are generated.
+    </body>
+
+    <h4>Legend</h4>
+
+    <img src="/public/assets/Legend-SpeciesMaps.png" alt="legend" />
+
+    <h4>Fauna types:</h4>
+
+    <div class="flex items-center">
+      <input
+        id="aves-fauna-map"
+        type="checkbox"
+        checked={$analyticalMaps.faunaAves.visible}
+        class="checkbox"
+        on:change={toggleFaunaAves}
+      />
+      <label for="aves-fauna-map" class="ml-2">Aves</label>
+    </div>
+
+    <div class="flex items-center">
+      <input
+        id="aves-freshwater-map"
+        type="checkbox"
+        checked={$analyticalMaps.faunaFreshwater.visible}
+        class="checkbox"
+        on:change={toggleFaunaFreshwater}
+      />
+      <label for="aves-freshwater-map" class="ml-2">Freshwater</label>
+    </div>
+
+    <div class="flex items-center">
+      <input
+        id="aves-marine-map"
+        type="checkbox"
+        checked={$analyticalMaps.faunaMarine.visible}
+        class="checkbox"
+        on:change={toggleFaunaMarine}
+      />
+      <label for="aves-marine-map" class="ml-2">Marine</label>
+    </div>
+
+    <div class="flex items-center">
+      <input
+        id="aves-terrestrial-map"
+        type="checkbox"
+        checked={$analyticalMaps.faunaTerrestrial.visible}
+        class="checkbox"
+        on:change={toggleFaunaTerrestrial}
+      />
+      <label for="aves-terrestrial-map" class="ml-2">Terrestrial</label>
+    </div>
+
+    <h4>
+      Introductory pathways (note that the biological control introductory
+      pathway does not have established species with known locality):
+    </h4>
+
+    <div class="flex items-center">
+      <input
+        id="intro-plant-trade-map"
+        type="checkbox"
+        checked={$analyticalMaps.introPlant.visible}
+        class="checkbox"
+        on:change={toggleIntroPlant}
+      />
+      <label for="intro-plant-trade-map" class="ml-2">Plant Trade</label>
+    </div>
+
+    <div class="flex items-center">
+      <input
+        id="intro-consumption-trade-map"
+        type="checkbox"
+        checked={$analyticalMaps.introConsumption.visible}
+        class="checkbox"
+        on:change={toggleIntroConsumption}
+      />
+      <label for="intro-consumption-trade-map" class="ml-2">Consumption</label>
+    </div>
+
+    <div class="flex items-center">
+      <input
+        id="intro-pet-trade-map"
+        type="checkbox"
+        checked={$analyticalMaps.introPet.visible}
+        class="checkbox"
+        on:change={toggleIntroPet}
+      />
+      <label for="intro-pet-trade-map" class="ml-2">Pet Trade</label>
+    </div>
+
+    <div class="flex items-center">
+      <input
+        id="intro-fishing-map"
+        type="checkbox"
+        checked={$analyticalMaps.introFishing.visible}
+        class="checkbox"
+        on:change={toggleIntroFishing}
+      />
+      <label for="intro-fishing-map" class="ml-2">Fishing</label>
+    </div>
+
+    <div class="flex items-center">
+      <input
+        id="intro-stowaway-map"
+        type="checkbox"
+        checked={$analyticalMaps.introStowaway.visible}
+        class="checkbox"
+        on:change={toggleIntroStowaway}
+      />
+      <label for="intro-stowaway-map" class="ml-2">Stowaway</label>
+    </div>
+
+    <div class="flex items-center">
+      <input
+        id="intro-corridor-map"
+        type="checkbox"
+        checked={$analyticalMaps.introCorridor.visible}
+        class="checkbox"
+        on:change={toggleIntroCorridor}
+      />
+      <label for="intro-corridor-map" class="ml-2">Corridor</label>
+    </div>
+
+    <div class="flex items-center">
+      <input
+        id="intro-unknown-map"
+        type="checkbox"
+        checked={$analyticalMaps.introUnknown.visible}
+        class="checkbox"
+        on:change={toggleIntroUnknown}
+      />
+      <label for="intro-unknown-map" class="ml-2">Unknown</label>
+    </div>
+
+    <h4>
+      Other supplementary information which may be useful for further analysis
+      include:
+    </h4>
+
+    <div class="flex items-center">
+      <input
+        id="other-extinction-map"
+        type="checkbox"
+        checked={$analyticalMaps.othersExtinction.visible}
+        class="checkbox"
+        on:change={toggleOthersExtinction}
+      />
+      <label for="other-extinction-map" class="ml-2">
+        Extinction (instead of count, year of extinction is considered where
+        before 1965 would be the lower bound and 1965 onwards would be the upper
+        bound)
+      </label>
+    </div>
+
+    <div class="flex items-center">
+      <input
+        id="other-active-removal-map"
+        type="checkbox"
+        checked={$analyticalMaps.othersActiveRemoval.visible}
+        class="checkbox"
+        on:change={toggleOthersActiveRemoval}
+      />
+      <label for="other-active-removal-map" class="ml-2">
+        Active Removal
+      </label>
+    </div>
   </article>
 </div>

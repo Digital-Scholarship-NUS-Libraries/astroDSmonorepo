@@ -1,0 +1,107 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 0,
+      "properties": {
+        "OBJECTID": 1,
+        "COUNT": 1,
+        "Mean_YearOfFirstPublishedRecords": 1997,
+        "Min_YearOfFirstPublishedRecords": 1997,
+        "Max_YearOfFirstPublishedRecords": 1997,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#de4fa6",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.83057430300005,
+              1.380048315000067
+            ],
+            [
+              103.82207908200007,
+              1.375143597000033
+            ],
+            [
+              103.82207908200007,
+              1.365334160000032
+            ],
+            [
+              103.83057430300005,
+              1.360429442000054
+            ],
+            [
+              103.83906952400008,
+              1.365334160000032
+            ],
+            [
+              103.83906952400008,
+              1.375143597000033
+            ],
+            [
+              103.83057430300005,
+              1.380048315000067
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1,
+      "properties": {
+        "OBJECTID": 2,
+        "COUNT": 1,
+        "Mean_YearOfFirstPublishedRecords": 2012,
+        "Min_YearOfFirstPublishedRecords": 2012,
+        "Max_YearOfFirstPublishedRecords": 2012,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#de4fa6",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.79659341800004,
+              1.409476625000025
+            ],
+            [
+              103.78809819700007,
+              1.404571907000047
+            ],
+            [
+              103.78809819700007,
+              1.394762470000046
+            ],
+            [
+              103.79659341800004,
+              1.389857752000069
+            ],
+            [
+              103.80508863900008,
+              1.394762470000046
+            ],
+            [
+              103.80508863900008,
+              1.404571907000047
+            ],
+            [
+              103.79659341800004,
+              1.409476625000025
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

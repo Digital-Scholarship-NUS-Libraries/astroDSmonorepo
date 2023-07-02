@@ -1,0 +1,617 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": 0,
+      "properties": {
+        "OBJECTID": 1,
+        "COUNT": 1,
+        "Mean_YearOfFirstPublishedRecords": 2009,
+        "Min_YearOfFirstPublishedRecords": 2009,
+        "Max_YearOfFirstPublishedRecords": 2009,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#de4fa6",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.99198350600005,
+              1.42419078000006
+            ],
+            [
+              103.98348828500008,
+              1.419286061000037
+            ],
+            [
+              103.98348828500008,
+              1.409476625000025
+            ],
+            [
+              103.99198350600005,
+              1.404571907000047
+            ],
+            [
+              104.00047872800008,
+              1.409476625000025
+            ],
+            [
+              104.00047872800008,
+              1.419286061000037
+            ],
+            [
+              103.99198350600005,
+              1.42419078000006
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 1,
+      "properties": {
+        "OBJECTID": 2,
+        "COUNT": 1,
+        "Mean_YearOfFirstPublishedRecords": 2018,
+        "Min_YearOfFirstPublishedRecords": 2018,
+        "Max_YearOfFirstPublishedRecords": 2018,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#de4fa6",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.75411731200006,
+              1.453619089000028
+            ],
+            [
+              103.74562209100009,
+              1.448714371000051
+            ],
+            [
+              103.74562209100009,
+              1.43890493400005
+            ],
+            [
+              103.75411731200006,
+              1.434000216000072
+            ],
+            [
+              103.76261253300004,
+              1.43890493400005
+            ],
+            [
+              103.76261253300004,
+              1.448714371000051
+            ],
+            [
+              103.75411731200006,
+              1.453619089000028
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 2,
+      "properties": {
+        "OBJECTID": 3,
+        "COUNT": 1,
+        "Mean_YearOfFirstPublishedRecords": 2006,
+        "Min_YearOfFirstPublishedRecords": 2006,
+        "Max_YearOfFirstPublishedRecords": 2006,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#de4fa6",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.91552651500007,
+              1.409476625000025
+            ],
+            [
+              103.90703129400003,
+              1.404571907000047
+            ],
+            [
+              103.90703129400003,
+              1.394762470000046
+            ],
+            [
+              103.91552651500007,
+              1.389857752000069
+            ],
+            [
+              103.92402173700003,
+              1.394762470000046
+            ],
+            [
+              103.92402173700003,
+              1.404571907000047
+            ],
+            [
+              103.91552651500007,
+              1.409476625000025
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 3,
+      "properties": {
+        "OBJECTID": 4,
+        "COUNT": 1,
+        "Mean_YearOfFirstPublishedRecords": 2016,
+        "Min_YearOfFirstPublishedRecords": 2016,
+        "Max_YearOfFirstPublishedRecords": 2016,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#de4fa6",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.83906952400008,
+              1.218192613000042
+            ],
+            [
+              103.83057430300005,
+              1.213287894000075
+            ],
+            [
+              103.83057430300005,
+              1.203478458000063
+            ],
+            [
+              103.83906952400008,
+              1.198573740000029
+            ],
+            [
+              103.84756474600005,
+              1.203478458000063
+            ],
+            [
+              103.84756474600005,
+              1.213287894000075
+            ],
+            [
+              103.83906952400008,
+              1.218192613000042
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 4,
+      "properties": {
+        "OBJECTID": 5,
+        "COUNT": 1,
+        "Mean_YearOfFirstPublishedRecords": 2009,
+        "Min_YearOfFirstPublishedRecords": 2009,
+        "Max_YearOfFirstPublishedRecords": 2009,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#de4fa6",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.72013642700006,
+              1.453619089000028
+            ],
+            [
+              103.71164120600008,
+              1.448714371000051
+            ],
+            [
+              103.71164120600008,
+              1.43890493400005
+            ],
+            [
+              103.72013642700006,
+              1.434000216000072
+            ],
+            [
+              103.72863164800003,
+              1.43890493400005
+            ],
+            [
+              103.72863164800003,
+              1.448714371000051
+            ],
+            [
+              103.72013642700006,
+              1.453619089000028
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 5,
+      "properties": {
+        "OBJECTID": 6,
+        "COUNT": 1,
+        "Mean_YearOfFirstPublishedRecords": 2009,
+        "Min_YearOfFirstPublishedRecords": 2009,
+        "Max_YearOfFirstPublishedRecords": 2009,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#de4fa6",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.94101217900004,
+              1.394762470000046
+            ],
+            [
+              103.93251695800006,
+              1.389857752000069
+            ],
+            [
+              103.93251695800006,
+              1.380048315000067
+            ],
+            [
+              103.94101217900004,
+              1.375143597000033
+            ],
+            [
+              103.94950740000007,
+              1.380048315000067
+            ],
+            [
+              103.94950740000007,
+              1.389857752000069
+            ],
+            [
+              103.94101217900004,
+              1.394762470000046
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 6,
+      "properties": {
+        "OBJECTID": 7,
+        "COUNT": 1,
+        "Mean_YearOfFirstPublishedRecords": 2009,
+        "Min_YearOfFirstPublishedRecords": 2009,
+        "Max_YearOfFirstPublishedRecords": 2009,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#de4fa6",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.84756474600005,
+              1.232906767000031
+            ],
+            [
+              103.83906952400008,
+              1.228002049000054
+            ],
+            [
+              103.83906952400008,
+              1.218192613000042
+            ],
+            [
+              103.84756474600005,
+              1.213287894000075
+            ],
+            [
+              103.85605996700008,
+              1.218192613000042
+            ],
+            [
+              103.85605996700008,
+              1.228002049000054
+            ],
+            [
+              103.84756474600005,
+              1.232906767000031
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 7,
+      "properties": {
+        "OBJECTID": 8,
+        "COUNT": 2,
+        "Mean_YearOfFirstPublishedRecords": 2009,
+        "Min_YearOfFirstPublishedRecords": 2009,
+        "Max_YearOfFirstPublishedRecords": 2009,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#2a1a8a",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.98348828500008,
+              1.409476625000025
+            ],
+            [
+              103.97499306400005,
+              1.404571907000047
+            ],
+            [
+              103.97499306400005,
+              1.394762470000046
+            ],
+            [
+              103.98348828500008,
+              1.389857752000069
+            ],
+            [
+              103.99198350600005,
+              1.394762470000046
+            ],
+            [
+              103.99198350600005,
+              1.404571907000047
+            ],
+            [
+              103.98348828500008,
+              1.409476625000025
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 8,
+      "properties": {
+        "OBJECTID": 9,
+        "COUNT": 1,
+        "Mean_YearOfFirstPublishedRecords": 2006,
+        "Min_YearOfFirstPublishedRecords": 2006,
+        "Max_YearOfFirstPublishedRecords": 2006,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#de4fa6",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.86455518800005,
+              1.321191696000028
+            ],
+            [
+              103.85605996700008,
+              1.316286978000051
+            ],
+            [
+              103.85605996700008,
+              1.306477541000049
+            ],
+            [
+              103.86455518800005,
+              1.301572823000072
+            ],
+            [
+              103.87305040900009,
+              1.306477541000049
+            ],
+            [
+              103.87305040900009,
+              1.316286978000051
+            ],
+            [
+              103.86455518800005,
+              1.321191696000028
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 9,
+      "properties": {
+        "OBJECTID": 10,
+        "COUNT": 1,
+        "Mean_YearOfFirstPublishedRecords": 2013,
+        "Min_YearOfFirstPublishedRecords": 2013,
+        "Max_YearOfFirstPublishedRecords": 2013,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#de4fa6",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              104.01746917000008,
+              1.380048315000067
+            ],
+            [
+              104.00897394900005,
+              1.375143597000033
+            ],
+            [
+              104.00897394900005,
+              1.365334160000032
+            ],
+            [
+              104.01746917000008,
+              1.360429442000054
+            ],
+            [
+              104.02596439100006,
+              1.365334160000032
+            ],
+            [
+              104.02596439100006,
+              1.375143597000033
+            ],
+            [
+              104.01746917000008,
+              1.380048315000067
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 10,
+      "properties": {
+        "OBJECTID": 11,
+        "COUNT": 1,
+        "Mean_YearOfFirstPublishedRecords": 1995,
+        "Min_YearOfFirstPublishedRecords": 1995,
+        "Max_YearOfFirstPublishedRecords": 1995,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#de4fa6",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              103.73712687000005,
+              1.453619089000028
+            ],
+            [
+              103.72863164800003,
+              1.448714371000051
+            ],
+            [
+              103.72863164800003,
+              1.43890493400005
+            ],
+            [
+              103.73712687000005,
+              1.434000216000072
+            ],
+            [
+              103.74562209100009,
+              1.43890493400005
+            ],
+            [
+              103.74562209100009,
+              1.448714371000051
+            ],
+            [
+              103.73712687000005,
+              1.453619089000028
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": 11,
+      "properties": {
+        "OBJECTID": 12,
+        "COUNT": 1,
+        "Mean_YearOfFirstPublishedRecords": 2012,
+        "Min_YearOfFirstPublishedRecords": 2012,
+        "Max_YearOfFirstPublishedRecords": 2012,
+        "stroke": "#555555",
+        "stroke-width": 2,
+        "stroke-opacity": 1,
+        "fill": "#de4fa6",
+        "fill-opacity": 0.5
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              104.00897394900005,
+              1.394762470000046
+            ],
+            [
+              104.00047872800008,
+              1.389857752000069
+            ],
+            [
+              104.00047872800008,
+              1.380048315000067
+            ],
+            [
+              104.00897394900005,
+              1.375143597000033
+            ],
+            [
+              104.01746917000008,
+              1.380048315000067
+            ],
+            [
+              104.01746917000008,
+              1.389857752000069
+            ],
+            [
+              104.00897394900005,
+              1.394762470000046
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

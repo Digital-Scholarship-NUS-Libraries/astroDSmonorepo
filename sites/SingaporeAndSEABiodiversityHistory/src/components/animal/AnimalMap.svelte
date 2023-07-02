@@ -1,6 +1,8 @@
 <script lang="ts">
   import { MapLibre } from "svelte-maplibre";
   import Animals from "./layers/Animals.svelte";
+  import AnalyticalMap from "./layers/AnalyticalMap.svelte";
+  import { analyticalMaps } from "../../store/animalLayers";
 </script>
 
 <div>
@@ -16,5 +18,11 @@
     standardControls
   >
     <Animals />
+
+    {#each Object.entries($analyticalMaps) as [key, analyticalMap]}
+      {#if analyticalMap.visible}
+        <AnalyticalMap layer={analyticalMap.geoJSON} />
+      {/if}
+    {/each}
   </MapLibre>
 </div>
