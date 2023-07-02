@@ -1,21 +1,21 @@
 <script lang="ts">
   import {
     filterAttributes,
-    setFaunaAves,
-    setFaunaFreshwater,
-    setFaunaMarine,
-    setFaunaTerrestrial,
-    setIntroPathwayAgricultural,
-    setIntroPathwayBiological,
-    setIntroPathwayConsumption,
-    setIntroPathwayCorridor,
-    setIntroPathwayFishing,
-    setIntroPathwayHorticultural,
-    setIntroPathwayMercyRelease,
-    setIntroPathwayPetTrade,
-    setIntroPathwayTransport,
-    setExtinction,
-    setActiveRemoval,
+    toggleFaunaAves,
+    toggleFaunaFreshwater,
+    toggleFaunaMarine,
+    toggleFaunaTerrestrial,
+    toggleIntroPathwayAgricultural,
+    toggleIntroPathwayBiological,
+    toggleIntroPathwayConsumption,
+    toggleIntroPathwayCorridor,
+    toggleIntroPathwayFishing,
+    toggleIntroPathwayHorticultural,
+    toggleIntroPathwayMercyRelease,
+    toggleIntroPathwayPetTrade,
+    toggleIntroPathwayTransport,
+    toggleExtinction,
+    toggleActiveRemoval,
   } from "../../store/animals.js";
   import {
     analyticals,
@@ -96,7 +96,7 @@
       class={$filterAttributes.fauna.aves
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setFaunaAves}
+      on:click={toggleFaunaAves}
     >
       Aves
     </button>
@@ -105,7 +105,7 @@
       class={$filterAttributes.fauna.freshwater
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setFaunaFreshwater}
+      on:click={toggleFaunaFreshwater}
     >
       Freshwater
     </button>
@@ -114,7 +114,7 @@
       class={$filterAttributes.fauna.marine
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setFaunaMarine}
+      on:click={toggleFaunaMarine}
     >
       Marine
     </button>
@@ -123,7 +123,7 @@
       class={$filterAttributes.fauna.terrestrial
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setFaunaTerrestrial}
+      on:click={toggleFaunaTerrestrial}
     >
       Terrestrial
     </button>
@@ -134,7 +134,7 @@
       class={$filterAttributes.introPathway.agricultural
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-400"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setIntroPathwayAgricultural}
+      on:click={toggleIntroPathwayAgricultural}
     >
       Agricultural
     </button>
@@ -143,7 +143,7 @@
       class={$filterAttributes.introPathway.biological
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setIntroPathwayBiological}
+      on:click={toggleIntroPathwayBiological}
     >
       Biological
     </button>
@@ -152,7 +152,7 @@
       class={$filterAttributes.introPathway.consumption
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setIntroPathwayConsumption}
+      on:click={toggleIntroPathwayConsumption}
     >
       Consumption
     </button>
@@ -161,7 +161,7 @@
       class={$filterAttributes.introPathway.corridor
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setIntroPathwayCorridor}
+      on:click={toggleIntroPathwayCorridor}
     >
       Corridor
     </button>
@@ -170,7 +170,7 @@
       class={$filterAttributes.introPathway.fishing
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setIntroPathwayFishing}
+      on:click={toggleIntroPathwayFishing}
     >
       Fishing
     </button>
@@ -179,7 +179,7 @@
       class={$filterAttributes.introPathway.horticultural
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setIntroPathwayHorticultural}
+      on:click={toggleIntroPathwayHorticultural}
     >
       Horticultural
     </button>
@@ -188,7 +188,7 @@
       class={$filterAttributes.introPathway.mercyRelease
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setIntroPathwayMercyRelease}
+      on:click={toggleIntroPathwayMercyRelease}
     >
       Mercy Release
     </button>
@@ -197,7 +197,7 @@
       class={$filterAttributes.introPathway.petTrade
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setIntroPathwayPetTrade}
+      on:click={toggleIntroPathwayPetTrade}
     >
       Pet Trade
     </button>
@@ -206,7 +206,7 @@
       class={$filterAttributes.introPathway.transport
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setIntroPathwayTransport}
+      on:click={toggleIntroPathwayTransport}
     >
       Transport
     </button>
@@ -217,7 +217,7 @@
       class={$filterAttributes.activeRemoval
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setActiveRemoval}
+      on:click={toggleActiveRemoval}
     >
       Active Removal
     </button>
@@ -226,7 +226,7 @@
       class={$filterAttributes.extinction
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setExtinction}
+      on:click={toggleExtinction}
     >
       Extinct
     </button>

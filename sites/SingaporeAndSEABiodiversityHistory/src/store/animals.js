@@ -64,7 +64,7 @@ export const filteredAnimals = derived(
   }
 )
 
-export const setFaunaAves = () => {
+export const toggleFaunaAves = () => {
   filterAttributes.update(attr => ({
     ...attr,
     fauna: {
@@ -74,7 +74,7 @@ export const setFaunaAves = () => {
   }))
 }
 
-export const setFaunaFreshwater = () => {
+export const toggleFaunaFreshwater = () => {
   filterAttributes.update(attr => ({
     ...attr,
     fauna: {
@@ -84,7 +84,7 @@ export const setFaunaFreshwater = () => {
   }))
 }
 
-export const setFaunaMarine = () => {
+export const toggleFaunaMarine = () => {
   filterAttributes.update(attr => ({
     ...attr,
     fauna: {
@@ -94,7 +94,7 @@ export const setFaunaMarine = () => {
   }))
 }
 
-export const setFaunaTerrestrial = () => {
+export const toggleFaunaTerrestrial = () => {
   filterAttributes.update(attr => ({
     ...attr,
     fauna: {
@@ -104,7 +104,7 @@ export const setFaunaTerrestrial = () => {
   }))
 }
 
-export const setIntroPathwayAgricultural = () => {
+export const toggleIntroPathwayAgricultural = () => {
   filterAttributes.update(attr => ({
     ...attr,
     introPathway: {
@@ -114,7 +114,7 @@ export const setIntroPathwayAgricultural = () => {
   }))
 }
 
-export const setIntroPathwayBiological = () => {
+export const toggleIntroPathwayBiological = () => {
   filterAttributes.update(attr => ({
     ...attr,
     introPathway: {
@@ -124,7 +124,7 @@ export const setIntroPathwayBiological = () => {
   }))
 }
 
-export const setIntroPathwayConsumption = () => {
+export const toggleIntroPathwayConsumption = () => {
   filterAttributes.update(attr => ({
     ...attr,
     introPathway: {
@@ -134,7 +134,7 @@ export const setIntroPathwayConsumption = () => {
   }))
 }
 
-export const setIntroPathwayCorridor = () => {
+export const toggleIntroPathwayCorridor = () => {
   filterAttributes.update(attr => ({
     ...attr,
     introPathway: {
@@ -144,7 +144,7 @@ export const setIntroPathwayCorridor = () => {
   }))
 }
 
-export const setIntroPathwayFishing = () => {
+export const toggleIntroPathwayFishing = () => {
   filterAttributes.update(attr => ({
     ...attr,
     introPathway: {
@@ -154,7 +154,7 @@ export const setIntroPathwayFishing = () => {
   }))
 }
 
-export const setIntroPathwayHorticultural = () => {
+export const toggleIntroPathwayHorticultural = () => {
   filterAttributes.update(attr => ({
     ...attr,
     introPathway: {
@@ -164,7 +164,7 @@ export const setIntroPathwayHorticultural = () => {
   }))
 }
 
-export const setIntroPathwayMercyRelease = () => {
+export const toggleIntroPathwayMercyRelease = () => {
   filterAttributes.update(attr => ({
     ...attr,
     introPathway: {
@@ -174,7 +174,7 @@ export const setIntroPathwayMercyRelease = () => {
   }))
 }
 
-export const setIntroPathwayPetTrade = () => {
+export const toggleIntroPathwayPetTrade = () => {
   filterAttributes.update(attr => ({
     ...attr,
     introPathway: {
@@ -184,7 +184,7 @@ export const setIntroPathwayPetTrade = () => {
   }))
 }
 
-export const setIntroPathwayTransport = () => {
+export const toggleIntroPathwayTransport = () => {
   filterAttributes.update(attr => ({
     ...attr,
     introPathway: {
@@ -194,14 +194,14 @@ export const setIntroPathwayTransport = () => {
   }))
 }
 
-export const setExtinction = () => {
+export const toggleExtinction = () => {
   filterAttributes.update(attr => ({
     ...attr,
     extinction: !attr.extinction
   }))
 }
 
-export const setActiveRemoval = () => {
+export const toggleActiveRemoval = () => {
   filterAttributes.update(attr => ({
     ...attr,
     activeRemoval: !attr.activeRemoval
