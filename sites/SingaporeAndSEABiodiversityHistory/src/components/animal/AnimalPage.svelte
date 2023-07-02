@@ -1,7 +1,7 @@
 <script lang="ts">
   import AnimalMap from "./AnimalMap.svelte";
+  import AnimalSidebar from "./AnimalSidebar.svelte";
   import AnimalTable from "./AnimalTable.svelte";
-  import AnimalToggles from "./AnimalToggles.svelte";
 
   let showMap: boolean = true;
 </script>
@@ -18,6 +18,6 @@
   {/if}
 
   <div class="w-4/12">
-    <AnimalToggles toggleMap={() => (showMap = !showMap)} />
+    <AnimalSidebar toggleMap={() => (showMap = !showMap)} />
   </div>
 </div>
