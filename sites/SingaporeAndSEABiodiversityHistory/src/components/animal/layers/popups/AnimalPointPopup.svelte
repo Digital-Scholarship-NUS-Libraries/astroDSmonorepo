@@ -10,7 +10,7 @@
   {#if closeButtonVisible}
     <button class="mb-2 top-2 left-2" on:click={onClose}>X</button>
   {/if}
-  <div class="max-h-80 w-80 overflow-y-scroll">
+  <div class="max-h-80 w-80 overflow-y-scroll overscroll-contain">
     {#if feature}
       <ul>
         <strong class="underline underline-offset-1">General</strong>

@@ -20,7 +20,7 @@
   let pointFeature = null;
 </script>
 
-<div class="max-h-80 w-80 overflow-y-scroll">
+<div class="max-h-80 w-80 overflow-y-scroll overscroll-contain">
   <ul>
     {#each innerFeatures as feat}
       {#if feat}
