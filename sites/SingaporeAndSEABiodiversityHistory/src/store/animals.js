@@ -62,6 +62,12 @@ export const filteredAnimals = derived(
   }
 )
 
+export const animalsVisibility = writable(true);
+
+export const toggleAnimalsVisibility = () => {
+  animalsVisibility.update(visibility => !visibility)
+}
+
 export const toggleFaunaAves = () => {
   filterAttributes.update(attr => ({
     ...attr,

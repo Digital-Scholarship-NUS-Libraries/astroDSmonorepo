@@ -1,6 +1,8 @@
 <script lang="ts">
   import {
     filterAttributes,
+    animalsVisibility,
+    toggleAnimalsVisibility,
     toggleFaunaAves,
     toggleFaunaFreshwater,
     toggleFaunaMarine,
@@ -56,6 +58,19 @@
         Museum.
       </li>
     </ul>
+
+    <div class="flex items-center">
+      <input
+        id="animal-visible"
+        type="checkbox"
+        checked={$animalsVisibility}
+        class="checkbox"
+        on:change={toggleAnimalsVisibility}
+      />
+      <label for="animal-visible" class="ml-2">Show Animals</label>
+    </div>
+
+    <img src="/public/assets/legend-points.png" alt="Animal legend" />
 
     <h4>Years (Largest Range: 1819 - 2023)</h4>
 
@@ -225,7 +240,7 @@
 
     <h4>Legend</h4>
 
-    <img src="/public/assets/Legend-SpeciesMaps.png" alt="legend" />
+    <img src="/public/assets/legend-species-maps.png" alt="legend" />
 
     <h4>Fauna Types</h4>
 
@@ -403,6 +418,6 @@
       </label>
     </div>
 
-    <img src="/public/assets/Legend-Ports.png" alt="Ports" />
+    <img src="/public/assets/legend-ports.png" alt="Ports" />
   </article>
 </div>
