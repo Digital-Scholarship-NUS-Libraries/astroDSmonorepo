@@ -3,23 +3,33 @@
   import { ports } from "../../../store/animalLayers";
 </script>
 
-{#if $ports.visible}
-  <GeoJSON data={$ports.geoJSON}>
+<GeoJSON data={$ports.geoJSON}>
+  {#if $ports.visible}
     <MarkerLayer interactive let:feature>
       <div>
-        <svg height="24" viewBox="0 0 24 24">
+        <svg height="40" viewBox="1.5 -1.75 39 45.75">
           <path
+            stroke="#7F7F7F"
+            stroke-width="3"
             fill={feature.properties?.["marker-color"]}
-            d="M14 11.5A2.5 2.5 0 0 0 16.5 9A2.5 2.5 0 0 0 14 6.5A2.5 2.5 0 0 0 11.5 9a2.5 2.5 0 0 0 2.5 2.5M14 2c3.86 0 7 3.13 7 7c0 5.25-7 13-7 13S7 14.25 7 9a7 7 0 0 1 7-7M5 9c0 4.5 5.08 10.66 6 11.81L10 22S3 14.25 3 9c0-3.17 2.11-5.85 5-6.71C6.16 3.94 5 6.33 5 9Z"
+            d="M 21 41 L 4.5 34.375 L 4.5 7.875 C 4.5 4.215 11.8875 1.25 21 1.25 C 30.1125 1.25 37.5 4.215 37.5 7.875 L 37.5 34.375 Z"
           />
         </svg>
       </div>
-      <Popup openOn="hover">
+      <Popup openOn="click">
         <ul>
-          <li>{feature.properties?.["PortName"]}</li>
-          <li>{feature.properties?.["PortType"]}</li>
+          <li>
+            <strong>Port name: </strong>{feature.properties?.["PortName"]}
+          </li>
+          <li>
+            <strong>Port type: </strong>{feature.properties?.["PortType"]}
+          </li>
+          <li>
+            <strong>Year Established: </strong>
+            {feature.properties?.["YearEstablished"]}
+          </li>
         </ul>
       </Popup>
     </MarkerLayer>
-  </GeoJSON>
-{/if}
+  {/if}
+</GeoJSON>
