@@ -1,19 +1,19 @@
 import { derived, writable } from 'svelte/store';
 import { filteredAnimals, filterAttributes } from "./animals";
-import FaunaAves from "/public/data/geojsons/FaunaAves.json";
-import FaunaFreshwater from "/public/data/geojsons/FaunaFreshwater.json";
-import FaunaMarine from "/public/data/geojsons/FaunaMarine.json";
-import FaunaTerrestrial from "/public/data/geojsons/FaunaTerrestrial.json";
-import IntroConsumption from "/public/data/geojsons/IntroConsumption.json";
-import IntroCorridor from "/public/data/geojsons/IntroCorridor.json";
-import IntroFishing from "/public/data/geojsons/IntroFishing.json";
-import IntroPet from "/public/data/geojsons/IntroPet.json";
-import IntroPlant from "/public/data/geojsons/IntroPlant.json";
-import IntroStowaway from "/public/data/geojsons/IntroStowaway.json";
-import IntroUnknown from "/public/data/geojsons/IntroUnknown.json";
-import OthersActiveRemoval from "/public/data/geojsons/OthersActiveRemoval.json";
-import OthersExtinction from "/public/data/geojsons/OthersExtinction.json";
-import SupplementaryPortsAroundSG from "/public/data/geojsons/SupplementaryPortsAroundSG.json";
+import FaunaAves from "/src/data/geojsons/FaunaAves.json";
+import FaunaFreshwater from "/src/data/geojsons/FaunaFreshwater.json";
+import FaunaMarine from "/src/data/geojsons/FaunaMarine.json";
+import FaunaTerrestrial from "/src/data/geojsons/FaunaTerrestrial.json";
+import IntroConsumption from "/src/data/geojsons/IntroConsumption.json";
+import IntroCorridor from "/src/data/geojsons/IntroCorridor.json";
+import IntroFishing from "/src/data/geojsons/IntroFishing.json";
+import IntroPet from "/src/data/geojsons/IntroPet.json";
+import IntroPlant from "/src/data/geojsons/IntroPlant.json";
+import IntroStowaway from "/src/data/geojsons/IntroStowaway.json";
+import IntroUnknown from "/src/data/geojsons/IntroUnknown.json";
+import OthersActiveRemoval from "/src/data/geojsons/OthersActiveRemoval.json";
+import OthersExtinction from "/src/data/geojsons/OthersExtinction.json";
+import SupplementaryPortsAroundSG from "/src/data/geojsons/SupplementaryPortsAroundSG.json";
 
 
 export const animals = derived(

@@ -4,8 +4,10 @@
   export let toggleMap: () => void;
 </script>
 
-<div class="flex flex-col h-full">
-  <img src="/public/assets/animal-banner.jpg" alt="animal-banner" />
+<div
+  class="flex flex-col h-full bg-repeat bg-contain bg-[url('/assets/animal-background.jpg')]"
+>
+  <img src="/assets/animal-banner.jpg" alt="animal-banner" />
 
   <label class="flex items-center justify-center pt-2 pb-2">
     <span>Data</span>
@@ -21,9 +23,4 @@
   <div class="overflow-y-scroll mr-4 ml-4 mb-2">
     <AnimalToggles />
   </div>
-
-  <div
-    class="absolute h-screen w-4/12 bg-repeat bg-contain opacity-10 flex flex-col"
-    style="z-index: -1; background-image: url('/public/assets/animal-background.jpg')"
-  />
 </div>

@@ -1,14 +1,14 @@
 [
   {
     "text": "Introduction",
-    "url": "/"
+    "url": ""
   },
   {
     "text": "Animal Map",
-    "url": "/map/animal"
+    "url": "map/animal"
   },
   {
     "text": "Plant Map",
-    "url": "/map/plant"
+    "url": "map/plant"
   }
 ]

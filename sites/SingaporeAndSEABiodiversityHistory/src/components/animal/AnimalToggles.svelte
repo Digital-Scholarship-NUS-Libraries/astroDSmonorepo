@@ -83,8 +83,8 @@
 
       <button
         class={$filterAttributes.fauna.aves
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleFaunaAves}
       >
         Aves
@@ -92,8 +92,8 @@
 
       <button
         class={$filterAttributes.fauna.freshwater
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleFaunaFreshwater}
       >
         Freshwater
@@ -101,8 +101,8 @@
 
       <button
         class={$filterAttributes.fauna.marine
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleFaunaMarine}
       >
         Marine
@@ -110,8 +110,8 @@
 
       <button
         class={$filterAttributes.fauna.terrestrial
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleFaunaTerrestrial}
       >
         Terrestrial
@@ -121,8 +121,8 @@
 
       <button
         class={$filterAttributes.introPathway.biological
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleIntroPathwayBiological}
       >
         Biological
@@ -130,8 +130,8 @@
 
       <button
         class={$filterAttributes.introPathway.consumption
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleIntroPathwayConsumption}
       >
         Consumption
@@ -139,8 +139,8 @@
 
       <button
         class={$filterAttributes.introPathway.corridor
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleIntroPathwayCorridor}
       >
         Corridor
@@ -148,8 +148,8 @@
 
       <button
         class={$filterAttributes.introPathway.fishing
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleIntroPathwayFishing}
       >
         Fishing
@@ -157,8 +157,8 @@
 
       <button
         class={$filterAttributes.introPathway.petTrade
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleIntroPathwayPetTrade}
       >
         Pet Trade
@@ -166,8 +166,8 @@
 
       <button
         class={$filterAttributes.introPathway.plantTrade
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-400"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-400"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleIntroPathwayPlantTrade}
       >
         Plant Trade
@@ -175,8 +175,8 @@
 
       <button
         class={$filterAttributes.introPathway.hitchhiker
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleIntroPathwayHitchhiker}
       >
         Stowaway
@@ -184,8 +184,8 @@
 
       <button
         class={$filterAttributes.introPathway.unknown
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleIntroPathwayUnknown}
       >
         Unknown
@@ -195,8 +195,8 @@
 
       <button
         class={$filterAttributes.activeRemoval
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleActiveRemoval}
       >
         Active Removal
@@ -204,8 +204,8 @@
 
       <button
         class={$filterAttributes.extinction
-          ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-          : "btn btn-xs btn-outline hover:bg-gray-300"}
+          ? "btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+          : "btn-xs btn-outline hover:bg-gray-300"}
         on:click={toggleExtinction}
       >
         Extinct
@@ -227,7 +227,7 @@
 
       <h4>Legend</h4>
 
-      <img src="/public/assets/Legend-SpeciesMaps.png" alt="legend" />
+      <img src="/assets/Legend-SpeciesMaps.png" alt="legend" />
 
       <h4>Fauna Types</h4>
 
@@ -406,7 +406,7 @@
         </label>
       </div>
 
-      <img src="/public/assets/Legend-Ports.png" alt="Ports" />
+      <img src="/assets/Legend-Ports.png" alt="Ports" />
     </article>
   </div>
 </div>
