@@ -1,6 +1,6 @@
 <script lang="ts">
-  import PlantFilter from "./PlantFilter.svelte";
   import PlantTable from "./PlantTable.svelte";
+  import PlantSidebar from "./PlantSidebar.svelte";
 </script>
 
 <div class="flex h-screen">
@@ -9,6 +9,6 @@
   </div>
 
   <div class="w-4/12">
-    <PlantFilter />
+    <PlantSidebar toggleMap={() => {}} />
   </div>
 </div>
