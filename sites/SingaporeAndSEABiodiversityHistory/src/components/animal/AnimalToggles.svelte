@@ -295,17 +295,6 @@
 
     <div class="flex items-center">
       <input
-        id="intro-plant-trade-map"
-        type="checkbox"
-        checked={$analyticals.introPlant.visible}
-        class="checkbox"
-        on:change={analyticalsToggles.toggleIntroPlant}
-      />
-      <label for="intro-plant-trade-map" class="ml-2">Plant Trade</label>
-    </div>
-
-    <div class="flex items-center">
-      <input
         id="intro-consumption-trade-map"
         type="checkbox"
         checked={$analyticals.introConsumption.visible}
@@ -317,13 +306,13 @@
 
     <div class="flex items-center">
       <input
-        id="intro-pet-trade-map"
+        id="intro-corridor-map"
         type="checkbox"
-        checked={$analyticals.introPet.visible}
+        checked={$analyticals.introCorridor.visible}
         class="checkbox"
-        on:change={analyticalsToggles.toggleIntroPet}
+        on:change={analyticalsToggles.toggleIntroCorridor}
       />
-      <label for="intro-pet-trade-map" class="ml-2">Pet Trade</label>
+      <label for="intro-corridor-map" class="ml-2">Corridor</label>
     </div>
 
     <div class="flex items-center">
@@ -339,6 +328,28 @@
 
     <div class="flex items-center">
       <input
+        id="intro-pet-trade-map"
+        type="checkbox"
+        checked={$analyticals.introPet.visible}
+        class="checkbox"
+        on:change={analyticalsToggles.toggleIntroPet}
+      />
+      <label for="intro-pet-trade-map" class="ml-2">Pet Trade</label>
+    </div>
+
+    <div class="flex items-center">
+      <input
+        id="intro-plant-trade-map"
+        type="checkbox"
+        checked={$analyticals.introPlant.visible}
+        class="checkbox"
+        on:change={analyticalsToggles.toggleIntroPlant}
+      />
+      <label for="intro-plant-trade-map" class="ml-2">Plant Trade</label>
+    </div>
+
+    <div class="flex items-center">
+      <input
         id="intro-stowaway-map"
         type="checkbox"
         checked={$analyticals.introStowaway.visible}
@@ -346,17 +357,6 @@
         on:change={analyticalsToggles.toggleIntroStowaway}
       />
       <label for="intro-stowaway-map" class="ml-2">Stowaway</label>
-    </div>
-
-    <div class="flex items-center">
-      <input
-        id="intro-corridor-map"
-        type="checkbox"
-        checked={$analyticals.introCorridor.visible}
-        class="checkbox"
-        on:change={analyticalsToggles.toggleIntroCorridor}
-      />
-      <label for="intro-corridor-map" class="ml-2">Corridor</label>
     </div>
 
     <div class="flex items-center">
@@ -374,6 +374,19 @@
 
     <div class="flex items-center">
       <input
+        id="other-active-removal-map"
+        type="checkbox"
+        checked={$analyticals.othersActiveRemoval.visible}
+        class="checkbox"
+        on:change={analyticalsToggles.toggleOthersActiveRemoval}
+      />
+      <label for="other-active-removal-map" class="ml-2">
+        Active Removal
+      </label>
+    </div>
+
+    <div class="flex items-center mt-2">
+      <input
         id="other-extinction-map"
         type="checkbox"
         checked={$analyticals.othersExtinction.visible}
@@ -384,19 +397,6 @@
         Extinction (instead of count, year of extinction is considered where
         before 1965 would be the lower bound and 1965 onwards would be the upper
         bound)
-      </label>
-    </div>
-
-    <div class="flex items-center">
-      <input
-        id="other-active-removal-map"
-        type="checkbox"
-        checked={$analyticals.othersActiveRemoval.visible}
-        class="checkbox"
-        on:change={analyticalsToggles.toggleOthersActiveRemoval}
-      />
-      <label for="other-active-removal-map" class="ml-2">
-        Active Removal
       </label>
     </div>
 
