@@ -27,7 +27,7 @@
       applyToClusters
       hoverCursor="pointer"
       paint={{
-        "circle-color": "#ecbefa",
+        "circle-color": "#ffb805",
         "circle-radius": ["step", ["get", "point_count"], 20, 3, 30, 4, 40],
         "circle-stroke-width": 1,
         "circle-stroke-opacity": hoverStateFilter(0, 1),
