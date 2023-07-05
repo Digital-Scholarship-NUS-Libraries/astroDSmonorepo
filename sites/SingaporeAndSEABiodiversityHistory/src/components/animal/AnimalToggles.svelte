@@ -33,6 +33,11 @@
       records with location information (this layer is kept on by default).
     </h4>
 
+    <img
+      src={`${import.meta.env.BASE_URL}assets/legend-points.png`}
+      alt="Animal legend"
+    />
+
     <h4>Description</h4>
 
     <ul class="list-disc">
@@ -58,22 +63,6 @@
         Museum.
       </li>
     </ul>
-
-    <div class="flex items-center">
-      <input
-        id="animal-visible"
-        type="checkbox"
-        checked={$animalsVisibility}
-        class="checkbox"
-        on:change={toggleAnimalsVisibility}
-      />
-      <label for="animal-visible" class="ml-2">Show Animals</label>
-    </div>
-
-    <img
-      src={`${import.meta.env.BASE_URL}assets/legend-points.png`}
-      alt="Animal legend"
-    />
 
     <h4>Years (Largest Range: 1819 - 2023)</h4>
 
@@ -226,6 +215,17 @@
     >
       Extinct
     </button>
+
+    <div class="flex items-center mt-4">
+      <input
+        id="animal-visible"
+        type="checkbox"
+        checked={!$animalsVisibility}
+        class="checkbox"
+        on:change={toggleAnimalsVisibility}
+      />
+      <label for="animal-visible" class="ml-2">Hide Layer</label>
+    </div>
 
     <h4>2. Maps with analysis.</h4>
 
