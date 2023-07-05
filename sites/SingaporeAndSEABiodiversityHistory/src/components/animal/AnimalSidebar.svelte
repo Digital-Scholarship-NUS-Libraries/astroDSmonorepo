@@ -4,10 +4,16 @@
   export let toggleMap: () => void;
 </script>
 
+<!-- FIXME the base path is harcoded here instead of using import.meta.env.BASE_URL -->
+<!-- it could be that tailwind generates its classes before astro has replaced the value here -->
+<!-- the class we need wouldn't exist then, yet we still see the expected value in the generated code -->
 <div
-  class="flex flex-col h-full bg-repeat bg-contain bg-[url('/assets/animal-background.jpg')]"
+  class={`flex flex-col h-full bg-repeat bg-contain bg-[url('/nuslibraries/dsprojects/sea-biodiversity/assets/background-animal.jpg')]`}
 >
-  <img src="/assets/animal-banner.jpg" alt="animal-banner" />
+  <img
+    src={`${import.meta.env.BASE_URL}assets/banner-animal.jpg`}
+    alt="animal-banner"
+  />
 
   <label class="flex items-center justify-center pt-2 pb-2">
     <span>Data</span>

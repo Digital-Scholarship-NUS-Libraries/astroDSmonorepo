@@ -70,7 +70,10 @@
       <label for="animal-visible" class="ml-2">Show Animals</label>
     </div>
 
-    <img src="/assets/legend-points.png" alt="Animal legend" />
+    <img
+      src={`${import.meta.env.BASE_URL}assets/legend-points.png`}
+      alt="Animal legend"
+    />
 
     <h4>Years (Largest Range: 1819 - 2023)</h4>
 
@@ -96,7 +99,7 @@
 
     <button
       class={$filterAttributes.fauna.aves
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleFaunaAves}
     >
@@ -105,7 +108,7 @@
 
     <button
       class={$filterAttributes.fauna.freshwater
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleFaunaFreshwater}
     >
@@ -114,7 +117,7 @@
 
     <button
       class={$filterAttributes.fauna.marine
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleFaunaMarine}
     >
@@ -123,7 +126,7 @@
 
     <button
       class={$filterAttributes.fauna.terrestrial
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleFaunaTerrestrial}
     >
@@ -134,7 +137,7 @@
 
     <button
       class={$filterAttributes.introPathway.biological
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleIntroPathwayBiological}
     >
@@ -143,7 +146,7 @@
 
     <button
       class={$filterAttributes.introPathway.consumption
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleIntroPathwayConsumption}
     >
@@ -152,7 +155,7 @@
 
     <button
       class={$filterAttributes.introPathway.corridor
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleIntroPathwayCorridor}
     >
@@ -161,7 +164,7 @@
 
     <button
       class={$filterAttributes.introPathway.fishing
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleIntroPathwayFishing}
     >
@@ -170,7 +173,7 @@
 
     <button
       class={$filterAttributes.introPathway.petTrade
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleIntroPathwayPetTrade}
     >
@@ -179,7 +182,7 @@
 
     <button
       class={$filterAttributes.introPathway.plantTrade
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-400"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-400"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleIntroPathwayPlantTrade}
     >
@@ -188,7 +191,7 @@
 
     <button
       class={$filterAttributes.introPathway.hitchhiker
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleIntroPathwayHitchhiker}
     >
@@ -197,7 +200,7 @@
 
     <button
       class={$filterAttributes.introPathway.unknown
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleIntroPathwayUnknown}
     >
@@ -208,7 +211,7 @@
 
     <button
       class={$filterAttributes.activeRemoval
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleActiveRemoval}
     >
@@ -217,7 +220,7 @@
 
     <button
       class={$filterAttributes.extinction
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
       on:click={toggleExtinction}
     >
@@ -240,7 +243,10 @@
 
     <h4>Legend</h4>
 
-    <img src="/assets/legend-species-maps.png" alt="legend" />
+    <img
+      src={`${import.meta.env.BASE_URL}assets/legend-species-maps.png`}
+      alt="legend"
+    />
 
     <h4>Fauna Types</h4>
 
@@ -418,6 +424,9 @@
       </label>
     </div>
 
-    <img src="/assets/legend-ports.png" alt="Ports" />
+    <img
+      src={`${import.meta.env.BASE_URL}assets/legend-ports.png`}
+      alt="Ports"
+    />
   </article>
 </div>

@@ -35,23 +35,6 @@
     first = true;
   }
 
-  // Don't set the data again after we've just created it.
-  // $: if (sourceObj) {
-  //   if (first) {
-  //     first = false;
-  //   } else {
-  //     sourceObj.setData(data);
-  //   }
-  // }
-
-  // $: sourceObj?.setClusterOptions(
-  //   flush({
-  //     cluster: !!cluster,
-  //     clusterMaxZoom: cluster?.maxZoom,
-  //     clusterRadius: cluster?.radius,
-  //   })
-  // );
-
   onDestroy(() => {
     if ($source) {
       let sourceName = $source;
