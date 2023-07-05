@@ -21,7 +21,7 @@ export const filterAttributes = writable({
     corridor: true,
     fishing: true,
     petTrade: true,
-    hitchhiker: true,
+    stowaway: true,
     unknown: true,
   },
   extinction: false,
@@ -49,7 +49,7 @@ export const filteredAnimals = derived(
         (animal["Intro_all"].split(" | ").includes("Corridor") && $filterAttributes.introPathway.corridor) ||
         (animal["Intro_all"].split(" | ").includes("Fishing") && $filterAttributes.introPathway.fishing) ||
         (animal["Intro_all"].split(" | ").includes("Pet trade") && $filterAttributes.introPathway.petTrade) ||
-        (animal["Intro_all"].split(" | ").includes("Hitchhiker") && $filterAttributes.introPathway.hitchhiker) ||
+        (animal["Intro_all"].split(" | ").includes("Stowaway") && $filterAttributes.introPathway.stowaway) ||
         (animal["Intro_all"].split(" | ").includes("Unknown") && $filterAttributes.introPathway.unknown)
       ))
       .filter(animal => (
@@ -168,12 +168,12 @@ export const toggleIntroPathwayPetTrade = () => {
   }))
 }
 
-export const toggleIntroPathwayHitchhiker = () => {
+export const toggleIntroPathwayStowaway = () => {
   filterAttributes.update(attr => ({
     ...attr,
     introPathway: {
       ...attr.introPathway,
-      hitchhiker: !attr.introPathway.hitchhiker
+      stowaway: !attr.introPathway.stowaway
     }
   }))
 }

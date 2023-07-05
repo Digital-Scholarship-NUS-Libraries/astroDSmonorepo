@@ -15,7 +15,7 @@
     toggleIntroPathwayPetTrade,
     toggleExtinction,
     toggleActiveRemoval,
-    toggleIntroPathwayHitchhiker,
+    toggleIntroPathwayStowaway,
     toggleIntroPathwayUnknown,
   } from "../../store/animals.js";
   import {
@@ -179,10 +179,10 @@
     </button>
 
     <button
-      class={$filterAttributes.introPathway.hitchhiker
+      class={$filterAttributes.introPathway.stowaway
         ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={toggleIntroPathwayHitchhiker}
+      on:click={toggleIntroPathwayStowaway}
     >
       Stowaway
     </button>
