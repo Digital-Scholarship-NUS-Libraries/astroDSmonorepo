@@ -1,13 +1,14 @@
 ---
 import { BaseLayout } from "@libdsastro/ui";
 import navigation from "../data/navigation.json";
+import Introduction from "../components/Introduction.svelte";
 ---
 
 <BaseLayout
   title="Singapore and South-East Asia Biodiversity History"
   navItems={navigation}
 >
-  <div class="mx-auto prose py-10">
-    <h1>Singapore and South-East Asia Biodiversity History</h1>
+  <div>
+    <Introduction />
   </div>
 </BaseLayout>
