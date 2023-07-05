@@ -60,15 +60,6 @@
     <h4>Residency Status</h4>
 
     <button
-      class={$filterAttributes.residency.naturalised
-        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
-        : "btn btn-xs btn-outline hover:bg-gray-300"}
-      on:click={setResidencyNaturalised}
-    >
-      Naturalised
-    </button>
-
-    <button
       class={$filterAttributes.residency.casual
         ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
         : "btn btn-xs btn-outline hover:bg-gray-300"}
@@ -84,6 +75,15 @@
       on:click={setResidencyCryptogenic}
     >
       Cryptogenic
+    </button>
+
+    <button
+      class={$filterAttributes.residency.naturalised
+        ? "btn btn-xs btn text-white bg-gray-800 hover:bg-gray-500"
+        : "btn btn-xs btn-outline hover:bg-gray-300"}
+      on:click={setResidencyNaturalised}
+    >
+      Naturalised
     </button>
 
     <h4>Others</h4>

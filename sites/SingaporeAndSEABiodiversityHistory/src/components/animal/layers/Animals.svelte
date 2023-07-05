@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { animalsVisibility } from "../../../store/animals";
   import { animals } from "../../../store/animalLayers";
   import {
     GeoJSON,
@@ -16,18 +17,18 @@
   let clusterVisible: boolean = true;
 </script>
 
-<div>
-  <GeoJSON
-    id="animals"
-    data={$animals}
-    cluster={{ radius: 500, maxZoom: 16 }}
-    generateId
-  >
+<GeoJSON
+  id="animals"
+  data={$animals}
+  cluster={{ radius: 500, maxZoom: 16 }}
+  generateId
+>
+  {#if $animalsVisibility}
     <CircleLayer
       applyToClusters
       hoverCursor="pointer"
       paint={{
-        "circle-color": "#ecbefa",
+        "circle-color": "#ffb805",
         "circle-radius": ["step", ["get", "point_count"], 20, 3, 30, 4, 40],
         "circle-stroke-width": 1,
         "circle-stroke-opacity": hoverStateFilter(0, 1),
@@ -96,5 +97,5 @@
         {/if}
       </Popup>
     </CircleLayer>
-  </GeoJSON>
-</div>
+  {/if}
+</GeoJSON>
