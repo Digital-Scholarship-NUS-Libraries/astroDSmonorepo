@@ -2,7 +2,10 @@
   class={`flex justify-center h-full bg-repeat bg-contain bg-[url('/nuslibraries/dsprojects/sea-biodiversity/assets/background-main.jpg')]`}
 >
   <article class="prose mb-8">
-    <img src="/public/assets/banner-main.jpg" alt="banner" />
+    <img
+      src={`${import.meta.env.BASE_URL}assets/banner-main.jpg`}
+      alt="banner"
+    />
 
     <h1>Credits and Acknowledgements</h1>
 

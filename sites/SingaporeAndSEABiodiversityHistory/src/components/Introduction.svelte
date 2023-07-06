@@ -3,13 +3,20 @@
 >
   <article class="prose">
     <h1>Singapore and South-East Asia Biodiversity History</h1>
-    <img src="/public/assets/banner-main.jpg" alt="banner" />
+    <img
+      src={`${import.meta.env.BASE_URL}assets/banner-main.jpg`}
+      alt="banner"
+    />
 
     <h1>About the project</h1>
 
     <div class="flex space-x-3">
       <div class="w-4/12">
-        <img class="h-40" src="/public/assets/intro-map.png" alt="intro-map" />
+        <img
+          class="h-40"
+          src={`${import.meta.env.BASE_URL}assets/intro-map.png`}
+          alt="intro-map"
+        />
         <p>
           This interactive geovisualization platform is created in fulfilment of
           the project on “Linking the Digital Humanities to Biodiversity History
@@ -20,7 +27,7 @@
       <div class="w-4/12">
         <img
           class="h-40"
-          src="/public/assets/intro-pointer.png"
+          src={`${import.meta.env.BASE_URL}assets/intro-pointer.png`}
           alt="intro-pointer"
         />
         <p>
@@ -33,7 +40,7 @@
       <div class="w-4/12">
         <img
           class="h-40"
-          src="/public/assets/intro-person.png"
+          src={`${import.meta.env.BASE_URL}assets/intro-person.png`}
           alt="intro-person"
         />
         <p>
@@ -58,20 +65,29 @@
         on. This webpage contains information about the project and the guide on
         how to navigate the platform. You may click on this tab to return back
         to this webpage at any time of exploring the platform.
-        <img src="/public/assets/intro-navbar-1.png" alt="intro-navbar-1" />
+        <img
+          src={`${import.meta.env.BASE_URL}assets/intro-navbar-1.png`}
+          alt="intro-navbar-1"
+        />
       </li>
 
       <li>
         Animal Map - This tab will lead you to the webpage containing the map
         for first published records of established animal database (for animals)
         and togglable historical maps.
-        <img src="/public/assets/intro-navbar-2.png" alt="intro-navbar-2" />
+        <img
+          src={`${import.meta.env.BASE_URL}assets/intro-navbar-2.png`}
+          alt="intro-navbar-2"
+        />
       </li>
 
       <li>
         Credits - This tab will lead you to the credits section where the
         acknowledgements are.
-        <img src="/public/assets/intro-navbar-3.png" alt="intro-navbar-3" />
+        <img
+          src={`${import.meta.env.BASE_URL}assets/intro-navbar-3.png`}
+          alt="intro-navbar-3"
+        />
       </li>
     </ol>
 
@@ -86,7 +102,9 @@
           sections (the map area on the left and the description and filter
           option control section on the right which includes the map legend).
           <img
-            src="/public/assets/intro-animal-map-overview.png"
+            src={`${
+              import.meta.env.BASE_URL
+            }assets/intro-animal-map-overview.png`}
             alt="intro-animal-map-overview"
           />
         </li>
@@ -97,14 +115,14 @@
           kept open. If you wish to hide this layer, there is an option at the
           bottom of the section.
           <img
-            src="/public/assets/intro-animal-map-area.png"
+            src={`${import.meta.env.BASE_URL}assets/intro-animal-map-area.png`}
             alt="intro-animal-map-area"
           />
           When points are clicked on, the pop-up windows with the details will appear.
           The pop-up windows are scrollable if the details exceed the pop-up window.
           Click on the same points to close the pop-up windows after viewing.
           <img
-            src="/public/assets/intro-animal-map-popup.png"
+            src={`${import.meta.env.BASE_URL}assets/intro-animal-map-popup.png`}
             alt="intro-animal-map-popup"
           />
         </li>
@@ -121,7 +139,7 @@
               allows you to type in the desired year(s) of interest to show on
               the map area view.
               <img
-                src="/public/assets/intro-filter-1.png"
+                src={`${import.meta.env.BASE_URL}assets/intro-filter-1.png`}
                 alt="intro-filter-1"
               />
             </li>
@@ -132,7 +150,7 @@
               show on the map area view. Click on it and the button will change
               to a darker grey shade to show that it is selected.
               <img
-                src="/public/assets/intro-filter-2.png"
+                src={`${import.meta.env.BASE_URL}assets/intro-filter-2.png`}
                 alt="intro-filter-2"
               />
             </li>
@@ -142,7 +160,7 @@
               component allows you to select the ‘Yes’ or ‘No’ options. Click on
               it and the dropdown menu will appear.
               <img
-                src="/public/assets/intro-filter-3.png"
+                src={`${import.meta.env.BASE_URL}assets/intro-filter-3.png`}
                 alt="intro-filter-3"
               />
             </li>
@@ -153,7 +171,7 @@
               you to toggle the desired historical map layer(s). Click on it and
               the historical map layer will appear.
               <img
-                src="/public/assets/intro-filter-4.png"
+                src={`${import.meta.env.BASE_URL}assets/intro-filter-4.png`}
                 alt="intro-filter-4"
               />
             </li>
@@ -164,7 +182,7 @@
               component allows you to slide to the desired transparency level
               for respective historical map layers.
               <img
-                src="/public/assets/intro-filter-5.png"
+                src={`${import.meta.env.BASE_URL}assets/intro-filter-5.png`}
                 alt="intro-filter-5"
               />
             </li>
