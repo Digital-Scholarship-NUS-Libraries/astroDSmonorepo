@@ -94,7 +94,7 @@
       <strong> Mr Gaetan BOISSON </strong><br />
       Principal Librarian (Digital Scholarship Manager), NUS Libraries, National
       University of Singapore <br />
-      Website Development
+      Website Development and Framework Architecture
     </p>
 
     <p>
