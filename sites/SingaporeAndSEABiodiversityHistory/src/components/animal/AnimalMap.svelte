@@ -18,17 +18,13 @@
   ]}
   standardControls
 >
-  <RasterSource
-    tiles={[
-      "https://libmaps.nus.edu.sg/gis/rest/services/Sing_Hist_Maps/1975/MapServer/tile/{z}/{y}/{x}",
-    ]}
-  >
-    <Layer type="raster" />
-  </RasterSource>
-  <Animals />
-  <Analyticals />
-  <Ports />
+  <CogLayer
+    cogURL="https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1913.tif"
+  />
   <CogLayer
     cogURL="https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1983.tif"
   />
+  <Animals />
+  <Analyticals />
+  <Ports />
 </MapLibre>
