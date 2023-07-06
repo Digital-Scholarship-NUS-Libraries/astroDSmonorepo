@@ -1,12 +1,7 @@
-<script lang="ts">
-  import { Layer } from "svelte-maplibre";
+<script context="module" lang="ts">
+  import { Pool } from "geotiff";
 
-  import maplibregl, { Map, RasterSourceSpecification } from "maplibre-gl";
-  import { Pool, fromUrl } from "geotiff";
-  import { encode } from "fast-png";
-  import { onMount } from "svelte";
-
-  export let cogURL;
+  const pool = new Pool();
 
   /**
    * transform x/y/z to webmercator-bbox
@@ -26,18 +21,30 @@
     const maxy = orgY - y * unit;
     return [minx, miny, maxx, maxy];
   };
+  const tiffMap = new Map();
+</script>
+
+<script lang="ts">
+  import { Layer } from "svelte-maplibre";
+  import maplibregl, { RasterSourceSpecification } from "maplibre-gl";
+  import { fromUrl } from "geotiff";
+  import { encode } from "fast-png";
+  import { onMount } from "svelte";
+
+  export let cogURL: string;
 
   const generateCogSource = async (
     url: string
   ): Promise<{ source: RasterSourceSpecification }> => {
     const tiff = await fromUrl(url);
-    const pool = new Pool();
+    tiffMap.set(url.split("://")[1].split("/")[2], tiff);
     maplibregl.addProtocol("cog", (params, callback) => {
+      const currentTiff = tiffMap.get(params.url.split("://")[1].split("/")[2]);
       const segments = params.url.split("/");
       const [z, x, y] = segments.slice(segments.length - 3).map(Number);
       const bbox = merc(x, y, z);
       const size = 256;
-      tiff
+      currentTiff
         .readRasters({
           bbox,
           samples: [0, 1, 2, 3],
@@ -62,8 +69,8 @@
       type: "raster",
       tiles: [`cog://${url.split("://")[1]}/{z}/{x}/{y}`],
       tileSize: 256,
-      minzoom: 8,
-      maxzoom: 16,
+      minzoom: 6,
+      maxzoom: 18,
     };
     return { source };
   };
@@ -76,4 +83,4 @@
   });
 </script>
 
-<Layer type="raster" {source} />
+<Layer type="raster" {source} beforeLayerType="circle" />
