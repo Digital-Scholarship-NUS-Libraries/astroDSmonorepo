@@ -4,7 +4,6 @@
   import Analyticals from "./layers/Analyticals.svelte";
   import Ports from "./layers/Ports.svelte";
   import CogLayer from "../COGLayer.svelte";
-  import RasterSource from "../RasterSource.svelte";
 </script>
 
 <MapLibre
