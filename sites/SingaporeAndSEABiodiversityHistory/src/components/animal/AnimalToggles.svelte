@@ -23,6 +23,8 @@
     analyticalsToggles,
     ports,
     togglePorts,
+    historicals,
+    historicalsToggles,
   } from "../../store/animalLayers.js";
 </script>
 
@@ -428,5 +430,45 @@
       src={`${import.meta.env.BASE_URL}assets/legend-ports.png`}
       alt="Ports"
     />
+
+    <h4>3. Historical maps showing land use land cover</h4>
+
+    <div class="mt-2 mb-2">
+      <div class="flex items-center">
+        <input
+          id="historical-1913"
+          type="checkbox"
+          checked={$historicals.year1913.visible}
+          class="checkbox"
+          on:change={historicalsToggles.toggleYear1913}
+        />
+        <label for="historical-1913" class="ml-2">
+          1913 map of Singapore and dependencies
+        </label>
+      </div>
+      <body>
+        Description: This layer illustrates the map of Singapore and her
+        dependencies in the year 1913.
+      </body>
+    </div>
+
+    <div>
+      <div class="flex items-center">
+        <input
+          id="historical-1983"
+          type="checkbox"
+          checked={$historicals.year1983.visible}
+          class="checkbox"
+          on:change={historicalsToggles.toggleYear1983}
+        />
+        <label for="historical-1983" class="ml-2">
+          1983 map of Singapore and dependencies
+        </label>
+      </div>
+      <body>
+        Description: This layer illustrates the map of Singapore and her
+        dependencies in the year 1983.
+      </body>
+    </div>
   </article>
 </div>

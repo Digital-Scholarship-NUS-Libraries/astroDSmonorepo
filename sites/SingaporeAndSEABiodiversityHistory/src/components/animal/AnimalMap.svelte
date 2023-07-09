@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { MapLibre, Layer } from "svelte-maplibre";
+  import { MapLibre } from "svelte-maplibre";
   import Animals from "./layers/Animals.svelte";
   import Analyticals from "./layers/Analyticals.svelte";
   import Ports from "./layers/Ports.svelte";
-  import CogLayer from "../COGLayer.svelte";
+  import Historicals from "./layers/Historicals.svelte";
 </script>
 
 <MapLibre
@@ -17,13 +17,8 @@
   ]}
   standardControls
 >
-  <CogLayer
-    cogURL="https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1913.tif"
-  />
-  <CogLayer
-    cogURL="https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1983.tif"
-  />
   <Animals />
   <Analyticals />
   <Ports />
+  <Historicals />
 </MapLibre>
