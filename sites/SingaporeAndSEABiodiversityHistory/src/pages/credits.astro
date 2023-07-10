@@ -1,11 +1,31 @@
 ---
 import { BaseLayout } from "@libdsastro/ui";
 import navigation from "../data/navigation.json";
+import ariLogo from "/assets/ari-logo.png";
+import lkcnhmLogo from "/assets/CoBrand_LeeKongChian_Museum_V.png";
+import yaleNusLogo from "/assets/YaleNUS.png";
 ---
 
 <BaseLayout
   title="Singapore and South-East Asia Biodiversity History"
   navItems={navigation}
+  partnerLogos={[
+    {
+      altText: "Yale NUS college",
+      url: "https://www.yale-nus.edu.sg/",
+      image: yaleNusLogo,
+    },
+    {
+      altText: "Lee Kong Chian Natural History Museum",
+      url: "https://lkcnhm.nus.edu.sg/",
+      image: lkcnhmLogo,
+    },
+    {
+      altText: "Asia Research Institute log",
+      url: "https://ari.nus.edu.sg/",
+      image: ariLogo,
+    },
+  ]}
 >
   <div
     class={`flex justify-center h-full bg-repeat bg-contain bg-[url('/nuslibraries/dsprojects/sea-biodiversity/assets/background-main.jpg')]`}
