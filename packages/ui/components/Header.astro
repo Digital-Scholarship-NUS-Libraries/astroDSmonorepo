@@ -1,10 +1,23 @@
 ---
-import NUSL_logo from '../assets/NUSL_logo.png'
+import NUSL_logo from "../assets/NUSL_logo.png";
+
+export interface Props {
+  partnerLogos: { altText: string; url: string; image: string }[];
+}
+const { partnerLogos } = Astro.props;
 ---
+
 <header class="bg-neutral-50">
-  <div class="container mx-auto">
-    <a href="https://nus.edu.sg/nuslibraries" class="block ml-5 md:ml-0 py-4">
-    <img src={NUSL_logo} alt="NUS Libraries"/>
+  <div class="container mx-auto flex">
+    <a href="https://nus.edu.sg/nuslibraries" class="ml-5 md:ml-0 py-4">
+      <img src={NUSL_logo} alt="NUS Libraries" />
     </a>
+    {
+      partnerLogos.map((logo) => (
+        <a href={logo.url} class="ml-5 py-4">
+          <img src={logo.image} alt={logo.altText} />
+        </a>
+      ))
+    }
   </div>
 </header>
