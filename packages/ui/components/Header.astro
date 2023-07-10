@@ -2,7 +2,7 @@
 import NUSL_logo from "../assets/NUSL_logo.png";
 
 export interface Props {
-  partnerLogos: { altText: string; url: string; image: string }[];
+  partnerLogos?: { altText: string; url: string; image: string }[];
 }
 const { partnerLogos } = Astro.props;
 ---
@@ -13,11 +13,12 @@ const { partnerLogos } = Astro.props;
       <img src={NUSL_logo} alt="NUS Libraries" />
     </a>
     {
-      partnerLogos.map((logo) => (
-        <a href={logo.url} class="ml-5 py-4">
-          <img src={logo.image} alt={logo.altText} />
-        </a>
-      ))
+      partnerLogos &&
+        partnerLogos.map((logo) => (
+          <a href={logo.url} class="ml-5 py-4">
+            <img src={logo.image} alt={logo.altText} />
+          </a>
+        ))
     }
   </div>
 </header>

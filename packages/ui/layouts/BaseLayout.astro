@@ -6,7 +6,7 @@ import { Footer } from "../index.js";
 export interface Props {
   title: string;
   navItems: { text: string; url: string }[];
-  partnerLogos: { altText: string; url: string; image: string }[];
+  partnerLogos?: { altText: string; url: string; image: string }[];
 }
 
 const { title, navItems, partnerLogos } = Astro.props;
