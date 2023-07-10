@@ -36,35 +36,39 @@
   const generateCogSource = async (
     url: string
   ): Promise<{ source: RasterSourceSpecification }> => {
-    const tiff = await fromUrl(url);
-    tiffMap.set(url.split("://")[1].split("/")[2], tiff);
-    maplibregl.addProtocol("cog", (params, callback) => {
-      const currentTiff = tiffMap.get(params.url.split("://")[1].split("/")[2]);
-      const segments = params.url.split("/");
-      const [z, x, y] = segments.slice(segments.length - 3).map(Number);
-      const bbox = merc(x, y, z);
-      const size = 256;
-      currentTiff
-        .readRasters({
-          bbox,
-          samples: [0, 1, 2, 3],
-          width: size,
-          height: size,
-          interleave: true,
-          pool,
-        })
-        .then((data) => {
-          const img = new ImageData(
-            //@ts-ignore
-            new Uint8ClampedArray(data),
-            size,
-            size
-          );
-          const png = encode(img);
-          callback(null, png, null, null);
-        });
-      return { cancel: () => {} };
-    });
+    if (!tiffMap.get(url.split("://")[1].split("/")[2])) {
+      const tiff = await fromUrl(url);
+      tiffMap.set(url.split("://")[1].split("/")[2], tiff);
+      maplibregl.addProtocol("cog", (params, callback) => {
+        const currentTiff = tiffMap.get(
+          params.url.split("://")[1].split("/")[2]
+        );
+        const segments = params.url.split("/");
+        const [z, x, y] = segments.slice(segments.length - 3).map(Number);
+        const bbox = merc(x, y, z);
+        const size = 256;
+        currentTiff
+          .readRasters({
+            bbox,
+            samples: [0, 1, 2, 3],
+            width: size,
+            height: size,
+            interleave: true,
+            pool,
+          })
+          .then((data) => {
+            const img = new ImageData(
+              //@ts-ignore
+              new Uint8ClampedArray(data),
+              size,
+              size
+            );
+            const png = encode(img);
+            callback(null, png, null, null);
+          });
+        return { cancel: () => {} };
+      });
+    }
     const source: RasterSourceSpecification = {
       type: "raster",
       tiles: [`cog://${url.split("://")[1]}/{z}/{x}/{y}`],
