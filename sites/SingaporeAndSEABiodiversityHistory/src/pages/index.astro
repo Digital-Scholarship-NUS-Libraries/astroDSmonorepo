@@ -60,9 +60,9 @@ import yaleNusLogo from "/assets/YaleNUS.png";
           />
           <p>
             The platform displays the locality of first published records of
-            established animal species (Animal Map) in Singapore from 1819
-            onwards. The Animal Map page contains togglable historical maps for
-            reference as well.
+            established animal species (Animal Map) in Singapore from the
+            nineteenth century onwards. The Animal Map page contains togglable
+            historical maps for reference as well.
           </p>
         </div>
         <div class="w-4/12">
@@ -92,29 +92,17 @@ import yaleNusLogo from "/assets/YaleNUS.png";
           that we are on. This webpage contains information about the project and
           the guide on how to navigate the platform. You may click on this tab to
           return back to this webpage at any time of exploring the platform.
-          <img
-            src={`${import.meta.env.BASE_URL}assets/intro-navbar-1.png`}
-            alt="intro-navbar-1"
-          />
         </li>
 
         <li>
           <strong>Animal Map</strong> - This tab will lead you to the webpage containing
           the map for first published records of established animal database and
           togglable maps with analysis and historical maps.
-          <img
-            src={`${import.meta.env.BASE_URL}assets/intro-navbar-2.png`}
-            alt="intro-navbar-2"
-          />
         </li>
 
         <li>
           <strong>Credits</strong> - This tab will lead you to the credits section
           where the acknowledgements are.
-          <img
-            src={`${import.meta.env.BASE_URL}assets/intro-navbar-3.png`}
-            alt="intro-navbar-3"
-          />
         </li>
       </ol>
 
@@ -128,50 +116,48 @@ import yaleNusLogo from "/assets/YaleNUS.png";
             <strong>Overview</strong> - The map webpage consists of two main sections
             (the map area on the left and the description and filter option control
             section on the right which includes the map legend).
-            <img
-              src={`${
-                import.meta.env.BASE_URL
-              }assets/intro-animal-map-overview.png`}
-              alt="intro-animal-map-overview"
-            />
           </li>
 
           <li>
             <strong>Map area</strong> on the left - This section contains the view
             of the maps. By default, the established animal species point map is
-            kept open. If you wish to hide this layer, there is an option at the
-            bottom of the section.
+            kept open. If you wish to hide this layer, there is a filter option at
+            the bottom of the section. When points are clicked on, the pop-up windows
+            with the details will appear. Click on any area outside the pop-up window
+            to close it.
             <img
               src={`${
                 import.meta.env.BASE_URL
               }assets/intro-animal-map-area.png`}
               alt="intro-animal-map-area"
             />
-            When points are clicked on, the pop-up windows with the details will
-            appear. The pop-up windows are scrollable if the details exceed the pop-up
-            window. Click on the same points to close the pop-up windows after viewing.
-            <img
-              src={`${
-                import.meta.env.BASE_URL
-              }assets/intro-animal-map-popup.png`}
-              alt="intro-animal-map-popup"
-            />
           </li>
 
           <li>
-            Description and filter option control section on the top right -
-            This section contains the description of the map layers and
-            interactive components which can be used to filter what is shown on
-            the map view. There are a few types of interactive components:
+            Description and <strong>filter option control section</strong> on the
+            top right - This section contains the description of the map layers and
+            interactive components which can be used to filter what is shown on the
+            map view. There are a few types of interactive components:
 
             <ol type="i">
               <li>
-                <strong>Year fill-in box</strong> - This interactive component allows
-                you to type in the desired year(s) of interest to show on the map
-                area view.
+                <strong>Toggle switch button</strong> – This interactive component
+                allows you to switch from the data table view to the map area view.
                 <img
+                  class="h-10"
                   src={`${import.meta.env.BASE_URL}assets/intro-filter-1.png`}
                   alt="intro-filter-1"
+                />
+              </li>
+
+              <li>
+                <strong>Year fill-in box</strong> - This interactive component allows
+                you to type and adjust in the desired year(s) of interest to show
+                on the map area view.
+                <img
+                  class="h-40"
+                  src={`${import.meta.env.BASE_URL}assets/intro-filter-2.png`}
+                  alt="intro-filter-2"
                 />
               </li>
 
@@ -179,32 +165,20 @@ import yaleNusLogo from "/assets/YaleNUS.png";
                 <strong>Option selection button</strong> - This interactive component
                 allows you to select the desired year(s) of interest to show on the
                 map area view. Click on it and the button will change to a darker
-                grey shade to show that it is selected.
+                shade to show that it is selected.
                 <img
-                  src={`${import.meta.env.BASE_URL}assets/intro-filter-2.png`}
-                  alt="intro-filter-2"
+                  src={`${import.meta.env.BASE_URL}assets/intro-filter-3.png`}
+                  alt="intro-filter-3"
                 />
               </li>
 
               <li>
-                <strong>Checkbox</strong> (only available for the historical map
-                layers in the Animal Map tab) - This interactive component allows
-                you to toggle the desired historical map layer(s). Click on it and
-                the historical map layer will appear.
+                <strong>Checkbox</strong> - This interactive component allows you
+                to toggle the desired historical map layer(s). Click on it and the
+                historical map layer will appear.
                 <img
                   src={`${import.meta.env.BASE_URL}assets/intro-filter-4.png`}
                   alt="intro-filter-4"
-                />
-              </li>
-
-              <li>
-                <strong>Transparency bar</strong> (only available for the historical
-                map layers in the Animal Map tab) - This interactive component allows
-                you to slide to the desired transparency level for respective historical
-                map layers.
-                <img
-                  src={`${import.meta.env.BASE_URL}assets/intro-filter-5.png`}
-                  alt="intro-filter-5"
                 />
               </li>
             </ol>
