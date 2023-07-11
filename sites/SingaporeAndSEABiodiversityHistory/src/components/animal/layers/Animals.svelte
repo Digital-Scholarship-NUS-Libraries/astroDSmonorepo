@@ -28,10 +28,10 @@
       applyToClusters
       hoverCursor="pointer"
       paint={{
-        "circle-color": "#ffb805",
-        "circle-radius": ["step", ["get", "point_count"], 20, 3, 30, 4, 40],
+        "circle-color": "#ffa505",
+        "circle-radius": ["step", ["get", "point_count"], 20, 3, 30],
         "circle-stroke-width": 1,
-        "circle-stroke-opacity": hoverStateFilter(0, 1),
+        "circle-stroke-opacity": hoverStateFilter(1, 1),
       }}
       on:click={() => {
         clusterVisible = true;
@@ -72,16 +72,10 @@
       applyToClusters={false}
       hoverCursor="pointer"
       paint={{
-        "circle-color": [
-          "step",
-          ["get", "Date_yyyy_FirstPub"],
-          "#624ff0",
-          1965,
-          "#e64c4c",
-        ],
+        "circle-color": "#ffa505",
         "circle-radius": 7,
         "circle-stroke-width": 1,
-        "circle-stroke-opacity": hoverStateFilter(0, 1),
+        "circle-stroke-opacity": hoverStateFilter(1, 1),
       }}
       on:click={() => {
         clusterVisible = true;
