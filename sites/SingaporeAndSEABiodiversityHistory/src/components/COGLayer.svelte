@@ -36,12 +36,12 @@
   const generateCogSource = async (
     url: string
   ): Promise<{ source: RasterSourceSpecification }> => {
-    if (!tiffMap.get(url.split("://")[1].split("/")[2])) {
+    if (!tiffMap.get(url.split("://")[1].split("/")[1])) {
       const tiff = await fromUrl(url);
-      tiffMap.set(url.split("://")[1].split("/")[2], tiff);
+      tiffMap.set(url.split("://")[1].split("/")[1], tiff);
       maplibregl.addProtocol("cog", (params, callback) => {
         const currentTiff = tiffMap.get(
-          params.url.split("://")[1].split("/")[2]
+          params.url.split("://")[1].split("/")[1]
         );
         const segments = params.url.split("/");
         const [z, x, y] = segments.slice(segments.length - 3).map(Number);

@@ -139,131 +139,131 @@ export const ports = writable({
 export const historicals = writable({
   year1846: {
     visible: false,
-    cogURL: "https://s3.ap-sou theast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1846.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1846.tif"
   },
   year1860: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1860.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1860.tif"
   },
   year1862: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1862.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1862.tif"
   },
   year1873: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1873.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1873.tif"
   },
   year1911: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1911.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1911.tif"
   },
   year1913: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1913.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1913.tif"
   },
   year1914: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1914.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1914.tif"
   },
   year1915: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1915.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1915.tif"
   },
   year1930Sea: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1930_sea_chart.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1930_sea_chart.tif"
   },
   year1930s: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1930s.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1930s.tif"
   },
   year1932: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1932.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1932.tif"
   },
   year1943: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1943.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1943.tif"
   },
   year1945: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1945.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1945.tif"
   },
   year1950: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1950.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1950.tif"
   },
   year1953: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1953.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1953.tif"
   },
   year1958: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1958.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1958.tif"
   },
   year1963: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1963.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1963.tif"
   },
   year1966: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1966.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1966.tif"
   },
   year1969: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1969.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1969.tif"
   },
   year1971: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1971.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1971.tif"
   },
   year1974: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1974.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1974.tif"
   },
   year1974_50K: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1974_50K.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1974_50K.tif"
   },
   year1975: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1975.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1975.tif"
   },
   year1978: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1978.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1978.tif"
   },
   year1983: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1983.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1983.tif"
   },
   year1987: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1987.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1987.tif"
   },
   year1993: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1993.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1993.tif"
   },
   year1998: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/1998.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/1998.tif"
   },
   year2002: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/2002.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/2002.tif"
   },
   year2005: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/2005.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/2005.tif"
   },
   year2005_50K: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/2005_50K.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/2005_50K.tif"
   },
   year2010: {
     visible: false,
-    cogURL: "https://s3.ap-southeast-1.amazonaws.com/static-content-libmaps.nus.edu.sg/2010.tif"
+    cogURL: "https://d39hmjnw8fb16p.cloudfront.net/2010.tif"
   },
 })
 
