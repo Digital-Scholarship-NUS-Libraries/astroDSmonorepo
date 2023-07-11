@@ -29,7 +29,7 @@
 </script>
 
 <div class="h-full overflow-y-scroll">
-  <article class="prose">
+  <article class="prose max-w-none">
     <h4>
       1. Locality of established non-native animal species first published
       records with location information (this layer is kept on by default).

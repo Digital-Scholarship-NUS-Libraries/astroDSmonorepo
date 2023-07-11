@@ -15,6 +15,9 @@
     alt="animal-banner"
   />
 
+  <p class="prose max-w-none text-center">
+    Click on button to toggle data table or map area view:
+  </p>
   <label class="flex items-center justify-center pt-2 pb-2">
     <span>Data</span>
     <input
