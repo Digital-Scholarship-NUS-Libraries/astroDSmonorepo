@@ -1,6 +1,6 @@
 <script lang="ts">
   import { GeoJSON, LineLayer, FillLayer } from "svelte-maplibre";
-  import { analyticals } from "../../../store/animalLayers";
+  import { analyticals } from "../../store/animalLayers";
 </script>
 
 {#each Object.entries($analyticals) as [key, value]}

@@ -15,7 +15,7 @@
     toggleIntroPathwayPetTrade,
     toggleIntroPathwayStowaway,
     toggleIntroPathwayUnknown,
-  } from "../../store/animals.js";
+  } from "../store/animals.js";
   import {
     analyticals,
     analyticalsToggles,
@@ -23,7 +23,7 @@
     togglePorts,
     historicals,
     historicalsToggles,
-  } from "../../store/animalLayers.js";
+  } from "../store/animalLayers.js";
 </script>
 
 <div class="prose max-w-none h-full overflow-y-scroll mr-4 ml-4 mb-2">

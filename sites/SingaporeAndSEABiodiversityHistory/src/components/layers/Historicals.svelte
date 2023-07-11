@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { historicals } from "../../../store/animalLayers";
-  import CogLayer from "../../COGLayer.svelte";
+  import { historicals } from "../../store/animalLayers";
+  import CogLayer from "../COGLayer.svelte";
 </script>
 
 <div>

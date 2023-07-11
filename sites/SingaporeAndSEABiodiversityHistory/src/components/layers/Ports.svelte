@@ -1,6 +1,6 @@
 <script lang="ts">
   import { GeoJSON, MarkerLayer, Popup } from "svelte-maplibre";
-  import { ports } from "../../../store/animalLayers";
+  import { ports } from "../../store/animalLayers";
 </script>
 
 <GeoJSON data={$ports.geoJSON}>

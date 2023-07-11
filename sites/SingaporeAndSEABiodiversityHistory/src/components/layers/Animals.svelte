@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { animalsVisibility } from "../../../store/animals";
-  import { animals } from "../../../store/animalLayers";
+  import { animalsVisibility } from "../../store/animals";
+  import { animals } from "../../store/animalLayers";
   import {
     GeoJSON,
     CircleLayer,
