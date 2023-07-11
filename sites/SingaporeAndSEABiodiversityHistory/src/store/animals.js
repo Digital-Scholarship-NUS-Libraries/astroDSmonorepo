@@ -33,14 +33,14 @@ export const filteredAnimals = derived(
   ([$animals, $filterAttributes], set) => {
     set($animals
       .filter(animal => (
-        (Number(animal["Date_yyyy_FirstPub"]) >= $filterAttributes.minYear) &&
+        Number(animal["Date_yyyy_FirstPub"]) >= $filterAttributes.minYear &&
         Number(animal["Date_yyyy_FirstPub"]) <= $filterAttributes.maxYear
       ))
       .filter(animal => (
-        (animal["Fauna"] === "Aves" && $filterAttributes.fauna.aves) ||
-        (animal["Fauna"] === "Freshwater" && $filterAttributes.fauna.freshwater) ||
-        (animal["Fauna"] === "Marine" && $filterAttributes.fauna.marine) ||
-        (animal["Fauna"] === "Terrestrial" && $filterAttributes.fauna.terrestrial)
+        (animal["Fauna"].split(" | ").includes("Aves") && $filterAttributes.fauna.aves) ||
+        (animal["Fauna"].split(" | ").includes("Freshwater") && $filterAttributes.fauna.freshwater) ||
+        (animal["Fauna"].split(" | ").includes("Marine") && $filterAttributes.fauna.marine) ||
+        (animal["Fauna"].split(" | ").includes("Terrestrial") && $filterAttributes.fauna.terrestrial)
       ))
       .filter(animal => (
         (animal["Intro_all"].split(" | ").includes("Plant trade") && $filterAttributes.introPathway.plantTrade) ||
@@ -51,12 +51,6 @@ export const filteredAnimals = derived(
         (animal["Intro_all"].split(" | ").includes("Pet trade") && $filterAttributes.introPathway.petTrade) ||
         (animal["Intro_all"].split(" | ").includes("Stowaway") && $filterAttributes.introPathway.stowaway) ||
         (animal["Intro_all"].split(" | ").includes("Unknown") && $filterAttributes.introPathway.unknown)
-      ))
-      .filter(animal => (
-        animal["Extinction_YN"] === ($filterAttributes.extinction ? "Y" : "N")
-      ))
-      .filter(animal => (
-        animal["ActiveRemoval_YN"] === ($filterAttributes.activeRemoval ? "Y" : "N")
       ))
     )
   }
