@@ -6,7 +6,7 @@ const animals = readable([], function start(set) {
 })
 
 export const filterAttributes = writable({
-  minYear: 1819,
+  minYear: 1800,
   maxYear: 2023,
   fauna: {
     aves: true,
@@ -185,19 +185,5 @@ export const toggleIntroPathwayUnknown = () => {
       ...attr.introPathway,
       unknown: !attr.introPathway.unknown
     }
-  }))
-}
-
-export const toggleExtinction = () => {
-  filterAttributes.update(attr => ({
-    ...attr,
-    extinction: !attr.extinction
-  }))
-}
-
-export const toggleActiveRemoval = () => {
-  filterAttributes.update(attr => ({
-    ...attr,
-    activeRemoval: !attr.activeRemoval
   }))
 }

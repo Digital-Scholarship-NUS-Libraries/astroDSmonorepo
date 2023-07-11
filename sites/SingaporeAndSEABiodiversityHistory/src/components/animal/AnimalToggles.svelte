@@ -13,8 +13,6 @@
     toggleIntroPathwayFishing,
     toggleIntroPathwayPlantTrade,
     toggleIntroPathwayPetTrade,
-    toggleExtinction,
-    toggleActiveRemoval,
     toggleIntroPathwayStowaway,
     toggleIntroPathwayUnknown,
   } from "../../store/animals.js";
@@ -34,42 +32,43 @@
     with location information (this layer is kept on by default).
   </h4>
 
-  <img
-    src={`${import.meta.env.BASE_URL}assets/legend-points.png`}
-    alt="Animal legend"
-  />
-
   <h4>Description</h4>
 
   <ul class="list-disc">
     <li>
       This map illustrates the locality of first published records of
-      established non-native animal species in Singapore from 1819 to present.
+      established non-native animal species in Singapore from the nineteenth
+      century to present, represented by orange point markers.
     </li>
     <li>
-      Note that most locality points on the maps provide the species'
-      approximate location as certain historical sources only provide
-      approximate location details and not the exact coordinates.
+      Please note that the exact coordinates of most locality points may not be
+      available in certain historical sources, hence they are represented by
+      approximate locations.
     </li>
     <li>
-      Points at the same location may also be presented in a spaced out manner
-      for better readability.
+      To enhance readability, points at the same location may appear as
+      clustered points with a number indicating the number of localities. Points
+      without numbers indicate a single locality.
     </li>
     <li>
-      For non-native species within Pulau Tekong, exact location of the record
-      has been redacted due to sensitivity of the site.
+      Due to the sensitivity of the site, the exact location of non-native
+      species within Pulau Tekong has been redacted.
     </li>
     <li>
       Data is contributed courtesy of the Lee Kong Chian Natural History Museum.
     </li>
   </ul>
 
-  <h4>Years (Largest Range: 1819 - 2023)</h4>
+  <h4>
+    Year range of interest (adjust desired year range by either keying in the
+    years of interest the boxes or mousing over boxes to use the up/down toggle
+    buttons)
+  </h4>
 
   <input
     type="number"
     bind:value={$filterAttributes.minYear}
-    min="1819"
+    min="1800"
     max={$filterAttributes.maxYear}
     placeholder="Start"
     class="input input-bordered input-sm max-w-xs"
@@ -84,7 +83,10 @@
     class="input input-bordered input-sm max-w-xs"
   />
 
-  <h4>Fauna</h4>
+  <h4>
+    Fauna type (options are selected by default, click on the buttons to
+    unselect them accordingly)
+  </h4>
 
   <button
     class={$filterAttributes.fauna.aves
@@ -122,7 +124,10 @@
     Terrestrial
   </button>
 
-  <h4>Pathway</h4>
+  <h4>
+    Introduction pathway (options are selected by default, click on the buttons
+    to unselect them accordingly)
+  </h4>
 
   <button
     class={$filterAttributes.introPathway.biological
@@ -196,26 +201,6 @@
     Unknown
   </button>
 
-  <h4>Others</h4>
-
-  <button
-    class={$filterAttributes.activeRemoval
-      ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
-      : "btn btn-xs btn-outline hover:bg-gray-300"}
-    on:click={toggleActiveRemoval}
-  >
-    Active Removal
-  </button>
-
-  <button
-    class={$filterAttributes.extinction
-      ? "btn btn-xs text-white bg-gray-800 hover:bg-gray-500"
-      : "btn btn-xs btn-outline hover:bg-gray-300"}
-    on:click={toggleExtinction}
-  >
-    Extinct
-  </button>
-
   <div class="flex items-center mt-4">
     <input
       id="animal-visible"
@@ -224,7 +209,9 @@
       class="checkbox"
       on:change={toggleAnimalsVisibility}
     />
-    <label for="animal-visible" class="ml-2">Hide Layer</label>
+    <label for="animal-visible" class="ml-2">
+      Hide layer (click on the checkbox to hide this layer)
+    </label>
   </div>
 
   <h4>2. Maps with analysis.</h4>
@@ -232,18 +219,20 @@
   <h4>Description</h4>
 
   <body>
-    Information from the SSRTG project database and other relevant reliable
-    sources are used to generate these maps which support the visual analysis of
-    the data for research and exploration. The study area has been broken down
-    into transverse hexagonal tessellations for consistency and summary maps of
-    count and mean year of first published record for established species for
+    Information from the project database and other relevant reliable sources
+    are used to generate these maps which support the visual analysis of the
+    data for research and exploration. The study area has been broken down into
+    transverse hexagonal tessellations for consistency and summary maps of count
+    and mean year of first published record for established species for
     respective fauna types, introductory pathways, and other information are
-    generated.
+    generated. 1965 is used as reference as it is the year which Singapore has
+    gained independence.
   </body>
 
   <h4>Legend</h4>
 
   <img
+    class="max-h-60"
     src={`${import.meta.env.BASE_URL}assets/legend-species-maps.png`}
     alt="legend"
   />
@@ -376,34 +365,6 @@
     <label for="intro-unknown-map" class="ml-2">Unknown</label>
   </div>
 
-  <h4>Active Removal and Extinction</h4>
-
-  <div class="flex items-center">
-    <input
-      id="other-active-removal-map"
-      type="checkbox"
-      checked={$analyticals.othersActiveRemoval.visible}
-      class="checkbox"
-      on:change={analyticalsToggles.toggleOthersActiveRemoval}
-    />
-    <label for="other-active-removal-map" class="ml-2"> Active Removal </label>
-  </div>
-
-  <div class="flex items-center mt-2">
-    <input
-      id="other-extinction-map"
-      type="checkbox"
-      checked={$analyticals.othersExtinction.visible}
-      class="checkbox"
-      on:change={analyticalsToggles.toggleOthersExtinction}
-    />
-    <label for="other-extinction-map" class="ml-2">
-      Extinction (instead of count, year of extinction is considered where
-      before 1965 would be the lower bound and 1965 onwards would be the upper
-      bound)
-    </label>
-  </div>
-
   <h4>
     Other supplementary information which may be useful for further analysis
     include
@@ -422,7 +383,11 @@
     </label>
   </div>
 
-  <img src={`${import.meta.env.BASE_URL}assets/legend-ports.png`} alt="Ports" />
+  <img
+    class="max-h-20"
+    src={`${import.meta.env.BASE_URL}assets/legend-ports.png`}
+    alt="Ports"
+  />
 
   <h4>3. Historical maps showing land use land cover</h4>
 
