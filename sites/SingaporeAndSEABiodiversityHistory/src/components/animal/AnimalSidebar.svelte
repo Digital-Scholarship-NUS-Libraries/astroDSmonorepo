@@ -29,7 +29,5 @@
     <span>Map</span>
   </label>
 
-  <div class="overflow-y-scroll mr-4 ml-4 mb-2">
-    <AnimalToggles />
-  </div>
+  <AnimalToggles />
 </div>
