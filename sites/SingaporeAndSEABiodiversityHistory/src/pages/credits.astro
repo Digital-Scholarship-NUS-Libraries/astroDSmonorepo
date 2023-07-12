@@ -1,9 +1,6 @@
 ---
 import { BaseLayout } from "@libdsastro/ui";
 import navigation from "../data/navigation.json";
-import ariLogo from "/assets/ari-logo.png";
-import lkcnhmLogo from "/assets/CoBrand_LeeKongChian_Museum_V.png";
-import yaleNusLogo from "/assets/YaleNUS.png";
 ---
 
 <BaseLayout
@@ -13,17 +10,19 @@ import yaleNusLogo from "/assets/YaleNUS.png";
     {
       altText: "Yale NUS college",
       url: "https://www.yale-nus.edu.sg/",
-      image: yaleNusLogo,
+      image: `${import.meta.env.BASE_URL}assets/YaleNUS.png`,
     },
     {
       altText: "Lee Kong Chian Natural History Museum",
       url: "https://lkcnhm.nus.edu.sg/",
-      image: lkcnhmLogo,
+      image: `${
+        import.meta.env.BASE_URL
+      }assets/CoBrand_LeeKongChian_Museum_V.png`,
     },
     {
       altText: "Asia Research Institute log",
       url: "https://ari.nus.edu.sg/",
-      image: ariLogo,
+      image: `${import.meta.env.BASE_URL}assets/ari-logo.png`,
     },
   ]}
 >
