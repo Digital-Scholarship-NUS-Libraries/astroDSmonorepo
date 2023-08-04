@@ -46,7 +46,7 @@
         const segments = params.url.split("/");
         const [z, x, y] = segments.slice(segments.length - 3).map(Number);
         const bbox = merc(x, y, z);
-        const size = 256;
+        const size = 512;
         currentTiff
           .readRasters({
             bbox,
@@ -72,7 +72,7 @@
     const source: RasterSourceSpecification = {
       type: "raster",
       tiles: [`cog://${url.split("://")[1]}/{z}/{x}/{y}`],
-      tileSize: 256,
+      tileSize: 512,
       minzoom: 6,
       maxzoom: 18,
     };
