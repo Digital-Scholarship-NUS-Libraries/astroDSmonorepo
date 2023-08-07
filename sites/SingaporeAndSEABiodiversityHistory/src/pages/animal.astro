@@ -1,4 +1,5 @@
 ---
+import { fade } from "astro:transitions";
 import { BaseLayout } from "@libdsastro/ui";
 import navigation from "../data/navigation.json";
 import AnimalPage from "../components/AnimalPage.svelte";
@@ -27,7 +28,7 @@ import AnimalPage from "../components/AnimalPage.svelte";
     },
   ]}
 >
-  <main>
+  <main transition:animate="slide">
     <AnimalPage client:only="svelte" />
   </main>
 </BaseLayout>

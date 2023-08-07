@@ -1,4 +1,5 @@
 ---
+import { fade } from "astro:transitions";
 import { BaseLayout } from "@libdsastro/ui";
 import navigation from "../data/navigation.json";
 ---
@@ -27,6 +28,7 @@ import navigation from "../data/navigation.json";
   ]}
 >
   <div
+    transition:animate="slide"
     class={`flex justify-center h-full bg-repeat bg-contain bg-[url('/nuslibraries/dsprojects/sea-biodiversity/assets/background-main.jpg')]`}
   >
     <article class="prose max-w-4xl mb-8">

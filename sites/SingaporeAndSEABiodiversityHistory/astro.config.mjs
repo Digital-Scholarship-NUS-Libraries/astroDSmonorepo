@@ -1,4 +1,4 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
 import tailwind from "@astrojs/tailwind";
 
@@ -6,7 +6,10 @@ import tailwind from "@astrojs/tailwind";
 import svelte from "@astrojs/svelte";
 
 export default defineConfig({
+  experimental: {
+    viewTransitions: true,
+  },
   integrations: [tailwind(), svelte()],
   site: "https://nus.edu.sg/nuslibraries/dsprojects/sea-biodiversity",
-  base: "/nuslibraries/dsprojects/sea-biodiversity"
+  base: "/nuslibraries/dsprojects/sea-biodiversity",
 });
