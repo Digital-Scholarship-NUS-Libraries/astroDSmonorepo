@@ -4,6 +4,9 @@ dist
 # dependencies
 node_modules/
 
+#pnpm patches
+/patches/
+
 # logs
 logs
 *.log
