@@ -7,6 +7,9 @@
 </script>
 
 <div class="flex h-screen">
+  <div class="w-4/12">
+    <AnimalSidebar toggleMap={() => (showMap = !showMap)} />
+  </div>
   {#if showMap}
     <div class="w-8/12">
       <AnimalMap />
@@ -16,8 +19,4 @@
       <AnimalTable />
     </div>
   {/if}
-
-  <div class="w-4/12">
-    <AnimalSidebar toggleMap={() => (showMap = !showMap)} />
-  </div>
 </div>
