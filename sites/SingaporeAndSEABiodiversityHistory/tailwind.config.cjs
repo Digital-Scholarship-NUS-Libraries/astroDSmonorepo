@@ -7,6 +7,9 @@ module.exports = {
   ],
 	theme: {
 		extend: {
+      height: {
+        custom: 'calc(100vh - 161px)'
+      }
     }
 	},
 	plugins: [

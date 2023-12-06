@@ -8,7 +8,7 @@
 <!-- it could be that tailwind generates its classes before astro has replaced the value here -->
 <!-- the class we need wouldn't exist then, yet we still see the expected value in the generated code -->
 <div
-  class={`flex flex-col h-full bg-repeat bg-contain bg-[url('/nuslibraries/dsprojects/sea-biodiversity/assets/background-animal.jpg')]`}
+  class={`flex flex-col h-custom bg-repeat bg-contain bg-[url('/nuslibraries/dsprojects/sea-biodiversity/assets/background-animal.jpg')]`}
 >
   <img
     src={`${import.meta.env.BASE_URL}assets/banner-animal.jpg`}

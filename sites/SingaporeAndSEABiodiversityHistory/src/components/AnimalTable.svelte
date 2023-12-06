@@ -2,7 +2,7 @@
   import { filteredAnimals } from "../store/animals.js";
 </script>
 
-<div class="h-screen w-full overflow-y-scroll">
+<div class="h-custom w-full overflow-y-scroll">
   <table class="table-auto">
     <tr>
       <th class="px-4 py-2">Current Name ({$filteredAnimals.length} animals)</th

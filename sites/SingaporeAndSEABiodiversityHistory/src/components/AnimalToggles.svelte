@@ -26,7 +26,7 @@
   } from "../store/animalLayers.js";
 </script>
 
-<div class="prose max-w-none h-full overflow-y-scroll mr-4 ml-4 mb-2">
+<div class="prose max-w-none h-custom overflow-y-scroll mr-4 ml-4 mb-2">
   <h4>
     1. Locality of established non-native animal species first published records
     with location information (this layer is kept on by default).

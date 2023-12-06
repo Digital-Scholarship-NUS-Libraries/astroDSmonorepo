@@ -8,7 +8,7 @@
 
 <MapLibre
   style="https://basemaps.cartocdn.com/gl/positron-gl-style/style.json"
-  class="h-screen"
+  class="h-custom"
   center={[103.8, 1.35]}
   zoom={10.5}
   maxBounds={[

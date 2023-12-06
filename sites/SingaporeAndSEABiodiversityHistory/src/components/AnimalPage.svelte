@@ -6,7 +6,7 @@
   let showMap: boolean = true;
 </script>
 
-<div class="flex h-screen">
+<div class="flex">
   <div class="w-4/12">
     <AnimalSidebar toggleMap={() => (showMap = !showMap)} />
   </div>
